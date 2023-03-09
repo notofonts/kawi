@@ -31,14 +31,6 @@ name = Languagesystems;
 );
 features = (
 {
-automatic = 1;
-code = "feature blws;
-feature pstf;
-feature pref;
-";
-tag = aalt;
-},
-{
 code = "#lookup belowForm {
 #	sub virama-kawi ka-kawi by ka-kawi.below;
 #	sub virama-kawi la-kawi by la-kawi.below;
