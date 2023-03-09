@@ -38643,12 +38643,7 @@ type = "italic angle";
 properties = (
 {
 key = copyrights;
-values = (
-{
-language = dflt;
-value = "Copyright 2023 Google Inc. All Rights Reserved.";
-}
-);
+value = "Copyright 2023 The Noto Project Authors (https://github.com/notofonts/kawi)";
 },
 {
 key = licenses;
