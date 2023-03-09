@@ -38650,13 +38650,13 @@ key = licenses;
 values = (
 {
 language = dflt;
-value = "This Font Software is licensed under the SIL Open Font License, Version 1.1. This Font Software is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the SIL Open Font License for the specific language, permissions and limitations governing your use of this Font Software.";
+value = "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL";
 }
 );
 },
 {
 key = licenseURL;
-value = "http://scripts.sil.org/OFL";
+value = "https://scripts.sil.org/OFL";
 },
 {
 key = trademarks;
@@ -38664,6 +38664,32 @@ values = (
 {
 language = dflt;
 value = "Noto is a trademark of Google Inc.";
+}
+);
+},
+{
+key = vendorID;
+value = GOOG;
+},
+{
+key = manufacturers;
+values = (
+{
+language = dflt;
+value = holdontype;
+}
+);
+},
+{
+key = manufacturerURL;
+value = "http://holdontype.design/";
+},
+{
+key = designers;
+values = (
+{
+language = dflt;
+value = "Fadhl Haqq";
 }
 );
 }
