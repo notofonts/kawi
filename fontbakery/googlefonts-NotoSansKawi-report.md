@@ -10,7 +10,11 @@ Fontbakery version: 0.8.11
 
 
 * 🔥 **FAIL** Family 'Noto Sans Kawi' has 2 fonts (should be no more than 1) with the same OS/2.fsSelection bold & italic settings: Bold=False, Italic=False [code: unique-fsselection]
-</div></details><br></div></details><details><summary><b>[19] NotoSansKawi-Bold.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Check font follows the Google Fonts vertical metric schema (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/vertical_metrics">com.google.fonts/check/vertical_metrics</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[19] NotoSansKawi-Bold.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check that texts shape as per expectation (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Shaping Checks>.html#com.google.fonts/check/shaping/regression">com.google.fonts/check/shaping/regression</a>)</summary><div>
+
+
+* 💔 **ERROR** Failed with KeyError: 'uni0E70'
+</div></details><details><summary>🔥 <b>FAIL:</b> Check font follows the Google Fonts vertical metric schema (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/vertical_metrics">com.google.fonts/check/vertical_metrics</a>)</summary><div>
 
 
 * 🔥 **FAIL** The sum of hhea.ascender + abs(hhea.descender) + hhea.lineGap is 1000 when it should be at least 1200 [code: bad-hhea-range]
@@ -42,52 +46,6 @@ The dot of soft dotted characters should disappear in other cases, for example: 
 
 
 * 🔥 **FAIL** The following invalid script tags were found in the font: kawi [code: bad-script-tags]
-</div></details><details><summary>🔥 <b>FAIL:</b> Check that texts shape as per expectation (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Shaping Checks>.html#com.google.fonts/check/shaping/regression">com.google.fonts/check/shaping/regression</a>)</summary><div>
-
-
-* 🔥 **FAIL** qa/shaping_tests/example.json: Expected and actual shaping not matching
-<div class="shaping">
-
-
-<style type="text/css">
-    @font-face {font-family: "TestFont"; src: url(../../fonts/NotoSansKawi/googlefonts/ttf/NotoSansKawi-Bold.ttf);}
-    .tf { font-family: "TestFont"; }
-    .shaping pre { font-size: 1.2rem; }
-    .shaping li {
-        font-size: 1.2rem;
-        border-top: 1px solid #ddd;
-        padding: 12px;
-        margin-top: 12px;
-    }
-    .shaping-svg {
-        height: 100px;
-        margin: 10px;
-        transform: matrix(1, 0, 0, -1, 0, 0);
-    }
-</style>
-
-<h4>qa/shaping_tests/example.json: Expected and actual shaping not matching</h4>
-
-
-</div>
-<div class="shaping">
-
-<li>Shaping did not match: <span class="tf">๰</span></li>
-
-
-<pre>Expected: None</pre>
-
-
-
-<pre>Got     : .notdef=0+500</pre>
-
-
-Got: <svg class="shaping-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 2000" transform="matrix(1 0 0 -1 0 0)">
-<path d="M50.0,-200.0L50.0,800.0L450.0,800.0L450.0,-200.0L50.0,-200.0ZM100.0,-150.0L400.0,-150.0L400.0,750.0L100.0,750.0L100.0,-150.0Z" transform="translate(0, 700)"/>
-</svg>
-
-
-</div> [code: shaping-regression]
 </div></details><details><summary>⚠ <b>WARN:</b> Ensure fonts have ScriptLangTags declared on the 'meta' table. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/meta/script_lang_tags">com.google.fonts/check/meta/script_lang_tags</a>)</summary><div>
 
 
@@ -115,9 +73,9 @@ Got: <svg class="shaping-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50
 
 	- ghakawi.below
 
-	- hakawi.001 
+	- hakawi.below 
 
-	- 11 more.
+	- 24 more.
 
 Use -F or --full-lists to disable shortening of long lists.
  [code: unreachable-glyphs]
@@ -250,7 +208,11 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-s
 * ⚠ **WARN** The following glyphs have semi-vertical/semi-horizontal lines:
 
 	* okawi (U+11F10): L<<624.0,388.0>--<626.0,88.0>> [code: found-semi-vertical]
-</div></details><br></div></details><details><summary><b>[16] NotoSansKawi-Regular.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Check font follows the Google Fonts vertical metric schema (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/vertical_metrics">com.google.fonts/check/vertical_metrics</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[16] NotoSansKawi-Regular.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check that texts shape as per expectation (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Shaping Checks>.html#com.google.fonts/check/shaping/regression">com.google.fonts/check/shaping/regression</a>)</summary><div>
+
+
+* 💔 **ERROR** Failed with KeyError: 'uni0E70'
+</div></details><details><summary>🔥 <b>FAIL:</b> Check font follows the Google Fonts vertical metric schema (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/vertical_metrics">com.google.fonts/check/vertical_metrics</a>)</summary><div>
 
 
 * 🔥 **FAIL** The sum of hhea.ascender + abs(hhea.descender) + hhea.lineGap is 1000 when it should be at least 1200 [code: bad-hhea-range]
@@ -282,52 +244,6 @@ The dot of soft dotted characters should disappear in other cases, for example: 
 
 
 * 🔥 **FAIL** The following invalid script tags were found in the font: kawi [code: bad-script-tags]
-</div></details><details><summary>🔥 <b>FAIL:</b> Check that texts shape as per expectation (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Shaping Checks>.html#com.google.fonts/check/shaping/regression">com.google.fonts/check/shaping/regression</a>)</summary><div>
-
-
-* 🔥 **FAIL** qa/shaping_tests/example.json: Expected and actual shaping not matching
-<div class="shaping">
-
-
-<style type="text/css">
-    @font-face {font-family: "TestFont"; src: url(../../fonts/NotoSansKawi/googlefonts/ttf/NotoSansKawi-Regular.ttf);}
-    .tf { font-family: "TestFont"; }
-    .shaping pre { font-size: 1.2rem; }
-    .shaping li {
-        font-size: 1.2rem;
-        border-top: 1px solid #ddd;
-        padding: 12px;
-        margin-top: 12px;
-    }
-    .shaping-svg {
-        height: 100px;
-        margin: 10px;
-        transform: matrix(1, 0, 0, -1, 0, 0);
-    }
-</style>
-
-<h4>qa/shaping_tests/example.json: Expected and actual shaping not matching</h4>
-
-
-</div>
-<div class="shaping">
-
-<li>Shaping did not match: <span class="tf">๰</span></li>
-
-
-<pre>Expected: None</pre>
-
-
-
-<pre>Got     : .notdef=0+500</pre>
-
-
-Got: <svg class="shaping-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 2000" transform="matrix(1 0 0 -1 0 0)">
-<path d="M50.0,-200.0L50.0,800.0L450.0,800.0L450.0,-200.0L50.0,-200.0ZM100.0,-150.0L400.0,-150.0L400.0,750.0L100.0,750.0L100.0,-150.0Z" transform="translate(0, 700)"/>
-</svg>
-
-
-</div> [code: shaping-regression]
 </div></details><details><summary>⚠ <b>WARN:</b> Ensure fonts have ScriptLangTags declared on the 'meta' table. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/meta/script_lang_tags">com.google.fonts/check/meta/script_lang_tags</a>)</summary><div>
 
 
@@ -355,9 +271,9 @@ Got: <svg class="shaping-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50
 
 	- ghakawi.below
 
-	- hakawi.001 
+	- hakawi.below 
 
-	- 11 more.
+	- 24 more.
 
 Use -F or --full-lists to disable shortening of long lists.
  [code: unreachable-glyphs]
@@ -462,6 +378,10 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-short-s
 
 
 * 💔 **ERROR** The condition <FontBakeryCondition:expected_font_names> had an error: KeyError: 'fvar'
+</div></details><details><summary>💔 <b>ERROR:</b> Check that texts shape as per expectation (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Shaping Checks>.html#com.google.fonts/check/shaping/regression">com.google.fonts/check/shaping/regression</a>)</summary><div>
+
+
+* 💔 **ERROR** Failed with KeyError: 'uni0E70'
 </div></details><details><summary>🔥 <b>FAIL:</b> Check font follows the Google Fonts vertical metric schema (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/vertical_metrics">com.google.fonts/check/vertical_metrics</a>)</summary><div>
 
 
@@ -494,52 +414,6 @@ The dot of soft dotted characters should disappear in other cases, for example: 
 
 
 * 🔥 **FAIL** The following invalid script tags were found in the font: kawi [code: bad-script-tags]
-</div></details><details><summary>🔥 <b>FAIL:</b> Check that texts shape as per expectation (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Shaping Checks>.html#com.google.fonts/check/shaping/regression">com.google.fonts/check/shaping/regression</a>)</summary><div>
-
-
-* 🔥 **FAIL** qa/shaping_tests/example.json: Expected and actual shaping not matching
-<div class="shaping">
-
-
-<style type="text/css">
-    @font-face {font-family: "TestFont"; src: url(../../fonts/NotoSansKawi/googlefonts/variable-ttf/NotoSansKawi[wght].ttf);}
-    .tf { font-family: "TestFont"; }
-    .shaping pre { font-size: 1.2rem; }
-    .shaping li {
-        font-size: 1.2rem;
-        border-top: 1px solid #ddd;
-        padding: 12px;
-        margin-top: 12px;
-    }
-    .shaping-svg {
-        height: 100px;
-        margin: 10px;
-        transform: matrix(1, 0, 0, -1, 0, 0);
-    }
-</style>
-
-<h4>qa/shaping_tests/example.json: Expected and actual shaping not matching</h4>
-
-
-</div>
-<div class="shaping">
-
-<li>Shaping did not match: <span class="tf">๰</span></li>
-
-
-<pre>Expected: None</pre>
-
-
-
-<pre>Got     : .notdef=0+500</pre>
-
-
-Got: <svg class="shaping-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 2000" transform="matrix(1 0 0 -1 0 0)">
-<path d="M50.0,-200.0L50.0,800.0L450.0,800.0L450.0,-200.0L50.0,-200.0ZM100.0,-150.0L400.0,-150.0L400.0,750.0L100.0,750.0L100.0,-150.0Z" transform="translate(0, 700)"/>
-</svg>
-
-
-</div> [code: shaping-regression]
 </div></details><details><summary>⚠ <b>WARN:</b> Ensure variable fonts include an avar table. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/mandatory_avar_table">com.google.fonts/check/mandatory_avar_table</a>)</summary><div>
 
 
@@ -571,9 +445,9 @@ Got: <svg class="shaping-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50
 
 	- ghakawi.below
 
-	- hakawi.001 
+	- hakawi.below 
 
-	- 11 more.
+	- 24 more.
 
 Use -F or --full-lists to disable shortening of long lists.
  [code: unreachable-glyphs]
@@ -584,9 +458,9 @@ Use -F or --full-lists to disable shortening of long lists.
 </div></details><details><summary>⚠ <b>WARN:</b> Detect any interpolation issues in the font. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/interpolation_issues">com.google.fonts/check/interpolation_issues</a>)</summary><div>
 
 
-* ⚠ **WARN** Interpolation issues were found in the font: 	- Contour 0 start point differs in glyph 'lakawi.below' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f1dc4d49fd0> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f1dc4d49050> 
+* ⚠ **WARN** Interpolation issues were found in the font: 	- Contour 0 start point differs in glyph 'lakawi.below' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f3438724490> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f343874b7d0> 
 
-	- Contour 0 start point differs in glyph 'lakawi.below2' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f1dc4d49fd0> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f1dc4d49050> [code: interpolation-issues]
+	- Contour 0 start point differs in glyph 'lakawi.below2' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f3438724490> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f343874b7d0> [code: interpolation-issues]
 </div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
@@ -607,8 +481,8 @@ minus
 
 | 💔 ERROR | 🔥 FAIL | ⚠ WARN | 💤 SKIP | ℹ INFO | 🍞 PASS | 🔎 DEBUG |
 |:-----:|:----:|:----:|:----:|:----:|:----:|:----:|
-| 3 | 26 | 26 | 327 | 20 | 292 | 0 |
-| 0% | 4% | 4% | 47% | 3% | 42% | 0% |
+| 6 | 23 | 26 | 327 | 20 | 292 | 0 |
+| 1% | 3% | 4% | 47% | 3% | 42% | 0% |
 
 **Note:** The following loglevels were omitted in this report:
 * **SKIP**
