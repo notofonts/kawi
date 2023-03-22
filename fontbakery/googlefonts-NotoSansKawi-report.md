@@ -26,7 +26,7 @@ Fontbakery version: 0.8.11
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1030, but got 800 instead [code: ascent]
-* 🔥 **FAIL** OS/2.usWinDescent value should be equal or greater than 580, but got 200 instead. [code: descent]
+* 🔥 **FAIL** OS/2.usWinDescent value should be equal or greater than 954, but got 200 instead. [code: descent]
 </div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
 
 
@@ -37,11 +37,6 @@ The dot of soft dotted characters should disappear in other cases, for example: 
 
 
 * 🔥 **FAIL** Space and non-breaking space have differing width: The space glyph named space is 250 font units wide, non-breaking space named (uni00A0) is 260 font units wide, and both should be positive and the same. GlyphsApp has "Sidebearing arithmetic" (https://glyphsapp.com/tutorials/spacing) which allows you to set the non-breaking space width to always equal the space width. [code: different-widths]
-</div></details><details><summary>🔥 <b>FAIL:</b> Check glyphs do not have duplicate components which have the same x,y coordinates. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/glyf.html#com.google.fonts/check/glyf_non_transformed_duplicate_components">com.google.fonts/check/glyf_non_transformed_duplicate_components</a>)</summary><div>
-
-
-* 🔥 **FAIL** The following glyphs have duplicate components which have the same x,y coordinates:
-	* {'glyph': 'doubleDandakawi', 'component': 'dandakawi', 'x': 0, 'y': 0} [code: found-duplicates]
 </div></details><details><summary>🔥 <b>FAIL:</b> Does the font have any invalid script tags? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/layout.html#com.google.fonts/check/layout_valid_script_tags">com.google.fonts/check/layout_valid_script_tags</a>)</summary><div>
 
 
@@ -55,29 +50,13 @@ The dot of soft dotted characters should disappear in other cases, for example: 
 
 * ⚠ **WARN** The following glyphs could not be reached by codepoint or substitution rules:
 
-	- bakawi.below
+	- lakawi.below2
 
-	- cakawi.below
+	- vowelI_anusvarakawi
 
-	- chakawi.below
+	- vowelUkawi.below 
 
-	- dakawi.below
-
-	- ddakawi.below
-
-	- ddhakawi.below
-
-	- dhakawi.below
-
-	- gakawi.below
-
-	- ghakawi.below
-
-	- hakawi.below 
-
-	- 24 more.
-
-Use -F or --full-lists to disable shortening of long lists.
+	- vowelUukawi.below
  [code: unreachable-glyphs]
 </div></details><details><summary>⚠ <b>WARN:</b> Check if each glyph has the recommended amount of contours. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/contour_count">com.google.fonts/check/contour_count</a>)</summary><div>
 
@@ -111,7 +90,12 @@ minus
 
 
 * ⚠ **WARN** The following mark characters could be in the GDEF mark glyph class:
-	 anusvarakawi (U+11F01), candrabindukawi (U+11F00), viramakawi (U+11F42), vowelEukawi (U+11F40), vowelIikawi (U+11F37), vowelIkawi (U+11F36), vowelUkawi (U+11F38), vowelUukawi (U+11F39) and vowelVocalicRkawi (U+11F3A) [code: mark-chars]
+	 vowelIikawi (U+11F37), vowelUukawi (U+11F39) and vowelVocalicRkawi (U+11F3A) [code: mark-chars]
+</div></details><details><summary>⚠ <b>WARN:</b> Check GDEF mark glyph class doesn't have characters that are not marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_non_mark_chars">com.google.fonts/check/gdef_non_mark_chars</a>)</summary><div>
+
+
+* ⚠ **WARN** The following non-mark characters should not be in the GDEF mark glyph class:
+	 U+11F02 [code: non-mark-chars]
 </div></details><details><summary>⚠ <b>WARN:</b> Are there any misaligned on-curve points? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_alignment_miss">com.google.fonts/check/outline_alignment_miss</a>)</summary><div>
 
 
@@ -137,7 +121,7 @@ minus
 
 	* Aring (U+00C5): X=377.5,Y=798.5 (should be at ascender 800?) 
 
-	* 47 more.
+	* 48 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]
 </div></details><details><summary>⚠ <b>WARN:</b> Are any segments inordinately short? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_short_segments">com.google.fonts/check/outline_short_segments</a>)</summary><div>
@@ -165,7 +149,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 	* W (U+0057) contains a short segment B<<516.0,375.0>-<513.0,386.0>-<508.5,408.0>> 
 
-	* 71 more.
+	* 73 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-short-segments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do any segments have colinear vectors? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_colinear_vectors">com.google.fonts/check/outline_colinear_vectors</a>)</summary><div>
@@ -208,7 +192,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-s
 * ⚠ **WARN** The following glyphs have semi-vertical/semi-horizontal lines:
 
 	* okawi (U+11F10): L<<624.0,388.0>--<626.0,88.0>> [code: found-semi-vertical]
-</div></details><br></div></details><details><summary><b>[16] NotoSansKawi-Regular.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check that texts shape as per expectation (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Shaping Checks>.html#com.google.fonts/check/shaping/regression">com.google.fonts/check/shaping/regression</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[15] NotoSansKawi-Regular.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check that texts shape as per expectation (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Shaping Checks>.html#com.google.fonts/check/shaping/regression">com.google.fonts/check/shaping/regression</a>)</summary><div>
 
 
 * 💔 **ERROR** Failed with KeyError: 'uni0E70'
@@ -224,7 +208,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-s
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1030, but got 800 instead [code: ascent]
-* 🔥 **FAIL** OS/2.usWinDescent value should be equal or greater than 580, but got 200 instead. [code: descent]
+* 🔥 **FAIL** OS/2.usWinDescent value should be equal or greater than 954, but got 200 instead. [code: descent]
 </div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
 
 
@@ -235,11 +219,6 @@ The dot of soft dotted characters should disappear in other cases, for example: 
 
 
 * 🔥 **FAIL** Space and non-breaking space have differing width: The space glyph named space is 200 font units wide, non-breaking space named (uni00A0) is 260 font units wide, and both should be positive and the same. GlyphsApp has "Sidebearing arithmetic" (https://glyphsapp.com/tutorials/spacing) which allows you to set the non-breaking space width to always equal the space width. [code: different-widths]
-</div></details><details><summary>🔥 <b>FAIL:</b> Check glyphs do not have duplicate components which have the same x,y coordinates. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/glyf.html#com.google.fonts/check/glyf_non_transformed_duplicate_components">com.google.fonts/check/glyf_non_transformed_duplicate_components</a>)</summary><div>
-
-
-* 🔥 **FAIL** The following glyphs have duplicate components which have the same x,y coordinates:
-	* {'glyph': 'doubleDandakawi', 'component': 'dandakawi', 'x': 0, 'y': 0} [code: found-duplicates]
 </div></details><details><summary>🔥 <b>FAIL:</b> Does the font have any invalid script tags? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/layout.html#com.google.fonts/check/layout_valid_script_tags">com.google.fonts/check/layout_valid_script_tags</a>)</summary><div>
 
 
@@ -253,29 +232,13 @@ The dot of soft dotted characters should disappear in other cases, for example: 
 
 * ⚠ **WARN** The following glyphs could not be reached by codepoint or substitution rules:
 
-	- bakawi.below
+	- lakawi.below2
 
-	- cakawi.below
+	- vowelI_anusvarakawi
 
-	- chakawi.below
+	- vowelUkawi.below 
 
-	- dakawi.below
-
-	- ddakawi.below
-
-	- ddhakawi.below
-
-	- dhakawi.below
-
-	- gakawi.below
-
-	- ghakawi.below
-
-	- hakawi.below 
-
-	- 24 more.
-
-Use -F or --full-lists to disable shortening of long lists.
+	- vowelUukawi.below
  [code: unreachable-glyphs]
 </div></details><details><summary>⚠ <b>WARN:</b> Check if each glyph has the recommended amount of contours. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/contour_count">com.google.fonts/check/contour_count</a>)</summary><div>
 
@@ -309,35 +272,12 @@ minus
 
 
 * ⚠ **WARN** The following mark characters could be in the GDEF mark glyph class:
-	 anusvarakawi (U+11F01), candrabindukawi (U+11F00), viramakawi (U+11F42), vowelEukawi (U+11F40), vowelIikawi (U+11F37), vowelIkawi (U+11F36), vowelUkawi (U+11F38), vowelUukawi (U+11F39) and vowelVocalicRkawi (U+11F3A) [code: mark-chars]
-</div></details><details><summary>⚠ <b>WARN:</b> Are there any misaligned on-curve points? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_alignment_miss">com.google.fonts/check/outline_alignment_miss</a>)</summary><div>
+	 vowelIikawi (U+11F37), vowelUukawi (U+11F39) and vowelVocalicRkawi (U+11F3A) [code: mark-chars]
+</div></details><details><summary>⚠ <b>WARN:</b> Check GDEF mark glyph class doesn't have characters that are not marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_non_mark_chars">com.google.fonts/check/gdef_non_mark_chars</a>)</summary><div>
 
 
-* ⚠ **WARN** The following glyphs have on-curve points which have potentially incorrect y coordinates:
-
-	* exclam (U+0021): X=177.5,Y=2.0 (should be at baseline 0?)
-
-	* exclam (U+0021): X=90.0,Y=2.0 (should be at baseline 0?)
-
-	* period (U+002E): X=177.5,Y=2.0 (should be at baseline 0?)
-
-	* period (U+002E): X=90.0,Y=2.0 (should be at baseline 0?)
-
-	* two (U+0032): X=152.5,Y=699.5 (should be at cap-height 700?)
-
-	* three (U+0033): X=137.0,Y=-1.5 (should be at baseline 0?)
-
-	* three (U+0033): X=143.5,Y=702.0 (should be at cap-height 700?)
-
-	* colon (U+003A): X=177.5,Y=2.0 (should be at baseline 0?)
-
-	* colon (U+003A): X=90.0,Y=2.0 (should be at baseline 0?)
-
-	* question (U+003F): X=222.0,Y=2.0 (should be at baseline 0?) 
-
-	* 88 more.
-
-Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]
+* ⚠ **WARN** The following non-mark characters should not be in the GDEF mark glyph class:
+	 U+11F02 [code: non-mark-chars]
 </div></details><details><summary>⚠ <b>WARN:</b> Are any segments inordinately short? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_short_segments">com.google.fonts/check/outline_short_segments</a>)</summary><div>
 
 
@@ -394,7 +334,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-short-s
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1030, but got 800 instead [code: ascent]
-* 🔥 **FAIL** OS/2.usWinDescent value should be equal or greater than 580, but got 200 instead. [code: descent]
+* 🔥 **FAIL** OS/2.usWinDescent value should be equal or greater than 954, but got 200 instead. [code: descent]
 </div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
 
 
@@ -405,11 +345,6 @@ The dot of soft dotted characters should disappear in other cases, for example: 
 
 
 * 🔥 **FAIL** Space and non-breaking space have differing width: The space glyph named space is 200 font units wide, non-breaking space named (uni00A0) is 260 font units wide, and both should be positive and the same. GlyphsApp has "Sidebearing arithmetic" (https://glyphsapp.com/tutorials/spacing) which allows you to set the non-breaking space width to always equal the space width. [code: different-widths]
-</div></details><details><summary>🔥 <b>FAIL:</b> Check glyphs do not have duplicate components which have the same x,y coordinates. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/glyf.html#com.google.fonts/check/glyf_non_transformed_duplicate_components">com.google.fonts/check/glyf_non_transformed_duplicate_components</a>)</summary><div>
-
-
-* 🔥 **FAIL** The following glyphs have duplicate components which have the same x,y coordinates:
-	* {'glyph': 'doubleDandakawi', 'component': 'dandakawi', 'x': 0, 'y': 0} [code: found-duplicates]
 </div></details><details><summary>🔥 <b>FAIL:</b> Does the font have any invalid script tags? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/layout.html#com.google.fonts/check/layout_valid_script_tags">com.google.fonts/check/layout_valid_script_tags</a>)</summary><div>
 
 
@@ -427,29 +362,13 @@ The dot of soft dotted characters should disappear in other cases, for example: 
 
 * ⚠ **WARN** The following glyphs could not be reached by codepoint or substitution rules:
 
-	- bakawi.below
+	- lakawi.below2
 
-	- cakawi.below
+	- vowelI_anusvarakawi
 
-	- chakawi.below
+	- vowelUkawi.below 
 
-	- dakawi.below
-
-	- ddakawi.below
-
-	- ddhakawi.below
-
-	- dhakawi.below
-
-	- gakawi.below
-
-	- ghakawi.below
-
-	- hakawi.below 
-
-	- 24 more.
-
-Use -F or --full-lists to disable shortening of long lists.
+	- vowelUukawi.below
  [code: unreachable-glyphs]
 </div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
 
@@ -458,9 +377,13 @@ Use -F or --full-lists to disable shortening of long lists.
 </div></details><details><summary>⚠ <b>WARN:</b> Detect any interpolation issues in the font. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/interpolation_issues">com.google.fonts/check/interpolation_issues</a>)</summary><div>
 
 
-* ⚠ **WARN** Interpolation issues were found in the font: 	- Contour 0 start point differs in glyph 'lakawi.below' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f3438724490> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f343874b7d0> 
+* ⚠ **WARN** Interpolation issues were found in the font: 	- Contour 0 start point differs in glyph 'candrabindukawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f6e27ea4410> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f6e275646d0>
 
-	- Contour 0 start point differs in glyph 'lakawi.below2' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f3438724490> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f343874b7d0> [code: interpolation-issues]
+	- Contour 0 start point differs in glyph 'lakawi.below' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f6e27ea4410> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f6e275646d0>
+
+	- Contour 0 start point differs in glyph 'lakawi.below2' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f6e27ea4410> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f6e275646d0> 
+
+	- Contour 1 start point differs in glyph 'sectionMakerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f6e27ea4410> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f6e275646d0> [code: interpolation-issues]
 </div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
@@ -474,14 +397,19 @@ minus
 
 
 * ⚠ **WARN** The following mark characters could be in the GDEF mark glyph class:
-	 anusvarakawi (U+11F01), candrabindukawi (U+11F00), viramakawi (U+11F42), vowelEukawi (U+11F40), vowelIikawi (U+11F37), vowelIkawi (U+11F36), vowelUkawi (U+11F38), vowelUukawi (U+11F39) and vowelVocalicRkawi (U+11F3A) [code: mark-chars]
+	 vowelIikawi (U+11F37), vowelUukawi (U+11F39) and vowelVocalicRkawi (U+11F3A) [code: mark-chars]
+</div></details><details><summary>⚠ <b>WARN:</b> Check GDEF mark glyph class doesn't have characters that are not marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_non_mark_chars">com.google.fonts/check/gdef_non_mark_chars</a>)</summary><div>
+
+
+* ⚠ **WARN** The following non-mark characters should not be in the GDEF mark glyph class:
+	 U+11F02 [code: non-mark-chars]
 </div></details><br></div></details>
 
 ### Summary
 
 | 💔 ERROR | 🔥 FAIL | ⚠ WARN | 💤 SKIP | ℹ INFO | 🍞 PASS | 🔎 DEBUG |
 |:-----:|:----:|:----:|:----:|:----:|:----:|:----:|
-| 6 | 23 | 26 | 327 | 20 | 292 | 0 |
+| 6 | 20 | 28 | 327 | 20 | 293 | 0 |
 | 1% | 3% | 4% | 47% | 3% | 42% | 0% |
 
 **Note:** The following loglevels were omitted in this report:
