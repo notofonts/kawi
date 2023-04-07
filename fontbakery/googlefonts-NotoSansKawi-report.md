@@ -10,7 +10,7 @@ Fontbakery version: 0.8.11
 
 
 * 🔥 **FAIL** Family 'Noto Sans Kawi' has 2 fonts (should be no more than 1) with the same OS/2.fsSelection bold & italic settings: Bold=False, Italic=False [code: unique-fsselection]
-</div></details><br></div></details><details><summary><b>[17] NotoSansKawi-Bold.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check that texts shape as per expectation (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Shaping Checks>.html#com.google.fonts/check/shaping/regression">com.google.fonts/check/shaping/regression</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[16] NotoSansKawi-Bold.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check that texts shape as per expectation (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Shaping Checks>.html#com.google.fonts/check/shaping/regression">com.google.fonts/check/shaping/regression</a>)</summary><div>
 
 
 * 💔 **ERROR** Failed with KeyError: 'uni0E70'
@@ -25,7 +25,7 @@ Fontbakery version: 0.8.11
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
-* 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1147, but got 800 instead [code: ascent]
+* 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1350, but got 800 instead [code: ascent]
 * 🔥 **FAIL** OS/2.usWinDescent value should be equal or greater than 954, but got 200 instead. [code: descent]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking with fontTools.ttx (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/ttx_roundtrip">com.google.fonts/check/ttx_roundtrip</a>)</summary><div>
 
@@ -38,10 +38,6 @@ Fontbakery version: 0.8.11
 * 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: i̊ i̋ j̀ j́ j̃ j̄ j̈ į̀ į́ į̂ į̃ į̄ į̌
 
 The dot of soft dotted characters should disappear in other cases, for example: ĩ ĭ i̇ ǐ i̒ ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ ĵ [code: soft-dotted]
-</div></details><details><summary>🔥 <b>FAIL:</b> Space and non-breaking space have the same width? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/whitespace_widths">com.google.fonts/check/whitespace_widths</a>)</summary><div>
-
-
-* 🔥 **FAIL** Space and non-breaking space have differing width: The space glyph named space is 250 font units wide, non-breaking space named (uni00A0) is 260 font units wide, and both should be positive and the same. GlyphsApp has "Sidebearing arithmetic" (https://glyphsapp.com/tutorials/spacing) which allows you to set the non-breaking space width to always equal the space width. [code: different-widths]
 </div></details><details><summary>🔥 <b>FAIL:</b> Does the font have any invalid script tags? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/layout.html#com.google.fonts/check/layout_valid_script_tags">com.google.fonts/check/layout_valid_script_tags</a>)</summary><div>
 
 
@@ -108,7 +104,7 @@ minus
 
 	* Aring (U+00C5): X=377.5,Y=798.5 (should be at ascender 800?) 
 
-	* 54 more.
+	* 53 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]
 </div></details><details><summary>⚠ <b>WARN:</b> Are any segments inordinately short? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_short_segments">com.google.fonts/check/outline_short_segments</a>)</summary><div>
@@ -136,7 +132,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 	* W (U+0057) contains a short segment B<<516.0,375.0>-<513.0,386.0>-<508.5,408.0>> 
 
-	* 76 more.
+	* 77 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-short-segments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do any segments have colinear vectors? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_colinear_vectors">com.google.fonts/check/outline_colinear_vectors</a>)</summary><div>
@@ -179,7 +175,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-s
 * ⚠ **WARN** The following glyphs have semi-vertical/semi-horizontal lines:
 
 	* okawi (U+11F10): L<<624.0,388.0>--<626.0,88.0>> [code: found-semi-vertical]
-</div></details><br></div></details><details><summary><b>[13] NotoSansKawi-Regular.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check that texts shape as per expectation (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Shaping Checks>.html#com.google.fonts/check/shaping/regression">com.google.fonts/check/shaping/regression</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[12] NotoSansKawi-Regular.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check that texts shape as per expectation (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Shaping Checks>.html#com.google.fonts/check/shaping/regression">com.google.fonts/check/shaping/regression</a>)</summary><div>
 
 
 * 💔 **ERROR** Failed with KeyError: 'uni0E70'
@@ -194,7 +190,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-s
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
-* 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1147, but got 800 instead [code: ascent]
+* 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1350, but got 800 instead [code: ascent]
 * 🔥 **FAIL** OS/2.usWinDescent value should be equal or greater than 954, but got 200 instead. [code: descent]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking with fontTools.ttx (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/ttx_roundtrip">com.google.fonts/check/ttx_roundtrip</a>)</summary><div>
 
@@ -207,10 +203,6 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-s
 * 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: i̊ i̋ j̀ j́ j̃ j̄ j̈ į̀ į́ į̂ į̃ į̄ į̌
 
 The dot of soft dotted characters should disappear in other cases, for example: ĩ ĭ i̇ ǐ i̒ ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ ĵ [code: soft-dotted]
-</div></details><details><summary>🔥 <b>FAIL:</b> Space and non-breaking space have the same width? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/whitespace_widths">com.google.fonts/check/whitespace_widths</a>)</summary><div>
-
-
-* 🔥 **FAIL** Space and non-breaking space have differing width: The space glyph named space is 200 font units wide, non-breaking space named (uni00A0) is 260 font units wide, and both should be positive and the same. GlyphsApp has "Sidebearing arithmetic" (https://glyphsapp.com/tutorials/spacing) which allows you to set the non-breaking space width to always equal the space width. [code: different-widths]
 </div></details><details><summary>🔥 <b>FAIL:</b> Does the font have any invalid script tags? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/layout.html#com.google.fonts/check/layout_valid_script_tags">com.google.fonts/check/layout_valid_script_tags</a>)</summary><div>
 
 
@@ -280,7 +272,7 @@ minus
 	* 62 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-short-segments]
-</div></details><br></div></details><details><summary><b>[17] NotoSansKawi[wght].ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check font names are correct (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/font_names">com.google.fonts/check/font_names</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[16] NotoSansKawi[wght].ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check font names are correct (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/font_names">com.google.fonts/check/font_names</a>)</summary><div>
 
 
 * 💔 **ERROR** The condition <FontBakeryCondition:expected_font_names> had an error: KeyError: 'fvar'
@@ -307,7 +299,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-short-s
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
-* 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1147, but got 800 instead [code: ascent]
+* 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1350, but got 800 instead [code: ascent]
 * 🔥 **FAIL** OS/2.usWinDescent value should be equal or greater than 954, but got 200 instead. [code: descent]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking with fontTools.ttx (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/ttx_roundtrip">com.google.fonts/check/ttx_roundtrip</a>)</summary><div>
 
@@ -320,10 +312,6 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-short-s
 * 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: i̊ i̋ j̀ j́ j̃ j̄ j̈ į̀ į́ į̂ į̃ į̄ į̌
 
 The dot of soft dotted characters should disappear in other cases, for example: ĩ ĭ i̇ ǐ i̒ ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ ĵ [code: soft-dotted]
-</div></details><details><summary>🔥 <b>FAIL:</b> Space and non-breaking space have the same width? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/whitespace_widths">com.google.fonts/check/whitespace_widths</a>)</summary><div>
-
-
-* 🔥 **FAIL** Space and non-breaking space have differing width: The space glyph named space is 200 font units wide, non-breaking space named (uni00A0) is 260 font units wide, and both should be positive and the same. GlyphsApp has "Sidebearing arithmetic" (https://glyphsapp.com/tutorials/spacing) which allows you to set the non-breaking space width to always equal the space width. [code: different-widths]
 </div></details><details><summary>🔥 <b>FAIL:</b> Check name table for empty records. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/name.html#com.adobe.fonts/check/name/empty_records">com.adobe.fonts/check/name/empty_records</a>)</summary><div>
 
 
@@ -344,25 +332,25 @@ The dot of soft dotted characters should disappear in other cases, for example: 
 </div></details><details><summary>⚠ <b>WARN:</b> Detect any interpolation issues in the font. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/interpolation_issues">com.google.fonts/check/interpolation_issues</a>)</summary><div>
 
 
-* ⚠ **WARN** Interpolation issues were found in the font: 	- Contour order differs in glyph 'flowerkawi': [0, 1, 2, 3, 4, 5, 6, 7, 8] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7feebf3a1fd0>, [8, 0, 7, 1, 2, 3, 4, 5, 6] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7feebf3a2490>.
+* ⚠ **WARN** Interpolation issues were found in the font: 	- Contour order differs in glyph 'flowerkawi': [0, 1, 2, 3, 4, 5, 6, 7, 8] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fc91d224f10>, [8, 0, 7, 1, 2, 3, 4, 5, 6] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fc91fd64490>.
 
-	- Contour 1 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7feebf3a1fd0> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7feebf3a2490>
+	- Contour 1 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fc91d224f10> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fc91fd64490>
 
-	- Contour 2 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7feebf3a1fd0> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7feebf3a2490>
+	- Contour 2 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fc91d224f10> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fc91fd64490>
 
-	- Contour 3 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7feebf3a1fd0> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7feebf3a2490>
+	- Contour 3 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fc91d224f10> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fc91fd64490>
 
-	- Contour 4 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7feebf3a1fd0> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7feebf3a2490>
+	- Contour 4 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fc91d224f10> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fc91fd64490>
 
-	- Contour 5 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7feebf3a1fd0> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7feebf3a2490>
+	- Contour 5 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fc91d224f10> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fc91fd64490>
 
-	- Contour 6 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7feebf3a1fd0> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7feebf3a2490>
+	- Contour 6 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fc91d224f10> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fc91fd64490>
 
-	- Contour 7 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7feebf3a1fd0> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7feebf3a2490>
+	- Contour 7 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fc91d224f10> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fc91fd64490>
 
-	- Contour 8 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7feebf3a1fd0> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7feebf3a2490> 
+	- Contour 8 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fc91d224f10> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fc91fd64490> 
 
-	- Contour order differs in glyph 'tripleDotkawi': [0, 1, 2] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7feebf3a1fd0>, [2, 1, 0] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7feebf3a2490>. [code: interpolation-issues]
+	- Contour order differs in glyph 'tripleDotkawi': [0, 1, 2] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fc91d224f10>, [2, 1, 0] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fc91fd64490>. [code: interpolation-issues]
 </div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
@@ -383,7 +371,7 @@ minus
 
 | 💔 ERROR | 🔥 FAIL | ⚠ WARN | 💤 SKIP | ℹ INFO | 🍞 PASS | 🔎 DEBUG |
 |:-----:|:----:|:----:|:----:|:----:|:----:|:----:|
-| 6 | 24 | 19 | 327 | 20 | 298 | 0 |
+| 6 | 21 | 19 | 327 | 20 | 301 | 0 |
 | 1% | 3% | 3% | 47% | 3% | 43% | 0% |
 
 **Note:** The following loglevels were omitted in this report:
