@@ -281,11 +281,14 @@ code = "lookup raFormShort {
 } raFormShort;
 
 lookup yaPostBelow {
+	sub ra-kawi.post.short ra-kawi ya-kawi.post' by ya-kawi.post.below;
 	sub @belowForms ya-kawi.post' by ya-kawi.post.below;
 	sub @postForms ya-kawi.post' by ya-kawi.post.below;
-	sub ra-kawi.below ya-kawi.post' by ya-kawi.post.below2;
-	sub ra-kawi.post.short ra-kawi ya-kawi.post' by ya-kawi.post.below;
 } yaPostBelow;
+
+lookup yaPostBelow2 {
+	sub ra-kawi.below ya-kawi.post.below' by ya-kawi.post.below2;
+} yaPostBelow2;
 
 lookup shortPostForms {
 	sub [pa-kawi.post pha-kawi.post sa-kawi.post ssa-kawi.post]' [wa-kawi.below la-kawi.below ma-kawi.below] by [pa-kawi.post.short pha-kawi.post.short sa-kawi.post.short ssa-kawi.post.short];
@@ -304,6 +307,8 @@ lookup reorder {
 	sub vowelAa-kawi' lookup swapNull [vowelEu-kawi vowelI-kawi vowelIi-kawi anusvara-kawi repha-kawi]' lookup addVowelAa;
 	sub vowelAa-kawi' lookup swapNull [vowelEu-kawi vowelI-kawi vowelIi-kawi anusvara-kawi repha-kawi]' lookup addVowelAaAlt;
 	sub ya-kawi.post' lookup swapNull [vowelEu-kawi vowelI-kawi vowelIi-kawi anusvara-kawi repha-kawi]' lookup addYaKawiPost;
+	sub ya-kawi.post.below' lookup swapNull [vowelEu-kawi vowelI-kawi vowelIi-kawi anusvara-kawi repha-kawi]' lookup addYaKawiPostBelow;
+	sub ya-kawi.post.below2' lookup swapNull [vowelEu-kawi vowelI-kawi vowelIi-kawi anusvara-kawi repha-kawi]' lookup addYaKawiPostBelow2;
 } reorder;
 
 lookup rephaVowelAa {
@@ -318,6 +323,7 @@ lookup vowelBelow2Ra {
 script kawi;
 lookup raFormShort;
 lookup yaPostBelow;
+lookup yaPostBelow2;
 lookup shortPostForms;
 lookup below2vowelspost;
 lookup raWidths;
