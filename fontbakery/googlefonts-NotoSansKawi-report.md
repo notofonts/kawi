@@ -17,7 +17,7 @@ Fontbakery version: 0.8.11
 </div></details><details><summary>🔥 <b>FAIL:</b> Check font follows the Google Fonts vertical metric schema (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/vertical_metrics">com.google.fonts/check/vertical_metrics</a>)</summary><div>
 
 
-* 🔥 **FAIL** The sum of hhea.ascender + abs(hhea.descender) + hhea.lineGap is 1000 when it should be at least 1200 [code: bad-hhea-range]
+* 🔥 **FAIL** The sum of hhea.ascender + abs(hhea.descender) + hhea.lineGap is 2210 when it should be at most 2000 [code: bad-hhea-range]
 </div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
@@ -25,8 +25,7 @@ Fontbakery version: 0.8.11
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
-* 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1350, but got 800 instead [code: ascent]
-* 🔥 **FAIL** OS/2.usWinDescent value should be equal or greater than 954, but got 200 instead. [code: descent]
+* 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1346, but got 1250 instead [code: ascent]
 </div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
 
 
@@ -87,8 +86,6 @@ minus
 
 	* G (U+0047): X=527.5,Y=1.0 (should be at baseline 0?)
 
-	* J (U+004A): X=-74.0,Y=-199.0 (should be at descender -200?)
-
 	* c (U+0063): X=394.5,Y=-0.5 (should be at baseline 0?)
 
 	* e (U+0065): X=432.5,Y=-0.5 (should be at baseline 0?)
@@ -97,9 +94,11 @@ minus
 
 	* degree (U+00B0): X=123.5,Y=702.0 (should be at cap-height 700?)
 
-	* Aring (U+00C5): X=377.5,Y=798.5 (should be at ascender 800?) 
+	* Ccedilla (U+00C7): X=482.0,Y=-1.0 (should be at baseline 0?)
 
-	* 53 more.
+	* Oslash (U+00D8): X=686.0,Y=701.0 (should be at cap-height 700?) 
+
+	* 31 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]
 </div></details><details><summary>⚠ <b>WARN:</b> Are any segments inordinately short? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_short_segments">com.google.fonts/check/outline_short_segments</a>)</summary><div>
@@ -170,14 +169,14 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-s
 * ⚠ **WARN** The following glyphs have semi-vertical/semi-horizontal lines:
 
 	* okawi (U+11F10): L<<624.0,388.0>--<626.0,88.0>> [code: found-semi-vertical]
-</div></details><br></div></details><details><summary><b>[11] NotoSansKawi-Regular.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check that texts shape as per expectation (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Shaping Checks>.html#com.google.fonts/check/shaping/regression">com.google.fonts/check/shaping/regression</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[12] NotoSansKawi-Regular.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check that texts shape as per expectation (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Shaping Checks>.html#com.google.fonts/check/shaping/regression">com.google.fonts/check/shaping/regression</a>)</summary><div>
 
 
 * 💔 **ERROR** Failed with KeyError: 'uni0E70'
 </div></details><details><summary>🔥 <b>FAIL:</b> Check font follows the Google Fonts vertical metric schema (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/vertical_metrics">com.google.fonts/check/vertical_metrics</a>)</summary><div>
 
 
-* 🔥 **FAIL** The sum of hhea.ascender + abs(hhea.descender) + hhea.lineGap is 1000 when it should be at least 1200 [code: bad-hhea-range]
+* 🔥 **FAIL** The sum of hhea.ascender + abs(hhea.descender) + hhea.lineGap is 2210 when it should be at most 2000 [code: bad-hhea-range]
 </div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
@@ -185,8 +184,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-s
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
-* 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1350, but got 800 instead [code: ascent]
-* 🔥 **FAIL** OS/2.usWinDescent value should be equal or greater than 954, but got 200 instead. [code: descent]
+* 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1346, but got 1250 instead [code: ascent]
 </div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
 
 
@@ -234,6 +232,34 @@ minus
 
 * ⚠ **WARN** The following non-mark characters should not be in the GDEF mark glyph class:
 	 U+11F02 [code: non-mark-chars]
+</div></details><details><summary>⚠ <b>WARN:</b> Are there any misaligned on-curve points? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_alignment_miss">com.google.fonts/check/outline_alignment_miss</a>)</summary><div>
+
+
+* ⚠ **WARN** The following glyphs have on-curve points which have potentially incorrect y coordinates:
+
+	* exclam (U+0021): X=177.5,Y=2.0 (should be at baseline 0?)
+
+	* exclam (U+0021): X=90.0,Y=2.0 (should be at baseline 0?)
+
+	* period (U+002E): X=177.5,Y=2.0 (should be at baseline 0?)
+
+	* period (U+002E): X=90.0,Y=2.0 (should be at baseline 0?)
+
+	* two (U+0032): X=152.5,Y=699.5 (should be at cap-height 700?)
+
+	* three (U+0033): X=137.0,Y=-1.5 (should be at baseline 0?)
+
+	* three (U+0033): X=143.5,Y=702.0 (should be at cap-height 700?)
+
+	* colon (U+003A): X=177.5,Y=2.0 (should be at baseline 0?)
+
+	* colon (U+003A): X=90.0,Y=2.0 (should be at baseline 0?)
+
+	* question (U+003F): X=222.0,Y=2.0 (should be at baseline 0?) 
+
+	* 85 more.
+
+Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]
 </div></details><details><summary>⚠ <b>WARN:</b> Are any segments inordinately short? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_short_segments">com.google.fonts/check/outline_short_segments</a>)</summary><div>
 
 
@@ -281,7 +307,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-short-s
 </div></details><details><summary>🔥 <b>FAIL:</b> Check font follows the Google Fonts vertical metric schema (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/vertical_metrics">com.google.fonts/check/vertical_metrics</a>)</summary><div>
 
 
-* 🔥 **FAIL** The sum of hhea.ascender + abs(hhea.descender) + hhea.lineGap is 1000 when it should be at least 1200 [code: bad-hhea-range]
+* 🔥 **FAIL** The sum of hhea.ascender + abs(hhea.descender) + hhea.lineGap is 2210 when it should be at most 2000 [code: bad-hhea-range]
 </div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
@@ -289,8 +315,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-short-s
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
-* 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1350, but got 800 instead [code: ascent]
-* 🔥 **FAIL** OS/2.usWinDescent value should be equal or greater than 954, but got 200 instead. [code: descent]
+* 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1346, but got 1250 instead [code: ascent]
 </div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
 
 
@@ -312,25 +337,25 @@ The dot of soft dotted characters should disappear in other cases, for example: 
 </div></details><details><summary>⚠ <b>WARN:</b> Detect any interpolation issues in the font. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/interpolation_issues">com.google.fonts/check/interpolation_issues</a>)</summary><div>
 
 
-* ⚠ **WARN** Interpolation issues were found in the font: 	- Contour order differs in glyph 'flowerkawi': [0, 1, 2, 3, 4, 5, 6, 7, 8] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0e0febff10>, [8, 0, 7, 1, 2, 3, 4, 5, 6] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0e10a8cc90>.
+* ⚠ **WARN** Interpolation issues were found in the font: 	- Contour order differs in glyph 'flowerkawi': [0, 1, 2, 3, 4, 5, 6, 7, 8] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338310>, [8, 0, 7, 1, 2, 3, 4, 5, 6] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338250>.
 
-	- Contour 1 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0e0febff10> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0e10a8cc90>
+	- Contour 1 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338310> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338250>
 
-	- Contour 2 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0e0febff10> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0e10a8cc90>
+	- Contour 2 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338310> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338250>
 
-	- Contour 3 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0e0febff10> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0e10a8cc90>
+	- Contour 3 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338310> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338250>
 
-	- Contour 4 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0e0febff10> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0e10a8cc90>
+	- Contour 4 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338310> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338250>
 
-	- Contour 5 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0e0febff10> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0e10a8cc90>
+	- Contour 5 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338310> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338250>
 
-	- Contour 6 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0e0febff10> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0e10a8cc90>
+	- Contour 6 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338310> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338250>
 
-	- Contour 7 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0e0febff10> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0e10a8cc90>
+	- Contour 7 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338310> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338250>
 
-	- Contour 8 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0e0febff10> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0e10a8cc90> 
+	- Contour 8 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338310> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338250> 
 
-	- Contour order differs in glyph 'tripleDotkawi': [0, 1, 2] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0e0febff10>, [2, 1, 0] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0e10a8cc90>. [code: interpolation-issues]
+	- Contour order differs in glyph 'tripleDotkawi': [0, 1, 2] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338310>, [2, 1, 0] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338250>. [code: interpolation-issues]
 </div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
@@ -351,7 +376,7 @@ minus
 
 | 💔 ERROR | 🔥 FAIL | ⚠ WARN | 💤 SKIP | ℹ INFO | 🍞 PASS | 🔎 DEBUG |
 |:-----:|:----:|:----:|:----:|:----:|:----:|:----:|
-| 6 | 17 | 19 | 327 | 20 | 305 | 0 |
+| 6 | 17 | 20 | 327 | 20 | 304 | 0 |
 | 1% | 2% | 3% | 47% | 3% | 44% | 0% |
 
 **Note:** The following loglevels were omitted in this report:
