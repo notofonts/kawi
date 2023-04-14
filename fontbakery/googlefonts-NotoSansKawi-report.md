@@ -25,7 +25,7 @@ Fontbakery version: 0.8.11
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
-* 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1346, but got 1250 instead [code: ascent]
+* 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1350, but got 1250 instead [code: ascent]
 </div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
 
 
@@ -98,7 +98,7 @@ minus
 
 	* Oslash (U+00D8): X=686.0,Y=701.0 (should be at cap-height 700?) 
 
-	* 31 more.
+	* 32 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]
 </div></details><details><summary>⚠ <b>WARN:</b> Are any segments inordinately short? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_short_segments">com.google.fonts/check/outline_short_segments</a>)</summary><div>
@@ -184,7 +184,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-s
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
-* 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1346, but got 1250 instead [code: ascent]
+* 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1350, but got 1250 instead [code: ascent]
 </div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
 
 
@@ -257,7 +257,7 @@ minus
 
 	* question (U+003F): X=222.0,Y=2.0 (should be at baseline 0?) 
 
-	* 85 more.
+	* 89 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]
 </div></details><details><summary>⚠ <b>WARN:</b> Are any segments inordinately short? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_short_segments">com.google.fonts/check/outline_short_segments</a>)</summary><div>
@@ -315,7 +315,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-short-s
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
-* 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1346, but got 1250 instead [code: ascent]
+* 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1350, but got 1250 instead [code: ascent]
 </div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
 
 
@@ -337,25 +337,25 @@ The dot of soft dotted characters should disappear in other cases, for example: 
 </div></details><details><summary>⚠ <b>WARN:</b> Detect any interpolation issues in the font. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/interpolation_issues">com.google.fonts/check/interpolation_issues</a>)</summary><div>
 
 
-* ⚠ **WARN** Interpolation issues were found in the font: 	- Contour order differs in glyph 'flowerkawi': [0, 1, 2, 3, 4, 5, 6, 7, 8] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338310>, [8, 0, 7, 1, 2, 3, 4, 5, 6] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338250>.
+* ⚠ **WARN** Interpolation issues were found in the font: 	- Contour order differs in glyph 'flowerkawi': [0, 1, 2, 3, 4, 5, 6, 7, 8] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f304c430350>, [8, 0, 7, 1, 2, 3, 4, 5, 6] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f304a847c90>.
 
-	- Contour 1 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338310> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338250>
+	- Contour 1 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f304c430350> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f304a847c90>
 
-	- Contour 2 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338310> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338250>
+	- Contour 2 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f304c430350> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f304a847c90>
 
-	- Contour 3 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338310> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338250>
+	- Contour 3 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f304c430350> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f304a847c90>
 
-	- Contour 4 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338310> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338250>
+	- Contour 4 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f304c430350> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f304a847c90>
 
-	- Contour 5 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338310> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338250>
+	- Contour 5 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f304c430350> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f304a847c90>
 
-	- Contour 6 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338310> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338250>
+	- Contour 6 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f304c430350> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f304a847c90>
 
-	- Contour 7 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338310> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338250>
+	- Contour 7 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f304c430350> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f304a847c90>
 
-	- Contour 8 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338310> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338250> 
+	- Contour 8 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f304c430350> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f304a847c90> 
 
-	- Contour order differs in glyph 'tripleDotkawi': [0, 1, 2] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338310>, [2, 1, 0] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f68b6338250>. [code: interpolation-issues]
+	- Contour order differs in glyph 'tripleDotkawi': [0, 1, 2] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f304c430350>, [2, 1, 0] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f304a847c90>. [code: interpolation-issues]
 </div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
