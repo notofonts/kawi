@@ -147,11 +147,14 @@
 <h3>Checking OS/2 usWinAscent & usWinDescent.</h3>
 <div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/family/win_ascent_and_descent&gt;</div>
 
-<details><summary>🔥 <strong>fonts/NotoSansKawi/googlefonts/ttf/NotoSansKawi-Bold.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>🔥 FAIL</span><span class='details_text'><p>OS/2.usWinAscent value should be equal or greater than 1351, but got 1250 instead [code: ascent]</p>
+<details><summary>🔥 <strong>fonts/NotoSansKawi/googlefonts/ttf/NotoSansKawi-Bold.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>🔥 FAIL</span><span class='details_text'><p>OS/2.usWinAscent value should be equal or greater than 1411, but got 1250 instead [code: ascent]</p>
+</span></li><li class='details_item'><span class='details_indicator'>🔥 FAIL</span><span class='details_text'><p>OS/2.usWinDescent value should be equal or greater than 1034, but got 960 instead. [code: descent]</p>
 </span></li></ul></div></details>
-<details><summary>🔥 <strong>fonts/NotoSansKawi/googlefonts/ttf/NotoSansKawi-Regular.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>🔥 FAIL</span><span class='details_text'><p>OS/2.usWinAscent value should be equal or greater than 1351, but got 1250 instead [code: ascent]</p>
+<details><summary>🔥 <strong>fonts/NotoSansKawi/googlefonts/ttf/NotoSansKawi-Regular.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>🔥 FAIL</span><span class='details_text'><p>OS/2.usWinAscent value should be equal or greater than 1411, but got 1250 instead [code: ascent]</p>
+</span></li><li class='details_item'><span class='details_indicator'>🔥 FAIL</span><span class='details_text'><p>OS/2.usWinDescent value should be equal or greater than 1034, but got 960 instead. [code: descent]</p>
 </span></li></ul></div></details>
-<details><summary>🔥 <strong>fonts/NotoSansKawi/googlefonts/variable-ttf/NotoSansKawi[wght].ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>🔥 FAIL</span><span class='details_text'><p>OS/2.usWinAscent value should be equal or greater than 1351, but got 1250 instead [code: ascent]</p>
+<details><summary>🔥 <strong>fonts/NotoSansKawi/googlefonts/variable-ttf/NotoSansKawi[wght].ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>🔥 FAIL</span><span class='details_text'><p>OS/2.usWinAscent value should be equal or greater than 1411, but got 1250 instead [code: ascent]</p>
+</span></li><li class='details_item'><span class='details_indicator'>🔥 FAIL</span><span class='details_text'><p>OS/2.usWinDescent value should be equal or greater than 1034, but got 960 instead. [code: descent]</p>
 </span></li></ul></div></details>
 <h3>Check if each glyph has the recommended amount of contours.</h3>
 <div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/contour_count&gt;</div>
@@ -203,24 +206,22 @@
 <h3>Detect any interpolation issues in the font.</h3>
 <div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/interpolation_issues&gt;</div>
 
-<details><summary>⚠️ <strong>fonts/NotoSansKawi/googlefonts/variable-ttf/NotoSansKawi[wght].ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>Interpolation issues were found in the font: 	- Contour order differs in glyph 'flowerkawi': [0, 1, 2, 3, 4, 5, 6, 7, 8] in &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f27d5e00950&gt;, [8, 0, 7, 1, 2, 3, 4, 5, 6] in &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f27d5e307d0&gt;.</p>
-<pre><code>- Contour 1 start point differs in glyph 'flowerkawi' between location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f27d5e00950&gt; and location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f27d5e307d0&gt;
+<details><summary>⚠️ <strong>fonts/NotoSansKawi/googlefonts/variable-ttf/NotoSansKawi[wght].ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>Interpolation issues were found in the font: 	- Contour order differs in glyph 'flowerkawi': [0, 1, 2, 3, 4, 5, 6, 7, 8] in &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae300950&gt;, [8, 0, 7, 1, 2, 3, 4, 5, 6] in &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae318190&gt;.</p>
+<pre><code>- Contour 1 start point differs in glyph 'flowerkawi' between location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae300950&gt; and location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae318190&gt;
 
-- Contour 2 start point differs in glyph 'flowerkawi' between location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f27d5e00950&gt; and location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f27d5e307d0&gt;
+- Contour 2 start point differs in glyph 'flowerkawi' between location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae300950&gt; and location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae318190&gt;
 
-- Contour 3 start point differs in glyph 'flowerkawi' between location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f27d5e00950&gt; and location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f27d5e307d0&gt;
+- Contour 3 start point differs in glyph 'flowerkawi' between location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae300950&gt; and location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae318190&gt;
 
-- Contour 4 start point differs in glyph 'flowerkawi' between location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f27d5e00950&gt; and location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f27d5e307d0&gt;
+- Contour 4 start point differs in glyph 'flowerkawi' between location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae300950&gt; and location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae318190&gt;
 
-- Contour 5 start point differs in glyph 'flowerkawi' between location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f27d5e00950&gt; and location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f27d5e307d0&gt;
+- Contour 5 start point differs in glyph 'flowerkawi' between location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae300950&gt; and location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae318190&gt;
 
-- Contour 6 start point differs in glyph 'flowerkawi' between location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f27d5e00950&gt; and location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f27d5e307d0&gt;
+- Contour 6 start point differs in glyph 'flowerkawi' between location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae300950&gt; and location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae318190&gt;
 
-- Contour 7 start point differs in glyph 'flowerkawi' between location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f27d5e00950&gt; and location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f27d5e307d0&gt;
+- Contour 7 start point differs in glyph 'flowerkawi' between location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae300950&gt; and location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae318190&gt; 
 
-- Contour 8 start point differs in glyph 'flowerkawi' between location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f27d5e00950&gt; and location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f27d5e307d0&gt; 
-
-- Contour order differs in glyph 'tripleDotkawi': [0, 1, 2] in &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f27d5e00950&gt;, [2, 1, 0] in &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f27d5e307d0&gt;. [code: interpolation-issues]
+- Contour 8 start point differs in glyph 'flowerkawi' between location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae300950&gt; and location &lt;fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae318190&gt; [code: interpolation-issues]
 </code></pre>
 </span></li></ul></div></details>
 <h3>Check math signs have the same width.</h3>
@@ -298,7 +299,7 @@ U+11F02 [code: non-mark-chars]</p>
 
 * Oslash (U+00D8): X=686.0,Y=701.0 (should be at cap-height 700?) 
 
-* 32 more.
+* 31 more.
 </code></pre>
 <p>Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]</p>
 </span></li></ul></div></details>
@@ -323,7 +324,7 @@ U+11F02 [code: non-mark-chars]</p>
 
 * question (U+003F): X=222.0,Y=2.0 (should be at baseline 0?) 
 
-* 89 more.
+* 84 more.
 </code></pre>
 <p>Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]</p>
 </span></li></ul></div></details>
@@ -351,7 +352,7 @@ U+11F02 [code: non-mark-chars]</p>
 
 * W (U+0057) contains a short segment B&lt;&lt;516.0,375.0&gt;-&lt;513.0,386.0&gt;-&lt;508.5,408.0&gt;&gt; 
 
-* 77 more.
+* 75 more.
 </code></pre>
 <p>Use -F or --full-lists to disable shortening of long lists. [code: found-short-segments]</p>
 </span></li></ul></div></details>
