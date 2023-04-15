@@ -10,7 +10,7 @@ Fontbakery version: 0.8.11
 
 
 * 🔥 **FAIL** Family 'Noto Sans Kawi' has 2 fonts (should be no more than 1) with the same OS/2.fsSelection bold & italic settings: Bold=False, Italic=False [code: unique-fsselection]
-</div></details><br></div></details><details><summary><b>[15] NotoSansKawi-Bold.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check that texts shape as per expectation (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Shaping Checks>.html#com.google.fonts/check/shaping/regression">com.google.fonts/check/shaping/regression</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[16] NotoSansKawi-Bold.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check that texts shape as per expectation (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Shaping Checks>.html#com.google.fonts/check/shaping/regression">com.google.fonts/check/shaping/regression</a>)</summary><div>
 
 
 * 💔 **ERROR** Failed with KeyError: 'uni0E70'
@@ -41,6 +41,15 @@ The dot of soft dotted characters should disappear in other cases, for example: 
 
 
 * ⚠ **WARN** This font file does not have a 'meta' table. [code: lacks-meta-table]
+</div></details><details><summary>⚠ <b>WARN:</b> Check font contains no unreachable glyphs (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/unreachable_glyphs">com.google.fonts/check/unreachable_glyphs</a>)</summary><div>
+
+
+* ⚠ **WARN** The following glyphs could not be reached by codepoint or substitution rules:
+
+	- vowelUkawi.below2 
+
+	- vowelUukawi.below2
+ [code: unreachable-glyphs]
 </div></details><details><summary>⚠ <b>WARN:</b> Check if each glyph has the recommended amount of contours. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/contour_count">com.google.fonts/check/contour_count</a>)</summary><div>
 
 
@@ -127,7 +136,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 	* W (U+0057) contains a short segment B<<516.0,375.0>-<513.0,386.0>-<508.5,408.0>> 
 
-	* 75 more.
+	* 81 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-short-segments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do any segments have colinear vectors? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_colinear_vectors">com.google.fonts/check/outline_colinear_vectors</a>)</summary><div>
@@ -170,7 +179,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-s
 * ⚠ **WARN** The following glyphs have semi-vertical/semi-horizontal lines:
 
 	* okawi (U+11F10): L<<624.0,388.0>--<626.0,88.0>> [code: found-semi-vertical]
-</div></details><br></div></details><details><summary><b>[12] NotoSansKawi-Regular.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check that texts shape as per expectation (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Shaping Checks>.html#com.google.fonts/check/shaping/regression">com.google.fonts/check/shaping/regression</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[13] NotoSansKawi-Regular.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check that texts shape as per expectation (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Shaping Checks>.html#com.google.fonts/check/shaping/regression">com.google.fonts/check/shaping/regression</a>)</summary><div>
 
 
 * 💔 **ERROR** Failed with KeyError: 'uni0E70'
@@ -201,6 +210,15 @@ The dot of soft dotted characters should disappear in other cases, for example: 
 
 
 * ⚠ **WARN** This font file does not have a 'meta' table. [code: lacks-meta-table]
+</div></details><details><summary>⚠ <b>WARN:</b> Check font contains no unreachable glyphs (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/unreachable_glyphs">com.google.fonts/check/unreachable_glyphs</a>)</summary><div>
+
+
+* ⚠ **WARN** The following glyphs could not be reached by codepoint or substitution rules:
+
+	- vowelUkawi.below2 
+
+	- vowelUukawi.below2
+ [code: unreachable-glyphs]
 </div></details><details><summary>⚠ <b>WARN:</b> Check if each glyph has the recommended amount of contours. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/contour_count">com.google.fonts/check/contour_count</a>)</summary><div>
 
 
@@ -290,7 +308,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 	* 62 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-short-segments]
-</div></details><br></div></details><details><summary><b>[14] NotoSansKawi[wght].ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check font names are correct (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/font_names">com.google.fonts/check/font_names</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[15] NotoSansKawi[wght].ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check font names are correct (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/font_names">com.google.fonts/check/font_names</a>)</summary><div>
 
 
 * 💔 **ERROR** The condition <FontBakeryCondition:expected_font_names> had an error: KeyError: 'fvar'
@@ -337,26 +355,35 @@ The dot of soft dotted characters should disappear in other cases, for example: 
 
 
 * ⚠ **WARN** This font file does not have a 'meta' table. [code: lacks-meta-table]
+</div></details><details><summary>⚠ <b>WARN:</b> Check font contains no unreachable glyphs (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/unreachable_glyphs">com.google.fonts/check/unreachable_glyphs</a>)</summary><div>
+
+
+* ⚠ **WARN** The following glyphs could not be reached by codepoint or substitution rules:
+
+	- vowelUkawi.below2 
+
+	- vowelUukawi.below2
+ [code: unreachable-glyphs]
 </div></details><details><summary>⚠ <b>WARN:</b> Detect any interpolation issues in the font. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/interpolation_issues">com.google.fonts/check/interpolation_issues</a>)</summary><div>
 
 
-* ⚠ **WARN** Interpolation issues were found in the font: 	- Contour order differs in glyph 'flowerkawi': [0, 1, 2, 3, 4, 5, 6, 7, 8] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae300950>, [8, 0, 7, 1, 2, 3, 4, 5, 6] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae318190>.
+* ⚠ **WARN** Interpolation issues were found in the font: 	- Contour order differs in glyph 'flowerkawi': [0, 1, 2, 3, 4, 5, 6, 7, 8] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7ec50>, [8, 0, 7, 1, 2, 3, 4, 5, 6] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7c210>.
 
-	- Contour 1 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae300950> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae318190>
+	- Contour 1 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7ec50> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7c210>
 
-	- Contour 2 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae300950> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae318190>
+	- Contour 2 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7ec50> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7c210>
 
-	- Contour 3 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae300950> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae318190>
+	- Contour 3 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7ec50> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7c210>
 
-	- Contour 4 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae300950> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae318190>
+	- Contour 4 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7ec50> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7c210>
 
-	- Contour 5 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae300950> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae318190>
+	- Contour 5 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7ec50> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7c210>
 
-	- Contour 6 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae300950> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae318190>
+	- Contour 6 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7ec50> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7c210>
 
-	- Contour 7 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae300950> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae318190> 
+	- Contour 7 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7ec50> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7c210> 
 
-	- Contour 8 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae300950> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe7ae318190> [code: interpolation-issues]
+	- Contour 8 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7ec50> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7c210> [code: interpolation-issues]
 </div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
@@ -377,8 +404,8 @@ minus
 
 | 💔 ERROR | 🔥 FAIL | ⚠ WARN | 💤 SKIP | ℹ INFO | 🍞 PASS | 🔎 DEBUG |
 |:-----:|:----:|:----:|:----:|:----:|:----:|:----:|
-| 6 | 17 | 20 | 327 | 20 | 304 | 0 |
-| 1% | 2% | 3% | 47% | 3% | 44% | 0% |
+| 6 | 17 | 23 | 327 | 20 | 301 | 0 |
+| 1% | 2% | 3% | 47% | 3% | 43% | 0% |
 
 **Note:** The following loglevels were omitted in this report:
 * **SKIP**
