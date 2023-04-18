@@ -325,7 +325,7 @@ The dot of soft dotted characters should disappear in other cases, for example: 
 </div></details><details><summary>⚠ <b>WARN:</b> Detect any interpolation issues in the font. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/interpolation_issues">com.google.fonts/check/interpolation_issues</a>)</summary><div>
 
 
-* ⚠ **WARN** Interpolation issues were found in the font: 	- Contour order differs in glyph 'flowerkawi': [0, 1, 2, 3, 4, 5, 6, 7, 8] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fbf5ff21010>, [7, 1, 3, 2, 4, 6, 5, 0, 8] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fbf5d8ddc90>. [code: interpolation-issues]
+* ⚠ **WARN** Interpolation issues were found in the font: 	- Contour order differs in glyph 'flowerkawi': [0, 1, 2, 3, 4, 5, 6, 7, 8] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f9dfce72950>, [7, 1, 3, 2, 4, 6, 5, 0, 8] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f9dfcd70510>. [code: interpolation-issues]
 </div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
