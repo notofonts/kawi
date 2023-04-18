@@ -186,10 +186,10 @@ features = (
 {
 automatic = 1;
 code = "feature pref;
-feature abvs;
 feature blwf;
 feature pstf;
 feature psts;
+feature abvs;
 feature ss01;
 feature ss02;
 ";
@@ -199,7 +199,6 @@ tag = aalt;
 code = "script kawi;
 lookup raForm {
 	ignore sub virama-kawi' [ka-kawi ba-kawi bha-kawi ca-kawi cha-kawi da-kawi dda-kawi ddha-kawi dha-kawi ga-kawi gha-kawi ha-kawi ja-kawi kha-kawi la-kawi la-kawi ma-kawi na-kawi nga-kawi nna-kawi nya-kawi sha-kawi ta-kawi tha-kawi tta-kawi ttha-kawi wa-kawi]' virama-kawi' ra-kawi';
-ignore sub virama-kawi' [ka-kawi ba-kawi ca-kawi cha-kawi da-kawi dda-kawi ddha-kawi dha-kawi ga-kawi gha-kawi ha-kawi ja-kawi kha-kawi la-kawi la-kawi ma-kawi na-kawi nga-kawi nna-kawi nya-kawi sha-kawi ta-kawi tha-kawi tta-kawi ttha-kawi wa-kawi]' virama-kawi' ra-kawi' virama-kawi' ya-kawi';
 	sub virama-kawi' ra-kawi' by ra-kawi.post;
 } raForm;
 ";
@@ -243,8 +242,7 @@ lookup below2Form {
 
 lookup below2vowels {
 	sub @belowForms [vowelU-kawi vowelUu-kawi]' by [vowelU-kawi.below vowelUu-kawi.below];
-} below2vowels;
-";
+} below2vowels;";
 tag = blwf;
 },
 {
