@@ -1,5 +1,5 @@
 {
-.appVersion = "3186";
+.appVersion = "3187";
 .formatVersion = 3;
 DisplayStrings = (
 "/vowelUu-kawi.below/vowelUu-kawi.below2/vowelU-kawi.below2",
@@ -339,7 +339,7 @@ tag = psts;
 },
 {
 code = "lookup topMarksLiga {
-	lookupflag IgnoreBaseGlyphs UseMarkFilteringSet [repha_anusvara-kawi repha_candrabindu-kawi repha_vowelEu-kawi repha_vowelEu_anusvara-kawi repha_vowelI-kawi repha_vowelI-kawi_anusvara-kawi repha_vowelIi-kawi repha_vowelIi-kawi_anusvara-kawi candrabindu-kawi anusvara-kawi repha-kawi vowelI-kawi vowelIi-kawi vowelEu-kawi vowelEu_anusvara-kawi vowelEu_candrabindu-kawi vowelI_anusvara-kawi vowelI_candrabindu-kawi vowelIi_anusvara-kawi vowelIi_candrabindu-kawi];
+	lookupflag UseMarkFilteringSet [repha_anusvara-kawi repha_candrabindu-kawi repha_vowelEu-kawi repha_vowelEu_anusvara-kawi repha_vowelI-kawi repha_vowelI-kawi_anusvara-kawi repha_vowelIi-kawi repha_vowelIi-kawi_anusvara-kawi candrabindu-kawi anusvara-kawi repha-kawi vowelI-kawi vowelIi-kawi vowelEu-kawi vowelEu_anusvara-kawi vowelEu_candrabindu-kawi vowelI_anusvara-kawi vowelI_candrabindu-kawi vowelIi_anusvara-kawi vowelIi_candrabindu-kawi];
 	sub repha-kawi vowelI-kawi anusvara-kawi by repha_vowelI-kawi_anusvara-kawi;
 	sub repha-kawi vowelIi-kawi anusvara-kawi by repha_vowelIi-kawi_anusvara-kawi;
 	sub repha-kawi vowelEu-kawi anusvara-kawi by repha_vowelEu_anusvara-kawi;
