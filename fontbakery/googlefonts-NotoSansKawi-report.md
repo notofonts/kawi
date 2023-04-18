@@ -367,23 +367,23 @@ The dot of soft dotted characters should disappear in other cases, for example: 
 </div></details><details><summary>⚠ <b>WARN:</b> Detect any interpolation issues in the font. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/interpolation_issues">com.google.fonts/check/interpolation_issues</a>)</summary><div>
 
 
-* ⚠ **WARN** Interpolation issues were found in the font: 	- Contour order differs in glyph 'flowerkawi': [0, 1, 2, 3, 4, 5, 6, 7, 8] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7ec50>, [8, 0, 7, 1, 2, 3, 4, 5, 6] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7c210>.
+* ⚠ **WARN** Interpolation issues were found in the font: 	- Contour order differs in glyph 'flowerkawi': [0, 1, 2, 3, 4, 5, 6, 7, 8] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f25237131d0>, [8, 0, 7, 1, 2, 3, 4, 5, 6] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f2523559c90>.
 
-	- Contour 1 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7ec50> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7c210>
+	- Contour 1 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f25237131d0> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f2523559c90>
 
-	- Contour 2 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7ec50> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7c210>
+	- Contour 2 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f25237131d0> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f2523559c90>
 
-	- Contour 3 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7ec50> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7c210>
+	- Contour 3 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f25237131d0> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f2523559c90>
 
-	- Contour 4 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7ec50> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7c210>
+	- Contour 4 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f25237131d0> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f2523559c90>
 
-	- Contour 5 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7ec50> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7c210>
+	- Contour 5 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f25237131d0> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f2523559c90>
 
-	- Contour 6 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7ec50> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7c210>
+	- Contour 6 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f25237131d0> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f2523559c90>
 
-	- Contour 7 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7ec50> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7c210> 
+	- Contour 7 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f25237131d0> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f2523559c90> 
 
-	- Contour 8 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7ec50> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f7055d7c210> [code: interpolation-issues]
+	- Contour 8 start point differs in glyph 'flowerkawi' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f25237131d0> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f2523559c90> [code: interpolation-issues]
 </div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
