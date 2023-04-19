@@ -218,6 +218,7 @@ lookup belowForm {
 	sub virama-kawi tta-kawi by tta-kawi.below;
 	sub virama-kawi ttha-kawi by ttha-kawi.below;
 	sub virama-kawi wa-kawi by wa-kawi.below;
+	sub virama-kawi ra-kawi by ra-kawi.below;
 	sub virama-kawi lVocalic-kawi by vowelVocalicL-kawi;
 } belowForm; 
 
@@ -227,7 +228,8 @@ lookup below2Form {
 
 lookup below2vowels {
 	sub @belowForms [vowelU-kawi vowelUu-kawi]' by [vowelU-kawi.below vowelUu-kawi.below];
-} below2vowels;";
+} below2vowels;
+";
 tag = blwf;
 },
 {
@@ -236,16 +238,11 @@ lookup postForms {
 	sub virama-kawi jha-kawi by jha-kawi.post;
 	sub virama-kawi pa-kawi by pa-kawi.post;
 	sub virama-kawi pha-kawi by pha-kawi.post;
-	sub virama-kawi ra-kawi by ra-kawi.post;
 	sub virama-kawi sa-kawi by sa-kawi.post;
 	sub virama-kawi ssa-kawi by ssa-kawi.post;
 	sub virama-kawi ya-kawi by ya-kawi.post;
 	sub virama-kawi rVocalic-kawi by vowelVocalicR-kawi.post;
 } postForms;
-
-lookup raFormBelow {
-	sub @consonants @belowForms ra-kawi.post' by ra-kawi.below;
-} raFormBelow;
 
 lookup vowelAaAltForms {
 	sub [pa-kawi la-kawi] vowelAa-kawi' by vowelAa-kawi.alt;
