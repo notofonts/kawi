@@ -1,6 +1,9 @@
 {
 .appVersion = "3192";
 .formatVersion = 3;
+DisplayStrings = (
+"𑼒𑼸𑼤𑽂𑼛𑼭𑼒"
+);
 axes = (
 {
 name = Weight;
@@ -23,6 +26,10 @@ name = postForms;
 {
 code = "repha_anusvara-kawi repha_candrabindu-kawi repha_vowelEu-kawi repha_vowelEu_anusvara-kawi repha_vowelI-kawi repha_vowelI-kawi_anusvara-kawi repha_vowelIi-kawi repha_vowelIi-kawi_anusvara-kawi candrabindu-kawi anusvara-kawi repha-kawi vowelI-kawi vowelIi-kawi vowelEu-kawi vowelEu_anusvara-kawi vowelI_anusvara-kawi vowelIi_anusvara-kawi ";
 name = aboveMarks;
+},
+{
+code = "pha-kawi.post ta-kawi.below vowelUu-kawi.below ddha-kawi.below dha-kawi.below pha-kawi.post.short o-kawi jnya-kawi ra-kawi.post pa-kawi.post.short ai-kawi six-kawi ca-kawi.below llVocalic-kawi ga-kawi.below sectionMaker-kawi doubleDot-kawi three-kawi lVocalic-kawi ha-kawi.below vowelVocalicR-kawi wa-kawi.below2 nna-kawi.below ttha-kawi.below sa-kawi.post.short vowelU-kawi.below e-kawi pa-kawi.post sa-kawi.post ra-kawi.post.short ja-kawi.below ii-kawi la-kawi.below2 ra-kawi.below ha-kawi.post rrVocalic-kawi kha-kawi.below ssa-kawi.below ya-kawi.post.below2 ssa-kawi.post ra-kawi.post.001 virama-kawi nya-kawi.below rVocalic-kawi ssa-kawi.post.short signKiller-kawi dda-kawi.below ra-kawi.post.002 ma-kawi.below sectionMaker-kawi.alt jha-kawi.post ddha-kawi ba-kawi.below i-kawi two-kawi wa-kawi.below2.low u-kawi vowelVocalicL-kawi danda-kawi vowelU-kawi tha-kawi.below doubleDanda-kawi uu-kawi cha-kawi.below ka-kawi.below tripleDot-kawi vowelVocalicR-kawi.post vowelUu-kawi sha-kawi.below na-kawi.below wa-kawi.below nga-kawi.below da-kawi.below tta-kawi.below gha-kawi.below ya-kawi.post.below bha-kawi.below ya-kawi.post la-kawi.below";
+name = LetterWithBelow;
 }
 );
 customParameters = (
@@ -349,6 +356,231 @@ value = "Below Shape Alternate Ssa";
 }
 );
 tag = ss02;
+},
+{
+code = "#Automatic Code End
+lookup contextualKern {
+	lookupflag UseMarkFilteringSet @LetterWithBelow;
+
+	pos @LetterWithBelow [i-kawi]' [cha-kawi.below] <${i9kawi_cha9kawi8below} 0 ${i9kawi_cha9kawi8below} 0>;
+	pos @LetterWithBelow [i-kawi]' [dda-kawi.below] <${i9kawi_dda9kawi8below} 0 ${i9kawi_dda9kawi8below} 0>;
+	pos @LetterWithBelow [i-kawi]' [ddha-kawi.below] <${i9kawi_ddha9kawi8below} 0 ${i9kawi_ddha9kawi8below} 0>;
+	pos @LetterWithBelow [i-kawi]' [gha-kawi.below] <${i9kawi_gha9kawi8below} 0 ${i9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [i-kawi]' [la-kawi.below] <${i9kawi_la9kawi8below} 0 ${i9kawi_la9kawi8below} 0>;
+	pos @LetterWithBelow [i-kawi]' [nna-kawi.below] <${i9kawi_nna9kawi8below} 0 ${i9kawi_nna9kawi8below} 0>;
+	pos @LetterWithBelow [i-kawi]' [nya-kawi.below] <${i9kawi_nya9kawi8below} 0 ${i9kawi_nya9kawi8below} 0>;
+	pos @LetterWithBelow [i-kawi]' [ssa-kawi.below] <${i9kawi_ssa9kawi8below} 0 ${i9kawi_ssa9kawi8below} 0>;
+	pos @LetterWithBelow [ka-kawi]' [gha-kawi.below] <${ka9kawi_gha9kawi8below} 0 ${ka9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [ka-kawi]' [nna-kawi.below] <${ka9kawi_nna9kawi8below} 0 ${ka9kawi_nna9kawi8below} 0>;
+	pos @LetterWithBelow [ka-kawi]' [nya-kawi.below] <${ka9kawi_nya9kawi8below} 0 ${ka9kawi_nya9kawi8below} 0>;
+	pos @LetterWithBelow [ka-kawi]' [ssa-kawi.below] <${ka9kawi_ssa9kawi8below} 0 ${ka9kawi_ssa9kawi8below} 0>;
+	pos @LetterWithBelow [ta-kawi]' [gha-kawi.below] <${ta9kawi_gha9kawi8below} 0 ${ta9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [ta-kawi]' [nna-kawi.below] <${ta9kawi_nna9kawi8below} 0 ${ta9kawi_nna9kawi8below} 0>;
+	pos @LetterWithBelow [ta-kawi]' [nya-kawi.below] <${ta9kawi_nya9kawi8below} 0 ${ta9kawi_nya9kawi8below} 0>;
+	pos @LetterWithBelow [ta-kawi]' [ssa-kawi.below] <${ta9kawi_ssa9kawi8below} 0 ${ta9kawi_ssa9kawi8below} 0>;
+	pos @LetterWithBelow [sa-kawi]' [cha-kawi.below] <${sa9kawi_cha9kawi8below} 0 ${sa9kawi_cha9kawi8below} 0>;
+	pos @LetterWithBelow [sa-kawi]' [ddha-kawi.below] <${sa9kawi_ddha9kawi8below} 0 ${sa9kawi_ddha9kawi8below} 0>;
+	pos @LetterWithBelow [sa-kawi]' [gha-kawi.below] <${sa9kawi_gha9kawi8below} 0 ${sa9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [sa-kawi]' [nna-kawi.below] <${sa9kawi_nna9kawi8below} 0 ${sa9kawi_nna9kawi8below} 0>;
+	pos @LetterWithBelow [sa-kawi]' [nya-kawi.below] <${sa9kawi_nya9kawi8below} 0 ${sa9kawi_nya9kawi8below} 0>;
+	pos @LetterWithBelow [sa-kawi]' [ssa-kawi.below] <${sa9kawi_ssa9kawi8below} 0 ${sa9kawi_ssa9kawi8below} 0>;
+	pos @LetterWithBelow [nga-kawi]' [cha-kawi.below] <${nga9kawi_cha9kawi8below} 0 ${nga9kawi_cha9kawi8below} 0>;
+	pos @LetterWithBelow [nga-kawi]' [dda-kawi.below] <${nga9kawi_dda9kawi8below} 0 ${nga9kawi_dda9kawi8below} 0>;
+	pos @LetterWithBelow [nga-kawi]' [ddha-kawi.below] <${nga9kawi_ddha9kawi8below} 0 ${nga9kawi_ddha9kawi8below} 0>;
+	pos @LetterWithBelow [nga-kawi]' [gha-kawi.below] <${nga9kawi_gha9kawi8below} 0 ${nga9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [nga-kawi]' [la-kawi.below] <${nga9kawi_la9kawi8below} 0 ${nga9kawi_la9kawi8below} 0>;
+	pos @LetterWithBelow [nga-kawi]' [nna-kawi.below] <${nga9kawi_nna9kawi8below} 0 ${nga9kawi_nna9kawi8below} 0>;
+	pos @LetterWithBelow [nga-kawi]' [nya-kawi.below] <${nga9kawi_nya9kawi8below} 0 ${nga9kawi_nya9kawi8below} 0>;
+	pos @LetterWithBelow [nga-kawi]' [ssa-kawi.below] <${nga9kawi_ssa9kawi8below} 0 ${nga9kawi_ssa9kawi8below} 0>;
+	pos @LetterWithBelow [wa-kawi]' [vowelVocalicR-kawi] <${wa9kawi_vowelVocalicR9kawi} 0 ${wa9kawi_vowelVocalicR9kawi} 0>;
+	pos @LetterWithBelow [wa-kawi]' [ca-kawi.below] <${wa9kawi_ca9kawi8below} 0 ${wa9kawi_ca9kawi8below} 0>;
+	pos @LetterWithBelow [wa-kawi]' [cha-kawi.below] <${wa9kawi_cha9kawi8below} 0 ${wa9kawi_cha9kawi8below} 0>;
+	pos @LetterWithBelow [wa-kawi]' [dda-kawi.below] <${wa9kawi_dda9kawi8below} 0 ${wa9kawi_dda9kawi8below} 0>;
+	pos @LetterWithBelow [wa-kawi]' [ddha-kawi.below] <${wa9kawi_ddha9kawi8below} 0 ${wa9kawi_ddha9kawi8below} 0>;
+	pos @LetterWithBelow [wa-kawi]' [gha-kawi.below] <${wa9kawi_gha9kawi8below} 0 ${wa9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [wa-kawi]' [ha-kawi.below] <${wa9kawi_ha9kawi8below} 0 ${wa9kawi_ha9kawi8below} 0>;
+	pos @LetterWithBelow [wa-kawi]' [la-kawi.below] <${wa9kawi_la9kawi8below} 0 ${wa9kawi_la9kawi8below} 0>;
+	pos @LetterWithBelow [wa-kawi]' [nna-kawi.below] <${wa9kawi_nna9kawi8below} 0 ${wa9kawi_nna9kawi8below} 0>;
+	pos @LetterWithBelow [wa-kawi]' [nya-kawi.below] <${wa9kawi_nya9kawi8below} 0 ${wa9kawi_nya9kawi8below} 0>;
+	pos @LetterWithBelow [wa-kawi]' [ssa-kawi.below] <${wa9kawi_ssa9kawi8below} 0 ${wa9kawi_ssa9kawi8below} 0>;
+	pos @LetterWithBelow [cha-kawi]' [gha-kawi.below] <${cha9kawi_gha9kawi8below} 0 ${cha9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [cha-kawi]' [nna-kawi.below] <${cha9kawi_nna9kawi8below} 0 ${cha9kawi_nna9kawi8below} 0>;
+	pos @LetterWithBelow [cha-kawi]' [nya-kawi.below] <${cha9kawi_nya9kawi8below} 0 ${cha9kawi_nya9kawi8below} 0>;
+	pos @LetterWithBelow [cha-kawi]' [ssa-kawi.below] <${cha9kawi_ssa9kawi8below} 0 ${cha9kawi_ssa9kawi8below} 0>;
+	pos @LetterWithBelow [ja-kawi]' [vowelVocalicR-kawi] <${ja9kawi_vowelVocalicR9kawi} 0 ${ja9kawi_vowelVocalicR9kawi} 0>;
+	pos @LetterWithBelow [ja-kawi]' [ca-kawi.below] <${ja9kawi_ca9kawi8below} 0 ${ja9kawi_ca9kawi8below} 0>;
+	pos @LetterWithBelow [ja-kawi]' [cha-kawi.below] <${ja9kawi_cha9kawi8below} 0 ${ja9kawi_cha9kawi8below} 0>;
+	pos @LetterWithBelow [ja-kawi]' [dda-kawi.below] <${ja9kawi_dda9kawi8below} 0 ${ja9kawi_dda9kawi8below} 0>;
+	pos @LetterWithBelow [ja-kawi]' [ddha-kawi.below] <${ja9kawi_ddha9kawi8below} 0 ${ja9kawi_ddha9kawi8below} 0>;
+	pos @LetterWithBelow [ja-kawi]' [gha-kawi.below] <${ja9kawi_gha9kawi8below} 0 ${ja9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [ja-kawi]' [ha-kawi.below] <${ja9kawi_ha9kawi8below} 0 ${ja9kawi_ha9kawi8below} 0>;
+	pos @LetterWithBelow [ja-kawi]' [la-kawi.below] <${ja9kawi_la9kawi8below} 0 ${ja9kawi_la9kawi8below} 0>;
+	pos @LetterWithBelow [ja-kawi]' [nna-kawi.below] <${ja9kawi_nna9kawi8below} 0 ${ja9kawi_nna9kawi8below} 0>;
+	pos @LetterWithBelow [ja-kawi]' [nya-kawi.below] <${ja9kawi_nya9kawi8below} 0 ${ja9kawi_nya9kawi8below} 0>;
+	pos @LetterWithBelow [ja-kawi]' [ssa-kawi.below] <${ja9kawi_ssa9kawi8below} 0 ${ja9kawi_ssa9kawi8below} 0>;
+	pos @LetterWithBelow [ja-kawi]' [ta-kawi.below] <${ja9kawi_ta9kawi8below} 0 ${ja9kawi_ta9kawi8below} 0>;
+	pos @LetterWithBelow [nya-kawi]' [gha-kawi.below] <${nya9kawi_gha9kawi8below} 0 ${nya9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [tta-kawi]' [vowelVocalicR-kawi] <${tta9kawi_vowelVocalicR9kawi} 0 ${tta9kawi_vowelVocalicR9kawi} 0>;
+	pos @LetterWithBelow [tta-kawi]' [ba-kawi.below] <${tta9kawi_ba9kawi8below} 0 ${tta9kawi_ba9kawi8below} 0>;
+	pos @LetterWithBelow [tta-kawi]' [ca-kawi.below] <${tta9kawi_ca9kawi8below} 0 ${tta9kawi_ca9kawi8below} 0>;
+	pos @LetterWithBelow [tta-kawi]' [cha-kawi.below] <${tta9kawi_cha9kawi8below} 0 ${tta9kawi_cha9kawi8below} 0>;
+	pos @LetterWithBelow [tta-kawi]' [dda-kawi.below] <${tta9kawi_dda9kawi8below} 0 ${tta9kawi_dda9kawi8below} 0>;
+	pos @LetterWithBelow [tta-kawi]' [ddha-kawi.below] <${tta9kawi_ddha9kawi8below} 0 ${tta9kawi_ddha9kawi8below} 0>;
+	pos @LetterWithBelow [tta-kawi]' [dha-kawi.below] <${tta9kawi_dha9kawi8below} 0 ${tta9kawi_dha9kawi8below} 0>;
+	pos @LetterWithBelow [tta-kawi]' [gha-kawi.below] <${tta9kawi_gha9kawi8below} 0 ${tta9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [tta-kawi]' [ha-kawi.below] <${tta9kawi_ha9kawi8below} 0 ${tta9kawi_ha9kawi8below} 0>;
+	pos @LetterWithBelow [tta-kawi]' [ka-kawi.below] <${tta9kawi_ka9kawi8below} 0 ${tta9kawi_ka9kawi8below} 0>;
+	pos @LetterWithBelow [tta-kawi]' [kha-kawi.below] <${tta9kawi_kha9kawi8below} 0 ${tta9kawi_kha9kawi8below} 0>;
+	pos @LetterWithBelow [tta-kawi]' [la-kawi.below] <${tta9kawi_la9kawi8below} 0 ${tta9kawi_la9kawi8below} 0>;
+	pos @LetterWithBelow [tta-kawi]' [nna-kawi.below] <${tta9kawi_nna9kawi8below} 0 ${tta9kawi_nna9kawi8below} 0>;
+	pos @LetterWithBelow [tta-kawi]' [nya-kawi.below] <${tta9kawi_nya9kawi8below} 0 ${tta9kawi_nya9kawi8below} 0>;
+	pos @LetterWithBelow [tta-kawi]' [ssa-kawi.below] <${tta9kawi_ssa9kawi8below} 0 ${tta9kawi_ssa9kawi8below} 0>;
+	pos @LetterWithBelow [tta-kawi]' [ta-kawi.below] <${tta9kawi_ta9kawi8below} 0 ${tta9kawi_ta9kawi8below} 0>;
+	pos @LetterWithBelow [ttha-kawi]' [vowelVocalicR-kawi] <${ttha9kawi_vowelVocalicR9kawi} 0 ${ttha9kawi_vowelVocalicR9kawi} 0>;
+	pos @LetterWithBelow [ttha-kawi]' [cha-kawi.below] <${ttha9kawi_cha9kawi8below} 0 ${ttha9kawi_cha9kawi8below} 0>;
+	pos @LetterWithBelow [ttha-kawi]' [dda-kawi.below] <${ttha9kawi_dda9kawi8below} 0 ${ttha9kawi_dda9kawi8below} 0>;
+	pos @LetterWithBelow [ttha-kawi]' [ddha-kawi.below] <${ttha9kawi_ddha9kawi8below} 0 ${ttha9kawi_ddha9kawi8below} 0>;
+	pos @LetterWithBelow [ttha-kawi]' [gha-kawi.below] <${ttha9kawi_gha9kawi8below} 0 ${ttha9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [ttha-kawi]' [la-kawi.below] <${ttha9kawi_la9kawi8below} 0 ${ttha9kawi_la9kawi8below} 0>;
+	pos @LetterWithBelow [ttha-kawi]' [nna-kawi.below] <${ttha9kawi_nna9kawi8below} 0 ${ttha9kawi_nna9kawi8below} 0>;
+	pos @LetterWithBelow [ttha-kawi]' [nya-kawi.below] <${ttha9kawi_nya9kawi8below} 0 ${ttha9kawi_nya9kawi8below} 0>;
+	pos @LetterWithBelow [ttha-kawi]' [ssa-kawi.below] <${ttha9kawi_ssa9kawi8below} 0 ${ttha9kawi_ssa9kawi8below} 0>;
+	pos @LetterWithBelow [dda-kawi]' [cha-kawi.below] <${dda9kawi_cha9kawi8below} 0 ${dda9kawi_cha9kawi8below} 0>;
+	pos @LetterWithBelow [dda-kawi]' [gha-kawi.below] <${dda9kawi_gha9kawi8below} 0 ${dda9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [dda-kawi]' [nna-kawi.below] <${dda9kawi_nna9kawi8below} 0 ${dda9kawi_nna9kawi8below} 0>;
+	pos @LetterWithBelow [dda-kawi]' [nya-kawi.below] <${dda9kawi_nya9kawi8below} 0 ${dda9kawi_nya9kawi8below} 0>;
+	pos @LetterWithBelow [dda-kawi]' [ssa-kawi.below] <${dda9kawi_ssa9kawi8below} 0 ${dda9kawi_ssa9kawi8below} 0>;
+	pos @LetterWithBelow [ddha-kawi]' [cha-kawi.below] <${ddha9kawi_cha9kawi8below} 0 ${ddha9kawi_cha9kawi8below} 0>;
+	pos @LetterWithBelow [ddha-kawi]' [gha-kawi.below] <${ddha9kawi_gha9kawi8below} 0 ${ddha9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [ddha-kawi]' [nna-kawi.below] <${ddha9kawi_nna9kawi8below} 0 ${ddha9kawi_nna9kawi8below} 0>;
+	pos @LetterWithBelow [ddha-kawi]' [nya-kawi.below] <${ddha9kawi_nya9kawi8below} 0 ${ddha9kawi_nya9kawi8below} 0>;
+	pos @LetterWithBelow [ddha-kawi]' [ssa-kawi.below] <${ddha9kawi_ssa9kawi8below} 0 ${ddha9kawi_ssa9kawi8below} 0>;
+	pos @LetterWithBelow [da-kawi]' [vowelVocalicR-kawi] <${da9kawi_vowelVocalicR9kawi} 0 ${da9kawi_vowelVocalicR9kawi} 0>;
+	pos @LetterWithBelow [da-kawi]' [ca-kawi.below] <${da9kawi_ca9kawi8below} 0 ${da9kawi_ca9kawi8below} 0>;
+	pos @LetterWithBelow [da-kawi]' [cha-kawi.below] <${da9kawi_cha9kawi8below} 0 ${da9kawi_cha9kawi8below} 0>;
+	pos @LetterWithBelow [da-kawi]' [dda-kawi.below] <${da9kawi_dda9kawi8below} 0 ${da9kawi_dda9kawi8below} 0>;
+	pos @LetterWithBelow [da-kawi]' [ddha-kawi.below] <${da9kawi_ddha9kawi8below} 0 ${da9kawi_ddha9kawi8below} 0>;
+	pos @LetterWithBelow [da-kawi]' [gha-kawi.below] <${da9kawi_gha9kawi8below} 0 ${da9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [da-kawi]' [ha-kawi.below] <${da9kawi_ha9kawi8below} 0 ${da9kawi_ha9kawi8below} 0>;
+	pos @LetterWithBelow [da-kawi]' [la-kawi.below] <${da9kawi_la9kawi8below} 0 ${da9kawi_la9kawi8below} 0>;
+	pos @LetterWithBelow [da-kawi]' [nna-kawi.below] <${da9kawi_nna9kawi8below} 0 ${da9kawi_nna9kawi8below} 0>;
+	pos @LetterWithBelow [da-kawi]' [nya-kawi.below] <${da9kawi_nya9kawi8below} 0 ${da9kawi_nya9kawi8below} 0>;
+	pos @LetterWithBelow [da-kawi]' [ssa-kawi.below] <${da9kawi_ssa9kawi8below} 0 ${da9kawi_ssa9kawi8below} 0>;
+	pos @LetterWithBelow [da-kawi]' [ta-kawi.below] <${da9kawi_ta9kawi8below} 0 ${da9kawi_ta9kawi8below} 0>;
+	pos @LetterWithBelow [ba-kawi]' [gha-kawi.below] <${ba9kawi_gha9kawi8below} 0 ${ba9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [ba-kawi]' [nna-kawi.below] <${ba9kawi_nna9kawi8below} 0 ${ba9kawi_nna9kawi8below} 0>;
+	pos @LetterWithBelow [ba-kawi]' [nya-kawi.below] <${ba9kawi_nya9kawi8below} 0 ${ba9kawi_nya9kawi8below} 0>;
+	pos @LetterWithBelow [ba-kawi]' [ssa-kawi.below] <${ba9kawi_ssa9kawi8below} 0 ${ba9kawi_ssa9kawi8below} 0>;
+	pos @LetterWithBelow [na-kawi]' [vowelVocalicR-kawi] <${na9kawi_vowelVocalicR9kawi} 0 ${na9kawi_vowelVocalicR9kawi} 0>;
+	pos @LetterWithBelow [na-kawi]' [ba-kawi.below] <${na9kawi_ba9kawi8below} 0 ${na9kawi_ba9kawi8below} 0>;
+	pos @LetterWithBelow [na-kawi]' [ca-kawi.below] <${na9kawi_ca9kawi8below} 0 ${na9kawi_ca9kawi8below} 0>;
+	pos @LetterWithBelow [na-kawi]' [cha-kawi.below] <${na9kawi_cha9kawi8below} 0 ${na9kawi_cha9kawi8below} 0>;
+	pos @LetterWithBelow [na-kawi]' [dda-kawi.below ddha-kawi.below] <${na9kawi_dda9kawi8below} 0 ${na9kawi_dda9kawi8below} 0>;
+
+	pos @LetterWithBelow [na-kawi]' [dha-kawi.below] <${na9kawi_dha9kawi8below} 0 ${na9kawi_dha9kawi8below} 0>;
+	pos @LetterWithBelow [na-kawi]' [ga-kawi.below] <${na9kawi_ga9kawi8below} 0 ${na9kawi_ga9kawi8below} 0>;
+	pos @LetterWithBelow [na-kawi]' [gha-kawi.below] <${na9kawi_gha9kawi8below} 0 ${na9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [na-kawi]' [ha-kawi.below] <${na9kawi_ha9kawi8below} 0 ${na9kawi_ha9kawi8below} 0>;
+	pos @LetterWithBelow [na-kawi]' [ka-kawi.below] <${na9kawi_ka9kawi8below} 0 ${na9kawi_ka9kawi8below} 0>;
+	pos @LetterWithBelow [na-kawi]' [kha-kawi.below] <${na9kawi_kha9kawi8below} 0 ${na9kawi_kha9kawi8below} 0>;
+	pos @LetterWithBelow [na-kawi]' [la-kawi.below] <${na9kawi_la9kawi8below} 0 ${na9kawi_la9kawi8below} 0>;
+	pos @LetterWithBelow [na-kawi]' [nna-kawi.below] <${na9kawi_nna9kawi8below} 0 ${na9kawi_nna9kawi8below} 0>;
+	pos @LetterWithBelow [na-kawi]' [nya-kawi.below] <${na9kawi_nya9kawi8below} 0 ${na9kawi_nya9kawi8below} 0>;
+	pos @LetterWithBelow [na-kawi]' [ssa-kawi.below] <${na9kawi_ssa9kawi8below} 0 ${na9kawi_ssa9kawi8below} 0>;
+	pos @LetterWithBelow [na-kawi]' [ta-kawi.below] <${na9kawi_ta9kawi8below} 0 ${na9kawi_ta9kawi8below} 0>;
+	pos @LetterWithBelow [na-kawi]' [tha-kawi.below] <${na9kawi_tha9kawi8below} 0 ${na9kawi_tha9kawi8below} 0>;
+	pos @LetterWithBelow [ssa-kawi]' [gha-kawi.below] <${ssa9kawi_gha9kawi8below} 0 ${ssa9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [ssa-kawi]' [nna-kawi.below] <${ssa9kawi_nna9kawi8below} 0 ${ssa9kawi_nna9kawi8below} 0>;
+	pos @LetterWithBelow [ssa-kawi]' [nya-kawi.below] <${ssa9kawi_nya9kawi8below} 0 ${ssa9kawi_nya9kawi8below} 0>;
+	pos @LetterWithBelow [ssa-kawi]' [ssa-kawi.below] <${ssa9kawi_ssa9kawi8below} 0 ${ssa9kawi_ssa9kawi8below} 0>;
+	pos @LetterWithBelow [pha-kawi]' [gha-kawi.below] <${pha9kawi_gha9kawi8below} 0 ${pha9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [pha-kawi]' [nna-kawi.below] <${pha9kawi_nna9kawi8below} 0 ${pha9kawi_nna9kawi8below} 0>;
+	pos @LetterWithBelow [bha-kawi]' [vowelVocalicR-kawi] <${bha9kawi_vowelVocalicR9kawi} 0 ${bha9kawi_vowelVocalicR9kawi} 0>;
+	pos @LetterWithBelow [bha-kawi]' [ba-kawi.below] <${bha9kawi_ba9kawi8below} 0 ${bha9kawi_ba9kawi8below} 0>;
+	pos @LetterWithBelow [bha-kawi]' [ca-kawi.below] <${bha9kawi_ca9kawi8below} 0 ${bha9kawi_ca9kawi8below} 0>;
+	pos @LetterWithBelow [bha-kawi]' [cha-kawi.below] <${bha9kawi_cha9kawi8below} 0 ${bha9kawi_cha9kawi8below} 0>;
+	pos @LetterWithBelow [bha-kawi]' [dda-kawi.below ddha-kawi.below] <${bha9kawi_dda9kawi8below} 0 ${bha9kawi_dda9kawi8below} 0>;
+	pos @LetterWithBelow [bha-kawi]' [gha-kawi.below] <${bha9kawi_gha9kawi8below} 0 ${bha9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [bha-kawi]' [ha-kawi.below] <${bha9kawi_ha9kawi8below} 0 ${bha9kawi_ha9kawi8below} 0>;
+	pos @LetterWithBelow [bha-kawi]' [ka-kawi.below kha-kawi.below] <${bha9kawi_ka9kawi8below} 0 ${bha9kawi_ka9kawi8below} 0>;
+	pos @LetterWithBelow [bha-kawi]' [la-kawi.below] <${bha9kawi_la9kawi8below} 0 ${bha9kawi_la9kawi8below} 0>;
+	pos @LetterWithBelow [bha-kawi]' [nna-kawi.below] <${bha9kawi_nna9kawi8below} 0 ${bha9kawi_nna9kawi8below} 0>;
+	pos @LetterWithBelow [bha-kawi]' [nya-kawi.below] <${bha9kawi_nya9kawi8below} 0 ${bha9kawi_nya9kawi8below} 0>;
+	pos @LetterWithBelow [bha-kawi]' [ssa-kawi.below] <${bha9kawi_ssa9kawi8below} 0 ${bha9kawi_ssa9kawi8below} 0>;
+	pos @LetterWithBelow [bha-kawi]' [ta-kawi.below] <${bha9kawi_ta9kawi8below} 0 ${bha9kawi_ta9kawi8below} 0>;
+	pos @LetterWithBelow [ma-kawi]' [gha-kawi.below] <${ma9kawi_gha9kawi8below} 0 ${ma9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [ma-kawi]' [nna-kawi.below] <${ma9kawi_nna9kawi8below} 0 ${ma9kawi_nna9kawi8below} 0>;
+	pos @LetterWithBelow [ma-kawi]' [nya-kawi.below] <${ma9kawi_nya9kawi8below} 0 ${ma9kawi_nya9kawi8below} 0>;
+	pos @LetterWithBelow [ma-kawi]' [ssa-kawi.below] <${ma9kawi_ssa9kawi8below} 0 ${ma9kawi_ssa9kawi8below} 0>;
+	pos @LetterWithBelow [ra-kawi]' [vowelUu-kawi] <${ra9kawi_vowelUu9kawi} 0 ${ra9kawi_vowelUu9kawi} 0>;
+	pos @LetterWithBelow [ra-kawi]' [vowelVocalicR-kawi] <${ra9kawi_vowelVocalicR9kawi} 0 ${ra9kawi_vowelVocalicR9kawi} 0>;
+	pos @LetterWithBelow [ra-kawi]' [vowelVocalicL-kawi] <${ra9kawi_vowelVocalicL9kawi} 0 ${ra9kawi_vowelVocalicL9kawi} 0>;
+	pos @LetterWithBelow [ra-kawi]' [ba-kawi.below] <${ra9kawi_ba9kawi8below} 0 ${ra9kawi_ba9kawi8below} 0>;
+	pos @LetterWithBelow [ra-kawi]' [bha-kawi.below] <${ra9kawi_bha9kawi8below} 0 ${ra9kawi_bha9kawi8below} 0>;
+	pos @LetterWithBelow [ra-kawi]' [ca-kawi.below] <${ra9kawi_ca9kawi8below} 0 ${ra9kawi_ca9kawi8below} 0>;
+	pos @LetterWithBelow [ra-kawi]' [cha-kawi.below] <${ra9kawi_cha9kawi8below} 0 ${ra9kawi_cha9kawi8below} 0>;
+	pos @LetterWithBelow [ra-kawi]' [da-kawi.below] <${ra9kawi_da9kawi8below} 0 ${ra9kawi_da9kawi8below} 0>;
+	pos @LetterWithBelow [ra-kawi]' [dda-kawi.below] <${ra9kawi_dda9kawi8below} 0 ${ra9kawi_dda9kawi8below} 0>;
+	pos @LetterWithBelow [ra-kawi]' [ddha-kawi.below] <${ra9kawi_ddha9kawi8below} 0 ${ra9kawi_ddha9kawi8below} 0>;
+	pos @LetterWithBelow [ra-kawi]' [dha-kawi.below] <${ra9kawi_dha9kawi8below} 0 ${ra9kawi_dha9kawi8below} 0>;
+	pos @LetterWithBelow [ra-kawi]' [ga-kawi.below] <${ra9kawi_ga9kawi8below} 0 ${ra9kawi_ga9kawi8below} 0>;
+	pos @LetterWithBelow [ra-kawi]' [gha-kawi.below] <${ra9kawi_gha9kawi8below} 0 ${ra9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [ra-kawi]' [ha-kawi.below] <${ra9kawi_ha9kawi8below} 0 ${ra9kawi_ha9kawi8below} 0>;
+	pos @LetterWithBelow [ra-kawi]' [ja-kawi.below] <${ra9kawi_ja9kawi8below} 0 ${ra9kawi_ja9kawi8below} 0>;
+	pos @LetterWithBelow [ra-kawi]' [ka-kawi.below] <${ra9kawi_ka9kawi8below} 0 ${ra9kawi_ka9kawi8below} 0>;
+	pos @LetterWithBelow [ra-kawi]' [kha-kawi.below] <${ra9kawi_kha9kawi8below} 0 ${ra9kawi_kha9kawi8below} 0>;
+	pos @LetterWithBelow [ra-kawi]' [la-kawi.below] <${ra9kawi_la9kawi8below} 0 ${ra9kawi_la9kawi8below} 0>;
+	pos @LetterWithBelow [ra-kawi]' [ma-kawi.below] <${ra9kawi_ma9kawi8below} 0 ${ra9kawi_ma9kawi8below} 0>;
+	pos @LetterWithBelow [ra-kawi]' [na-kawi.below] <${ra9kawi_na9kawi8below} 0 ${ra9kawi_na9kawi8below} 0>;
+	pos @LetterWithBelow [ra-kawi]' [nga-kawi.below] <${ra9kawi_nga9kawi8below} 0 ${ra9kawi_nga9kawi8below} 0>;
+	pos @LetterWithBelow [ra-kawi]' [nna-kawi.below] <${ra9kawi_nna9kawi8below} 0 ${ra9kawi_nna9kawi8below} 0>;
+	pos @LetterWithBelow [ra-kawi]' [nya-kawi.below] <${ra9kawi_nya9kawi8below} 0 ${ra9kawi_nya9kawi8below} 0>;
+	pos @LetterWithBelow [ra-kawi]' [sha-kawi.below] <${ra9kawi_sha9kawi8below} 0 ${ra9kawi_sha9kawi8below} 0>;
+	pos @LetterWithBelow [ra-kawi]' [ssa-kawi.below] <${ra9kawi_ssa9kawi8below} 0 ${ra9kawi_ssa9kawi8below} 0>;
+	pos @LetterWithBelow [ra-kawi]' [ta-kawi.below] <${ra9kawi_ta9kawi8below} 0 ${ra9kawi_ta9kawi8below} 0>;
+	pos @LetterWithBelow [ra-kawi]' [tha-kawi.below] <${ra9kawi_tha9kawi8below} 0 ${ra9kawi_tha9kawi8below} 0>;
+	pos @LetterWithBelow [ra-kawi]' [tta-kawi.below] <${ra9kawi_tta9kawi8below} 0 ${ra9kawi_tta9kawi8below} 0>;
+	pos @LetterWithBelow [ra-kawi]' [ttha-kawi.below] <${ra9kawi_ttha9kawi8below} 0 ${ra9kawi_ttha9kawi8below} 0>;
+	pos @LetterWithBelow [ra-kawi]' [wa-kawi.below] <${ra9kawi_wa9kawi8below} 0 ${ra9kawi_wa9kawi8below} 0>;
+	pos @LetterWithBelow [la-kawi]' [gha-kawi.below] <${la9kawi_gha9kawi8below} 0 ${la9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [sha-kawi]' [vowelVocalicR-kawi] <${sha9kawi_vowelVocalicR9kawi} 0 ${sha9kawi_vowelVocalicR9kawi} 0>;
+	pos @LetterWithBelow [sha-kawi]' [ca-kawi.below] <${sha9kawi_ca9kawi8below} 0 ${sha9kawi_ca9kawi8below} 0>;
+	pos @LetterWithBelow [sha-kawi]' [cha-kawi.below] <${sha9kawi_cha9kawi8below} 0 ${sha9kawi_cha9kawi8below} 0>;
+	pos @LetterWithBelow [sha-kawi]' [dda-kawi.below ddha-kawi.below] <${sha9kawi_dda9kawi8below} 0 ${sha9kawi_dda9kawi8below} 0>;
+	pos @LetterWithBelow [sha-kawi]' [gha-kawi.below] <${sha9kawi_gha9kawi8below} 0 ${sha9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [sha-kawi]' [ha-kawi.below] <${sha9kawi_ha9kawi8below} 0 ${sha9kawi_ha9kawi8below} 0>;
+	pos @LetterWithBelow [sha-kawi]' [la-kawi.below] <${sha9kawi_la9kawi8below} 0 ${sha9kawi_la9kawi8below} 0>;
+	pos @LetterWithBelow [sha-kawi]' [nna-kawi.below] <${sha9kawi_nna9kawi8below} 0 ${sha9kawi_nna9kawi8below} 0>;
+	pos @LetterWithBelow [sha-kawi]' [nya-kawi.below] <${sha9kawi_nya9kawi8below} 0 ${sha9kawi_nya9kawi8below} 0>;
+	pos @LetterWithBelow [sha-kawi]' [ssa-kawi.below] <${sha9kawi_ssa9kawi8below} 0 ${sha9kawi_ssa9kawi8below} 0>;
+	pos @LetterWithBelow [sha-kawi]' [ta-kawi.below] <${sha9kawi_ta9kawi8below} 0 ${sha9kawi_ta9kawi8below} 0>;
+	pos @LetterWithBelow [ha-kawi]' [gha-kawi.below] <${ha9kawi_gha9kawi8below} 0 ${ha9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [kha-kawi]' [gha-kawi.below] <${kha9kawi_gha9kawi8below} 0 ${kha9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [kha-kawi]' [nna-kawi.below] <${kha9kawi_nna9kawi8below} 0 ${kha9kawi_nna9kawi8below} 0>;
+	pos @LetterWithBelow [ga-kawi]' [gha-kawi.below] <${ga9kawi_gha9kawi8below} 0 ${ga9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [ga-kawi]' [nna-kawi.below] <${ga9kawi_nna9kawi8below} 0 ${ga9kawi_nna9kawi8below} 0>;
+	pos @LetterWithBelow [ga-kawi]' [nya-kawi.below] <${ga9kawi_nya9kawi8below} 0 ${ga9kawi_nya9kawi8below} 0>;
+	pos @LetterWithBelow [ca-kawi]' [vowelVocalicR-kawi] <${ca9kawi_vowelVocalicR9kawi} 0 ${ca9kawi_vowelVocalicR9kawi} 0>;
+	pos @LetterWithBelow [ca-kawi]' [ca-kawi.below] <${ca9kawi_ca9kawi8below} 0 ${ca9kawi_ca9kawi8below} 0>;
+	pos @LetterWithBelow [ca-kawi]' [cha-kawi.below] <${ca9kawi_cha9kawi8below} 0 ${ca9kawi_cha9kawi8below} 0>;
+	pos @LetterWithBelow [ca-kawi]' [dda-kawi.below] <${ca9kawi_dda9kawi8below} 0 ${ca9kawi_dda9kawi8below} 0>;
+	pos @LetterWithBelow [ca-kawi]' [gha-kawi.below] <${ca9kawi_gha9kawi8below} 0 ${ca9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [ca-kawi]' [ha-kawi.below] <${ca9kawi_ha9kawi8below} 0 ${ca9kawi_ha9kawi8below} 0>;
+	pos @LetterWithBelow [ca-kawi]' [ka-kawi.below] <${ca9kawi_ka9kawi8below} 0 ${ca9kawi_ka9kawi8below} 0>;
+	pos @LetterWithBelow [ca-kawi]' [kha-kawi.below] <${ca9kawi_kha9kawi8below} 0 ${ca9kawi_kha9kawi8below} 0>;
+	pos @LetterWithBelow [ca-kawi]' [la-kawi.below] <${ca9kawi_la9kawi8below} 0 ${ca9kawi_la9kawi8below} 0>;
+	pos @LetterWithBelow [ca-kawi]' [nna-kawi.below] <${ca9kawi_nna9kawi8below} 0 ${ca9kawi_nna9kawi8below} 0>;
+	pos @LetterWithBelow [ca-kawi]' [nya-kawi.below] <${ca9kawi_nya9kawi8below} 0 ${ca9kawi_nya9kawi8below} 0>;
+	pos @LetterWithBelow [ca-kawi]' [ssa-kawi.below] <${ca9kawi_ssa9kawi8below} 0 ${ca9kawi_ssa9kawi8below} 0>;
+	pos @LetterWithBelow [ja-kawi]' [ka-kawi.below] <${ja9kawi_ka9kawi8below} 0 ${ja9kawi_ka9kawi8below} 0>;
+	pos @LetterWithBelow [da-kawi]' [ka-kawi.below] <${da9kawi_ka9kawi8below} 0 ${da9kawi_ka9kawi8below} 0>;
+	pos @LetterWithBelow [dha-kawi]' [gha-kawi.below] <${dha9kawi_gha9kawi8below} 0 ${dha9kawi_gha9kawi8below} 0>;
+	pos @LetterWithBelow [dha-kawi]' [nna-kawi.below] <${dha9kawi_nna9kawi8below} 0 ${dha9kawi_nna9kawi8below} 0>;
+	pos @LetterWithBelow [dha-kawi]' [nya-kawi.below] <${dha9kawi_nya9kawi8below} 0 ${dha9kawi_nya9kawi8below} 0>;
+} contextualKern;
+";
+notes = "	pos @LetterWithBelow [tta-kawi]' [wa-kawi.below2.low] <${tta9kawi_wa9kawi8below28low} 0 ${tta9kawi_wa9kawi8below28low} 0>;\012";
+tag = kern;
 }
 );
 fontMaster = (
@@ -464,6 +696,241 @@ over = -16;
 }
 );
 name = Regular;
+numberValues = (
+65,
+29,
+34,
+270,
+28,
+162,
+135,
+43,
+129,
+221,
+113,
+86,
+80,
+203,
+95,
+68,
+62,
+86,
+97,
+291,
+193,
+186,
+34,
+120,
+88,
+22,
+27,
+263,
+21,
+155,
+128,
+36,
+122,
+53,
+92,
+107,
+101,
+76,
+312,
+77,
+70,
+204,
+177,
+85,
+171,
+169,
+61,
+34,
+28,
+66,
+55,
+101,
+84,
+89,
+325,
+59,
+83,
+217,
+190,
+98,
+184,
+29,
+22,
+83,
+35,
+72,
+137,
+101,
+106,
+25,
+342,
+96,
+74,
+76,
+130,
+234,
+247,
+115,
+201,
+86,
+30,
+21,
+48,
+29,
+24,
+251,
+18,
+152,
+105,
+53,
+139,
+2,
+207,
+109,
+102,
+96,
+6,
+201,
+93,
+76,
+90,
+63,
+52,
+87,
+71,
+76,
+302,
+56,
+80,
+50,
+214,
+187,
+95,
+181,
+26,
+211,
+103,
+76,
+70,
+113,
+95,
+102,
+167,
+131,
+55,
+48,
+372,
+106,
+64,
+66,
+130,
+100,
+264,
+237,
+145,
+231,
+76,
+41,
+60,
+248,
+150,
+113,
+67,
+133,
+25,
+73,
+65,
+92,
+127,
+91,
+362,
+126,
+67,
+90,
+60,
+224,
+227,
+105,
+191,
+56,
+232,
+114,
+107,
+61,
+43,
+286,
+146,
+298,
+132,
+285,
+360,
+226,
+333,
+337,
+268,
+271,
+595,
+339,
+168,
+287,
+289,
+373,
+273,
+197,
+121,
+218,
+487,
+460,
+318,
+173,
+404,
+279,
+244,
+177,
+171,
+241,
+122,
+60,
+49,
+44,
+59,
+279,
+53,
+77,
+17,
+181,
+154,
+92,
+178,
+23,
+79,
+158,
+71,
+210,
+120,
+105,
+5,
+43,
+88,
+76,
+322,
+82,
+9,
+10,
+77,
+182,
+173,
+7,
+11,
+2,
+186,
+84,
+73
+);
 userData = {
 GSCornerRadius = 115;
 };
@@ -580,6 +1047,241 @@ pos = -200;
 }
 );
 name = Bold;
+numberValues = (
+46,
+10,
+8,
+267,
+20,
+198,
+132,
+9,
+54,
+171,
+102,
+36,
+7,
+174,
+105,
+39,
+3,
+87,
+25,
+298,
+239,
+193,
+4,
+35,
+34,
+11,
+0,
+279,
+27,
+213,
+144,
+5,
+9,
+1,
+45,
+127,
+44,
+43,
+368,
+131,
+92,
+289,
+233,
+3,
+55,
+212,
+153,
+95,
+6,
+54,
+8,
+82,
+2,
+5,
+303,
+80,
+40,
+234,
+168,
+15,
+91,
+7,
+9,
+65,
+15,
+25,
+83,
+24,
+26,
+30,
+354,
+97,
+72,
+77,
+93,
+275,
+209,
+0,
+91,
+47,
+0,
+0,
+43,
+10,
+9,
+284,
+19,
+215,
+169,
+0,
+51,
+0,
+223,
+154,
+88,
+3,
+0,
+225,
+156,
+90,
+1,
+57,
+0,
+85,
+1,
+2,
+306,
+83,
+43,
+0,
+237,
+171,
+0,
+97,
+3,
+182,
+113,
+47,
+0,
+85,
+64,
+74,
+113,
+73,
+75,
+63,
+384,
+141,
+112,
+97,
+119,
+41,
+297,
+239,
+0,
+121,
+72,
+51,
+0,
+259,
+201,
+134,
+0,
+157,
+96,
+35,
+10,
+14,
+93,
+25,
+314,
+73,
+55,
+71,
+0,
+255,
+189,
+0,
+77,
+3,
+199,
+121,
+67,
+14,
+0,
+259,
+108,
+261,
+127,
+258,
+327,
+153,
+267,
+264,
+257,
+243,
+568,
+325,
+137,
+296,
+291,
+315,
+215,
+163,
+121,
+214,
+499,
+433,
+0,
+171,
+295,
+276,
+240,
+134,
+144,
+213,
+154,
+0,
+10,
+38,
+13,
+259,
+43,
+26,
+0,
+190,
+124,
+0,
+46,
+15,
+78,
+154,
+85,
+219,
+150,
+84,
+66,
+75,
+134,
+84,
+385,
+132,
+113,
+88,
+122,
+296,
+250,
+102,
+41,
+44,
+176,
+107,
+41
+);
 }
 );
 glyphs = (
@@ -22045,7 +22747,7 @@ layers = (
 anchors = (
 {
 name = bottom;
-pos = (645,0);
+pos = (629,0);
 },
 {
 name = top;
@@ -22053,7 +22755,7 @@ pos = (374,544);
 },
 {
 name = topright;
-pos = (639,544);
+pos = (629,544);
 }
 );
 background = {
@@ -22181,7 +22883,7 @@ pos = (364,544);
 },
 {
 name = topright;
-pos = (629,544);
+pos = (635,544);
 }
 );
 layerId = "FD202070-6699-4318-8E83-95414ED89137";
@@ -22591,7 +23293,7 @@ layers = (
 anchors = (
 {
 name = bottom;
-pos = (431,0);
+pos = (472,0);
 },
 {
 name = top;
@@ -22599,7 +23301,7 @@ pos = (314,544);
 },
 {
 name = topright;
-pos = (425,544);
+pos = (472,544);
 }
 );
 background = {
@@ -22691,7 +23393,7 @@ width = 600;
 anchors = (
 {
 name = bottom;
-pos = (455,0);
+pos = (502,0);
 },
 {
 name = top;
@@ -22699,7 +23401,7 @@ pos = (330,544);
 },
 {
 name = topright;
-pos = (449,544);
+pos = (502,544);
 }
 );
 background = {
@@ -77545,6 +78247,707 @@ type = descender;
 },
 {
 type = "italic angle";
+}
+);
+numbers = (
+{
+name = i9kawi_cha9kawi8below;
+},
+{
+name = i9kawi_dda9kawi8below;
+},
+{
+name = i9kawi_ddha9kawi8below;
+},
+{
+name = i9kawi_gha9kawi8below;
+},
+{
+name = i9kawi_la9kawi8below;
+},
+{
+name = i9kawi_nna9kawi8below;
+},
+{
+name = i9kawi_nya9kawi8below;
+},
+{
+name = i9kawi_ra9kawi8below;
+},
+{
+name = i9kawi_ssa9kawi8below;
+},
+{
+name = ka9kawi_gha9kawi8below;
+},
+{
+name = ka9kawi_nna9kawi8below;
+},
+{
+name = ka9kawi_nya9kawi8below;
+},
+{
+name = ka9kawi_ssa9kawi8below;
+},
+{
+name = ta9kawi_gha9kawi8below;
+},
+{
+name = ta9kawi_nna9kawi8below;
+},
+{
+name = ta9kawi_nya9kawi8below;
+},
+{
+name = ta9kawi_ssa9kawi8below;
+},
+{
+name = sa9kawi_cha9kawi8below;
+},
+{
+name = sa9kawi_ddha9kawi8below;
+},
+{
+name = sa9kawi_gha9kawi8below;
+},
+{
+name = sa9kawi_nna9kawi8below;
+},
+{
+name = sa9kawi_nya9kawi8below;
+},
+{
+name = sa9kawi_ra9kawi8below;
+},
+{
+name = sa9kawi_ssa9kawi8below;
+},
+{
+name = nga9kawi_cha9kawi8below;
+},
+{
+name = nga9kawi_dda9kawi8below;
+},
+{
+name = nga9kawi_ddha9kawi8below;
+},
+{
+name = nga9kawi_gha9kawi8below;
+},
+{
+name = nga9kawi_la9kawi8below;
+},
+{
+name = nga9kawi_nna9kawi8below;
+},
+{
+name = nga9kawi_nya9kawi8below;
+},
+{
+name = nga9kawi_ra9kawi8below;
+},
+{
+name = nga9kawi_ssa9kawi8below;
+},
+{
+name = wa9kawi_vowelVocalicR9kawi;
+},
+{
+name = wa9kawi_ca9kawi8below;
+},
+{
+name = wa9kawi_cha9kawi8below;
+},
+{
+name = wa9kawi_dda9kawi8below;
+},
+{
+name = wa9kawi_ddha9kawi8below;
+},
+{
+name = wa9kawi_gha9kawi8below;
+},
+{
+name = wa9kawi_ha9kawi8below;
+},
+{
+name = wa9kawi_la9kawi8below;
+},
+{
+name = wa9kawi_nna9kawi8below;
+},
+{
+name = wa9kawi_nya9kawi8below;
+},
+{
+name = wa9kawi_ra9kawi8below;
+},
+{
+name = wa9kawi_ssa9kawi8below;
+},
+{
+name = cha9kawi_gha9kawi8below;
+},
+{
+name = cha9kawi_nna9kawi8below;
+},
+{
+name = cha9kawi_nya9kawi8below;
+},
+{
+name = cha9kawi_ssa9kawi8below;
+},
+{
+name = ja9kawi_vowelVocalicR9kawi;
+},
+{
+name = ja9kawi_ca9kawi8below;
+},
+{
+name = ja9kawi_cha9kawi8below;
+},
+{
+name = ja9kawi_dda9kawi8below;
+},
+{
+name = ja9kawi_ddha9kawi8below;
+},
+{
+name = ja9kawi_gha9kawi8below;
+},
+{
+name = ja9kawi_ha9kawi8below;
+},
+{
+name = ja9kawi_la9kawi8below;
+},
+{
+name = ja9kawi_nna9kawi8below;
+},
+{
+name = ja9kawi_nya9kawi8below;
+},
+{
+name = ja9kawi_ra9kawi8below;
+},
+{
+name = ja9kawi_ssa9kawi8below;
+},
+{
+name = ja9kawi_ta9kawi8below;
+},
+{
+name = nya9kawi_gha9kawi8below;
+},
+{
+name = tta9kawi_vowelVocalicR9kawi;
+},
+{
+name = tta9kawi_ba9kawi8below;
+},
+{
+name = tta9kawi_ca9kawi8below;
+},
+{
+name = tta9kawi_cha9kawi8below;
+},
+{
+name = tta9kawi_dda9kawi8below;
+},
+{
+name = tta9kawi_ddha9kawi8below;
+},
+{
+name = tta9kawi_dha9kawi8below;
+},
+{
+name = tta9kawi_gha9kawi8below;
+},
+{
+name = tta9kawi_ha9kawi8below;
+},
+{
+name = tta9kawi_ka9kawi8below;
+},
+{
+name = tta9kawi_kha9kawi8below;
+},
+{
+name = tta9kawi_la9kawi8below;
+},
+{
+name = tta9kawi_nna9kawi8below;
+},
+{
+name = tta9kawi_nya9kawi8below;
+},
+{
+name = tta9kawi_ra9kawi8below;
+},
+{
+name = tta9kawi_ssa9kawi8below;
+},
+{
+name = tta9kawi_ta9kawi8below;
+},
+{
+name = tta9kawi_wa9kawi8below28low;
+},
+{
+name = ttha9kawi_vowelVocalicR9kawi;
+},
+{
+name = ttha9kawi_cha9kawi8below;
+},
+{
+name = ttha9kawi_dda9kawi8below;
+},
+{
+name = ttha9kawi_ddha9kawi8below;
+},
+{
+name = ttha9kawi_gha9kawi8below;
+},
+{
+name = ttha9kawi_la9kawi8below;
+},
+{
+name = ttha9kawi_nna9kawi8below;
+},
+{
+name = ttha9kawi_nya9kawi8below;
+},
+{
+name = ttha9kawi_ra9kawi8below;
+},
+{
+name = ttha9kawi_ssa9kawi8below;
+},
+{
+name = dda9kawi_cha9kawi8below;
+},
+{
+name = dda9kawi_gha9kawi8below;
+},
+{
+name = dda9kawi_nna9kawi8below;
+},
+{
+name = dda9kawi_nya9kawi8below;
+},
+{
+name = dda9kawi_ssa9kawi8below;
+},
+{
+name = ddha9kawi_cha9kawi8below;
+},
+{
+name = ddha9kawi_gha9kawi8below;
+},
+{
+name = ddha9kawi_nna9kawi8below;
+},
+{
+name = ddha9kawi_nya9kawi8below;
+},
+{
+name = ddha9kawi_ssa9kawi8below;
+},
+{
+name = da9kawi_vowelVocalicR9kawi;
+},
+{
+name = da9kawi_ca9kawi8below;
+},
+{
+name = da9kawi_cha9kawi8below;
+},
+{
+name = da9kawi_dda9kawi8below;
+},
+{
+name = da9kawi_ddha9kawi8below;
+},
+{
+name = da9kawi_gha9kawi8below;
+},
+{
+name = da9kawi_ha9kawi8below;
+},
+{
+name = da9kawi_la9kawi8below;
+},
+{
+name = da9kawi_la9kawi8below2;
+},
+{
+name = da9kawi_nna9kawi8below;
+},
+{
+name = da9kawi_nya9kawi8below;
+},
+{
+name = da9kawi_ra9kawi8below;
+},
+{
+name = da9kawi_ssa9kawi8below;
+},
+{
+name = da9kawi_ta9kawi8below;
+},
+{
+name = ba9kawi_gha9kawi8below;
+},
+{
+name = ba9kawi_nna9kawi8below;
+},
+{
+name = ba9kawi_nya9kawi8below;
+},
+{
+name = ba9kawi_ssa9kawi8below;
+},
+{
+name = na9kawi_vowelVocalicR9kawi;
+},
+{
+name = na9kawi_ba9kawi8below;
+},
+{
+name = na9kawi_ca9kawi8below;
+},
+{
+name = na9kawi_cha9kawi8below;
+},
+{
+name = na9kawi_dda9kawi8below;
+},
+{
+name = na9kawi_dha9kawi8below;
+},
+{
+name = na9kawi_ga9kawi8below;
+},
+{
+name = na9kawi_gha9kawi8below;
+},
+{
+name = na9kawi_ha9kawi8below;
+},
+{
+name = na9kawi_ka9kawi8below;
+},
+{
+name = na9kawi_kha9kawi8below;
+},
+{
+name = na9kawi_la9kawi8below;
+},
+{
+name = na9kawi_la9kawi8below2;
+},
+{
+name = na9kawi_nna9kawi8below;
+},
+{
+name = na9kawi_nya9kawi8below;
+},
+{
+name = na9kawi_ra9kawi8below;
+},
+{
+name = na9kawi_ssa9kawi8below;
+},
+{
+name = na9kawi_ta9kawi8below;
+},
+{
+name = na9kawi_tha9kawi8below;
+},
+{
+name = na9kawi_wa9kawi8below28low;
+},
+{
+name = ssa9kawi_gha9kawi8below;
+},
+{
+name = ssa9kawi_nna9kawi8below;
+},
+{
+name = ssa9kawi_nya9kawi8below;
+},
+{
+name = ssa9kawi_ssa9kawi8below;
+},
+{
+name = pha9kawi_gha9kawi8below;
+},
+{
+name = pha9kawi_nna9kawi8below;
+},
+{
+name = bha9kawi_vowelVocalicR9kawi;
+},
+{
+name = bha9kawi_ba9kawi8below;
+},
+{
+name = bha9kawi_ca9kawi8below;
+},
+{
+name = bha9kawi_cha9kawi8below;
+},
+{
+name = bha9kawi_dda9kawi8below;
+},
+{
+name = bha9kawi_gha9kawi8below;
+},
+{
+name = bha9kawi_ha9kawi8below;
+},
+{
+name = bha9kawi_ka9kawi8below;
+},
+{
+name = bha9kawi_la9kawi8below;
+},
+{
+name = bha9kawi_la9kawi8below2;
+},
+{
+name = bha9kawi_nna9kawi8below;
+},
+{
+name = bha9kawi_nya9kawi8below;
+},
+{
+name = bha9kawi_ra9kawi8below;
+},
+{
+name = bha9kawi_ssa9kawi8below;
+},
+{
+name = bha9kawi_ta9kawi8below;
+},
+{
+name = ma9kawi_gha9kawi8below;
+},
+{
+name = ma9kawi_nna9kawi8below;
+},
+{
+name = ma9kawi_nya9kawi8below;
+},
+{
+name = ma9kawi_ssa9kawi8below;
+},
+{
+name = ra9kawi_vowelUu9kawi;
+},
+{
+name = ra9kawi_vowelVocalicR9kawi;
+},
+{
+name = ra9kawi_vowelVocalicL9kawi;
+},
+{
+name = ra9kawi_ba9kawi8below;
+},
+{
+name = ra9kawi_bha9kawi8below;
+},
+{
+name = ra9kawi_ca9kawi8below;
+},
+{
+name = ra9kawi_cha9kawi8below;
+},
+{
+name = ra9kawi_da9kawi8below;
+},
+{
+name = ra9kawi_dda9kawi8below;
+},
+{
+name = ra9kawi_ddha9kawi8below;
+},
+{
+name = ra9kawi_dha9kawi8below;
+},
+{
+name = ra9kawi_ga9kawi8below;
+},
+{
+name = ra9kawi_gha9kawi8below;
+},
+{
+name = ra9kawi_ha9kawi8below;
+},
+{
+name = ra9kawi_ja9kawi8below;
+},
+{
+name = ra9kawi_ka9kawi8below;
+},
+{
+name = ra9kawi_kha9kawi8below;
+},
+{
+name = ra9kawi_la9kawi8below;
+},
+{
+name = ra9kawi_la9kawi8below2;
+},
+{
+name = ra9kawi_ma9kawi8below;
+},
+{
+name = ra9kawi_na9kawi8below;
+},
+{
+name = ra9kawi_nga9kawi8below;
+},
+{
+name = ra9kawi_nna9kawi8below;
+},
+{
+name = ra9kawi_nya9kawi8below;
+},
+{
+name = ra9kawi_ra9kawi8below;
+},
+{
+name = ra9kawi_sha9kawi8below;
+},
+{
+name = ra9kawi_ssa9kawi8below;
+},
+{
+name = ra9kawi_ta9kawi8below;
+},
+{
+name = ra9kawi_tha9kawi8below;
+},
+{
+name = ra9kawi_tta9kawi8below;
+},
+{
+name = ra9kawi_ttha9kawi8below;
+},
+{
+name = ra9kawi_wa9kawi8below;
+},
+{
+name = la9kawi_gha9kawi8below;
+},
+{
+name = sha9kawi_vowelVocalicR9kawi;
+},
+{
+name = sha9kawi_ca9kawi8below;
+},
+{
+name = sha9kawi_cha9kawi8below;
+},
+{
+name = sha9kawi_dda9kawi8below;
+},
+{
+name = sha9kawi_gha9kawi8below;
+},
+{
+name = sha9kawi_ha9kawi8below;
+},
+{
+name = sha9kawi_la9kawi8below;
+},
+{
+name = sha9kawi_la9kawi8below2;
+},
+{
+name = sha9kawi_nna9kawi8below;
+},
+{
+name = sha9kawi_nya9kawi8below;
+},
+{
+name = sha9kawi_ra9kawi8below;
+},
+{
+name = sha9kawi_ssa9kawi8below;
+},
+{
+name = sha9kawi_ta9kawi8below;
+},
+{
+name = ha9kawi_gha9kawi8below;
+},
+{
+name = kha9kawi_gha9kawi8below;
+},
+{
+name = kha9kawi_nna9kawi8below;
+},
+{
+name = ga9kawi_gha9kawi8below;
+},
+{
+name = ga9kawi_nna9kawi8below;
+},
+{
+name = ga9kawi_nya9kawi8below;
+},
+{
+name = ca9kawi_vowelVocalicR9kawi;
+},
+{
+name = ca9kawi_ca9kawi8below;
+},
+{
+name = ca9kawi_cha9kawi8below;
+},
+{
+name = ca9kawi_dda9kawi8below;
+},
+{
+name = ca9kawi_gha9kawi8below;
+},
+{
+name = ca9kawi_ha9kawi8below;
+},
+{
+name = ca9kawi_ka9kawi8below;
+},
+{
+name = ca9kawi_kha9kawi8below;
+},
+{
+name = ca9kawi_la9kawi8below;
+},
+{
+name = ca9kawi_nna9kawi8below;
+},
+{
+name = ca9kawi_nya9kawi8below;
+},
+{
+name = ca9kawi_ssa9kawi8below;
+},
+{
+name = ja9kawi_ka9kawi8below;
+},
+{
+name = da9kawi_ka9kawi8below;
+},
+{
+name = dha9kawi_gha9kawi8below;
+},
+{
+name = dha9kawi_nna9kawi8below;
+},
+{
+name = dha9kawi_nya9kawi8below;
 }
 );
 properties = (
