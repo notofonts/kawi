@@ -77757,13 +77757,9 @@ key = manufacturers;
 values = (
 {
 language = dflt;
-value = holdontype;
+value = "";
 }
 );
-},
-{
-key = manufacturerURL;
-value = "http://holdontype.design/";
 },
 {
 key = designers;
@@ -77773,6 +77769,10 @@ language = dflt;
 value = "Fadhl Haqq";
 }
 );
+},
+{
+key = designerURL;
+value = "https://www.holdontype.design/";
 }
 );
 unitsPerEm = 1000;
