@@ -30,7 +30,7 @@
             <textarea id="output" class="kawi"></textarea>
         </div>
         <script>
-var mapping = {
+const mapping = {
   0xa980: 0x11f00, // JAVANESE SIGN PANYANGGA -> KAWI SIGN CANDRABINDU
   0xa981: 0x11f01, // JAVANESE SIGN CECAK -> KAWI SIGN ANUSVARA
   0xa982: 0x11f02, // JAVANESE SIGN LAYAR -> KAWI SIGN REPHA
@@ -88,7 +88,7 @@ var mapping = {
   0xa9b0: 0x11f30, // JAVANESE LETTER SA MAHAPRANA -> KAWI LETTER SSA
   0xa9b1: 0x11f31, // JAVANESE LETTER SA -> KAWI LETTER SA
   0xa9b2: 0x11f32, // JAVANESE LETTER HA -> KAWI LETTER HA
-    
+
   0xa9b3: 0x11f5a, // JAVANESE SIGN CECAK TELU -> KAWI SIGN NUKTA
 
   0xa9b4: 0x11f34, // JAVANESE VOWEL SIGN TARUNG -> KAWI VOWEL SIGN AA
@@ -110,23 +110,18 @@ var mapping = {
 };
 
 // Digits
-for (var i of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]) {
-  mapping[0xa9d0 + i] = 0x11f50 + i;
+for (let i = 0; i <= 9; i++) {
+  mapping[0xa9d0 + i] = [0x11f50 + i];
 }
 
+// Listen for changes to the input field and update the output field with the corresponding Kawi text
 $("#input").on("input", function () {
-  var text = $("#input").val();
-  var chars = Array.from(text);
-  var output_chars = [];
-  for (var char of chars) {
-    var codepoint = char.charCodeAt(0);
-    var mapped = mapping[codepoint];
-    if (Array.isArray(mapped)) {
-      output_chars.push(...mapped);
-    } else {
-      output_chars.push(mapped || codepoint);
-    }
-  }
+  const text = $("#input").val();
+  const chars = Array.from(text);
+  const output_chars = chars.flatMap((char) => {
+    const codepoint = char.charCodeAt(0);
+    return mapping[codepoint] || codepoint;
+  });
   $("#output").val(String.fromCodePoint(...output_chars));
 });
         </script>
