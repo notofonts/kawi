@@ -35,8 +35,6 @@ const mapping = {
 	0xa982: 0x11f02, // JAVANESE SIGN LAYAR -> KAWI SIGN REPHA
 	0xa983: 0x11f03, // JAVANESE SIGN WIGNYAN -> KAWI SIGN VISARGA
 
-	0xa9c0: 0x11f42, // JAVANESE PANGKON -> KAWI CONJOINER
-
 	0xa984: 0x11f04, // JAVANESE LETTER A -> KAWI LETTER A
 	// JAVANESE LETTER I KAWI's status is complicated to say the least
 	0xa986: 0x11f06, // JAVANESE LETTER I -> KAWI LETTER I
@@ -44,7 +42,7 @@ const mapping = {
 	0xa988: 0x11f08, // JAVANESE LETTER U -> KAWI LETTER U
 	// 11F09 KAWI LETTER UU has no equivalent
 	0xa989: 0x11f0a, // JAVANESE LETTER PA CEREK -> KAWI LETTER VOCALIC R
-	// No 11F0B  KAWI LETTER VOCALIC RR either
+	// No 11F0B KAWI LETTER VOCALIC RR either
 	0xa98a: 0x11f0c, // JAVANESE LETTER NGA LELET -> KAWI LETTER VOCALIC L
 	0xa98b: 0x11f0d, // JAVANESE LETTER NGA LELET RASWADI -> KAWI LETTER VOCALIC LL
 	0xa98c: 0x11f0e, // JAVANESE LETTER E -> KAWI LETTER E
@@ -104,23 +102,61 @@ const mapping = {
 	0xa9be: [0x11f42, 0x11f2b], // JAVANESE CONSONANT SIGN PENGKAL -> KAWI CONJOINER + KAWI LETTER YA
 	0xa9bf: [0x11f42, 0x11f2c], // JAVANESE CONSONANT SIGN CAKRA -> KAWI CONJOINER + KAWI LETTER RA
 
+	// Handle special case for JAVANESE PANGKON
+	0xa9c0: function (nextCodepoint) {
+		if (nextCodepoint === 0x200c) {
+			return [0x11f41, null];
+		}
+		// A984 to A988 and A98C to A98E are independent vowel characters but attestation of the characters being conjoined is yet to be seen. Setting them to be "conjoined" as well for the time being
+		else if (nextCodepoint >= 0xa984 && nextCodepoint <= 0xa9b2) {
+			return [0x11f42];
+		} else {
+			return [0x11f41];
+		}
+	},
+
 	0xa9c8: 0x11f43, // JAVANESE PADA LINGSA -> KAWI DANDA
 	0xa9c9: 0x11f44 // JAVANESE PADA LUNGSI -> KAWI DOUBLE DANDA
 };
 
-// Digits
+// Add mappings for digits
 for (let i = 0; i <= 9; i++) {
 	mapping[0xa9d0 + i] = [0x11f50 + i];
 }
 
-// Listen for changes to the input field and update the output field with the corresponding Kawi text
+// Handle input event
 $("#input").on("input", function () {
 	const text = $("#input").val();
 	const chars = Array.from(text);
-	const output_chars = chars.flatMap((char) => {
+	const output_chars = [];
+
+	for (let i = 0; i < chars.length; i++) {
+		const char = chars[i];
 		const codepoint = char.charCodeAt(0);
-		return mapping[codepoint] || codepoint;
-	});
+		const nextCodepoint = chars[i + 1] && chars[i + 1].charCodeAt(0);
+		const mappedValue = mapping[codepoint];
+
+		if (typeof mappedValue === "function") {
+			// Handle special cases with function
+			const result = mappedValue(nextCodepoint);
+			output_chars.push(...result.filter((v) => v !== null));
+			if (result[1] === null) {
+				i++;
+			}
+		} else if (mappedValue) {
+			// Add mapped value to output
+			if (Array.isArray(mappedValue)) {
+				output_chars.push(...mappedValue);
+			} else {
+				output_chars.push(mappedValue);
+			}
+		} else {
+			// No mapping found, add original value to output
+			output_chars.push(codepoint);
+		}
+	}
+
+	// Update output with converted text
 	$("#output").val(String.fromCodePoint(...output_chars));
 });
 	</script>
