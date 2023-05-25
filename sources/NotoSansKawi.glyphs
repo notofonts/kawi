@@ -1,5 +1,5 @@
 {
-.appVersion = "3192";
+.appVersion = "3195";
 .formatVersion = 3;
 axes = (
 {
@@ -71014,6 +71014,10 @@ anchors = (
 {
 name = _bottom;
 pos = (620,0);
+},
+{
+name = bottom;
+pos = (620,-370);
 }
 );
 background = {
@@ -71080,6 +71084,10 @@ anchors = (
 {
 name = _bottom;
 pos = (650,0);
+},
+{
+name = bottom;
+pos = (650,-430);
 }
 );
 background = {
