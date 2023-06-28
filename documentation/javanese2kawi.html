@@ -1,15 +1,15 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Javanese to Kawi Convertor</title>
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="author" href="humans.txt">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <style>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Javanese to Kawi Converter</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="author" href="humans.txt">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<style>
             @font-face {
                 font-family: "Noto Sans Kawi Local";
                 src: url(../fonts/NotoSansKawi/unhinted/ttf/NotoSansKawi-Regular.ttf);
@@ -18,108 +18,147 @@
             .kawi {
                 font-family: "Noto Sans Kawi Local", "Noto Sans Kawi";
             }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <h2>Simple Unicode Javanese to Unicode Kawi convertor</h2>
-            <h3>Javanese</h3>
-            <textarea id="input"></textarea>
-            <h3>Kawi</h3>
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h2>Simple Unicode Javanese to Unicode Kawi converter</h2>
+		<h3>Javanese</h3>
+		<textarea id="input" class="java"></textarea>
+		<h3>Kawi</h3>
+		<textarea id="output" class="kawi"></textarea>
+	</div>
+	<script>
+const mapping = {
+	0xa980: 0x11f00, // JAVANESE SIGN PANYANGGA -> KAWI SIGN CANDRABINDU
+	0xa981: 0x11f01, // JAVANESE SIGN CECAK -> KAWI SIGN ANUSVARA
+	0xa982: 0x11f02, // JAVANESE SIGN LAYAR -> KAWI SIGN REPHA
+	0xa983: 0x11f03, // JAVANESE SIGN WIGNYAN -> KAWI SIGN VISARGA
 
-            <textarea id="output" class="kawi"></textarea>
-        </div>
-        <script>
-// 
-var mapping = {
-  0xA980: 0x11F00,  // JAVANESE SIGN PANYANGGA -> KAWI SIGN CANDRABINDU
-  0xA981: 0x11F01,  // JAVANESE SIGN CECAK -> KAWI SIGN ANUSVARA
-  0xA982: 0x11F02,  // JAVANESE SIGN LAYAR -> KAWI SIGN REPHA
-  0xA983: 0x11F03,  // JAVANESE SIGN WIGNYAN -> KAWI SIGN VISARGA
+	0xa984: 0x11f04, // JAVANESE LETTER A -> KAWI LETTER A
+	// JAVANESE LETTER I KAWI's status is complicated to say the least
+	0xa986: 0x11f06, // JAVANESE LETTER I -> KAWI LETTER I
+	0xa987: 0x11f07, // JAVANESE LETTER II -> KAWI LETTER II
+	0xa988: 0x11f08, // JAVANESE LETTER U -> KAWI LETTER U
+	// 11F09 KAWI LETTER UU has no equivalent
+	0xa989: 0x11f0a, // JAVANESE LETTER PA CEREK -> KAWI LETTER VOCALIC R
+	// No 11F0B KAWI LETTER VOCALIC RR either
+	0xa98a: 0x11f0c, // JAVANESE LETTER NGA LELET -> KAWI LETTER VOCALIC L
+	0xa98b: 0x11f0d, // JAVANESE LETTER NGA LELET RASWADI -> KAWI LETTER VOCALIC LL
+	0xa98c: 0x11f0e, // JAVANESE LETTER E -> KAWI LETTER E
+	0xa98d: 0x11f0f, // JAVANESE LETTER AI -> KAWI LETTER AI
+	0xa98e: 0x11f10, // JAVANESE LETTER O -> KAWI LETTER O
 
-  0xA9C0: 0x11F42,  // JAVANESE PANGKON -> KAWI CONJOINER
+	0xa98f: 0x11f12, // JAVANESE LETTER KA -> KAWI LETTER KA
+	0xa990: 0x11f12, // JAVANESE LETTER KA SASAK -> KAWI LETTER KA ?
+	0xa991: 0x11f13, // JAVANESE LETTER KA MURDA -> KAWI LETTER KHA
+	0xa992: 0x11f14, // JAVANESE LETTER GA -> KAWI LETTER GA
+	0xa993: 0x11f15, // JAVANESE LETTER GA MURDA -> KAWI LETTER GHA
+	0xa994: 0x11f16, // JAVANESE LETTER NGA -> KAWI LETTER NGA
+	0xa995: 0x11f17, // JAVANESE LETTER CA -> KAWI LETTER CA
+	0xa996: 0x11f18, // JAVANESE LETTER CA MURDA -> KAWI LETTER CHA
+	0xa997: 0x11f19, // JAVANESE LETTER JA -> KAWI LETTER JA
+	0xa998: 0x11f33, // JAVANESE LETTER NYA MURDA -> KAWI LETTER JNYA
+	0xa999: 0x11f1a, // JAVANESE LETTER JA MAHAPRANA -> KAWI LETTER JHA
+	0xa99a: 0x11f1b, // JAVANESE LETTER NYA -> KAWI LETTER NYA
+	0xa99b: 0x11f1c, // JAVANESE LETTER TTA -> KAWI LETTER TTA
+	0xa99c: 0x11f1d, // JAVANESE LETTER TTA MAHAPRANA -> KAWI LETTER TTHA
+	0xa99d: 0x11f1e, // JAVANESE LETTER DDA -> KAWI LETTER DDA
+	0xa99e: 0x11f1f, // JAVANESE LETTER DDA MAHAPRANA -> KAWI LETTER DDHA
+	0xa99f: 0x11f20, // JAVANESE LETTER NA MURDA -> KAWI LETTER NNA
+	0xa9a0: 0x11f21, // JAVANESE LETTER TA -> KAWI LETTER TA
+	0xa9a1: 0x11f22, // JAVANESE LETTER TA MURDA -> KAWI LETTER THA
+	0xa9a2: 0x11f23, // JAVANESE LETTER DA -> KAWI LETTER DA
+	0xa9a3: 0x11f24, // JAVANESE LETTER DA MAHAPRANA -> KAWI LETTER DHA
+	0xa9a4: 0x11f25, // JAVANESE LETTER NA -> KAWI LETTER NA
+	0xa9a5: 0x11f26, // JAVANESE LETTER PA -> KAWI LETTER PA
+	0xa9a6: 0x11f27, // JAVANESE LETTER PA MURDA -> KAWI LETTER PHA
+	0xa9a7: 0x11f28, // JAVANESE LETTER BA -> KAWI LETTER BA
+	0xa9a8: 0x11f29, // JAVANESE LETTER BA MURDA -> KAWI LETTER BHA
+	0xa9a9: 0x11f2a, // JAVANESE LETTER MA -> KAWI LETTER MA
+	0xa9aa: 0x11f2b, // JAVANESE LETTER YA -> KAWI LETTER YA
+	0xa9ab: 0x11f2c, // JAVANESE LETTER RA -> KAWI LETTER RA
+	0xa9ac: 0x11f2c, // JAVANESE LETTER RA AGUNG -> KAWI LETTER RA
+	0xa9ad: 0x11f2d, // JAVANESE LETTER LA -> KAWI LETTER LA
+	0xa9ae: 0x11f2e, // JAVANESE LETTER WA -> KAWI LETTER WA
+	0xa9af: 0x11f2f, // JAVANESE LETTER SA MURDA -> KAWI LETTER SHA
+	0xa9b0: 0x11f30, // JAVANESE LETTER SA MAHAPRANA -> KAWI LETTER SSA
+	0xa9b1: 0x11f31, // JAVANESE LETTER SA -> KAWI LETTER SA
+	0xa9b2: 0x11f32, // JAVANESE LETTER HA -> KAWI LETTER HA
 
-  0xA984: 0x11F04,  // JAVANESE LETTER A -> KAWI LETTER A
-  0xA985: 0x11F05,  // JAVANESE LETTER I KAWI -> KAWI LETTER AA ??
-  0xA986: 0x11F06,  // JAVANESE LETTER I -> KAWI LETTER I
-  0xA987: 0x11F07,  // JAVANESE LETTER II -> KAWI LETTER II
-  0xA988: 0x11F08,  // JAVANESE LETTER U -> KAWI LETTER U
-  // 11F09 KAWI LETTER UU has no equivalent
-  0xA989: 0x11F0A,  // JAVANESE LETTER PA CEREK -> KAWI LETTER VOCALIC R
-  // No 11F0B  KAWI LETTER VOCALIC RR either
-  0xA98A: 0x11F0C,  // JAVANESE LETTER NGA LELET -> KAWI LETTER VOCALIC L
-  0xA98B: 0x11F0D,  // JAVANESE LETTER NGA LELET RASWADI -> KAWI LETTER VOCALIC LL
-  0xA98C: 0x11F0E,  // JAVANESE LETTER E -> KAWI LETTER E
-  0xA98D: 0x11F0F,  // JAVANESE LETTER AI -> KAWI LETTER AI
-  0xA98E: 0x11F10,  // JAVANESE LETTER O -> KAWI LETTER O
+	0xa9b3: 0x11f5a, // JAVANESE SIGN CECAK TELU -> KAWI SIGN NUKTA
 
-  0xA98F: 0x11F12,  // JAVANESE LETTER KA -> KAWI LETTER KA
-  0xA990: 0x11F12,  // JAVANESE LETTER KA SASAK -> KAWI LETTER KA ?
-  0xA991: 0x11F13,  // JAVANESE LETTER KA MURDA -> KAWI LETTER KHA
-  0xA992: 0x11F14,  // JAVANESE LETTER GA -> KAWI LETTER GA
-  0xA993: 0x11F15,  // JAVANESE LETTER GA MURDA -> KAWI LETTER GHA
-  0xA994: 0x11F16,  // JAVANESE LETTER NGA -> KAWI LETTER NGA
-  0xA995: 0x11F17,  // JAVANESE LETTER CA -> KAWI LETTER CA
-  0xA996: 0x11F18,  // JAVANESE LETTER CA MURDA -> KAWI LETTER CHA
-  0xA997: 0x11F19,  // JAVANESE LETTER JA -> KAWI LETTER JA
-  0xA998: 0x11F33,  // JAVANESE LETTER NYA MURDA -> KAWI LETTER JNYA ???
-  0xA999: 0x11F1A,  // JAVANESE LETTER JA MAHAPRANA -> KAWI LETTER JHA
-  0xA99A: 0x11F1B,  // JAVANESE LETTER NYA -> KAWI LETTER NYA
-  0xA99B: 0x11F1C,  // JAVANESE LETTER TTA -> KAWI LETTER TTA
-  0xA99C: 0x11F1D,  // JAVANESE LETTER TTA MAHAPRANA -> KAWI LETTER TTHA
-  0xA99D: 0x11F1E,  // JAVANESE LETTER DDA -> KAWI LETTER DDA
-  0xA99E: 0x11F1F,  // JAVANESE LETTER DDA MAHAPRANA -> KAWI LETTER DDHA
-  0xA99F: 0x11F20,  // JAVANESE LETTER NA MURDA -> KAWI LETTER NNA
-  0xA9A0: 0x11F21,  // JAVANESE LETTER TA -> KAWI LETTER TA
-  0xA9A1: 0x11F22,  // JAVANESE LETTER TA MURDA -> KAWI LETTER THA
-  0xA9A2: 0x11F23,  // JAVANESE LETTER DA -> KAWI LETTER DA
-  0xA9A3: 0x11F24,  // JAVANESE LETTER DA MAHAPRANA -> KAWI LETTER DHA
-  0xA9A4: 0x11F25,  // JAVANESE LETTER NA -> KAWI LETTER NA
-  0xA9A5: 0x11F26,  // JAVANESE LETTER PA -> KAWI LETTER PA
-  0xA9A6: 0x11F27,  // JAVANESE LETTER PA MURDA -> KAWI LETTER PHA
-  0xA9A7: 0x11F28,  // JAVANESE LETTER BA -> KAWI LETTER BA
-  0xA9A8: 0x11F29,  // JAVANESE LETTER BA MURDA -> KAWI LETTER BHA
-  0xA9A9: 0x11F2A,  // JAVANESE LETTER MA -> KAWI LETTER MA
-  0xA9AA: 0x11F2B,  // JAVANESE LETTER YA -> KAWI LETTER YA
-  0xA9AB: 0x11F2C,  // JAVANESE LETTER RA -> KAWI LETTER RA
-  0xA9AC: 0x11F2C,  // JAVANESE LETTER RA AGUNG -> KAWI LETTER RA?
-  0xA9AD: 0x11F2D,  // JAVANESE LETTER LA -> KAWI LETTER LA
-  0xA9AE: 0x11F2E,  // JAVANESE LETTER WA -> KAWI LETTER WA
-  0xA9AF: 0x11F2F,  // JAVANESE LETTER SA MURDA -> KAWI LETTER SHA
-  0xA9B0: 0x11F30,  // JAVANESE LETTER SA MAHAPRANA -> KAWI LETTER SSA
-  0xA9B1: 0x11F31,  // JAVANESE LETTER SA -> KAWI LETTER SA
-  0xA9B2: 0x11F32,  // JAVANESE LETTER HA -> KAWI LETTER HA
+	0xa9b4: 0x11f34, // JAVANESE VOWEL SIGN TARUNG -> KAWI VOWEL SIGN AA
+	0xa9b5: 0x11f35, // JAVANESE VOWEL SIGN TOLONG -> KAWI VOWEL SIGN ALTERNATE AA
+	0xa9b6: 0x11f36, // JAVANESE VOWEL SIGN WULU -> KAWI VOWEL SIGN I
+	0xa9b7: 0x11f37, // JAVANESE VOWEL SIGN WULU MELIK -> KAWI VOWEL SIGN II
+	0xa9b8: 0x11f38, // JAVANESE VOWEL SIGN SUKU -> KAWI VOWEL SIGN U
+	0xa9b9: 0x11f39, // JAVANESE VOWEL SIGN SUKU MENDUT -> KAWI VOWEL SIGN UU
+	0xa9ba: 0x11f3e, // JAVANESE VOWEL SIGN TALING -> KAWI VOWEL SIGN E
+	0xa9bb: 0x11f3f, // JAVANESE VOWEL SIGN DIRGA MURE -> KAWI VOWEL SIGN AI
+	0xa9bc: 0x11f40, // JAVANESE VOWEL SIGN PEPET -> KAWI VOWEL SIGN EU
 
-  0xA9B4: 0x11F34,  // JAVANESE VOWEL SIGN TARUNG -> KAWI VOWEL SIGN AA
-  0xA9B5: 0x11F35,  // JAVANESE VOWEL SIGN TOLONG -> KAWI VOWEL SIGN ALTERNATE AA
-  0xA9B6: 0x11F36,  // JAVANESE VOWEL SIGN WULU -> KAWI VOWEL SIGN I
-  0xA9B7: 0x11F37,  // JAVANESE VOWEL SIGN WULU MELIK -> KAWI VOWEL SIGN II
-  0xA9B8: 0x11F38,  // JAVANESE VOWEL SIGN SUKU -> KAWI VOWEL SIGN U
-  0xA9B9: 0x11F39,  // JAVANESE VOWEL SIGN SUKU MENDUT -> KAWI VOWEL SIGN UU
-  // No Javanese equivalent of 0x11F3A KAWI VOWEL SIGN VOCALIC R
-  0xA9BA: 0x11F3E,  // JAVANESE VOWEL SIGN TALING -> KAWI VOWEL SIGN E
-  0xA9BB: 0x11F3F,  // JAVANESE VOWEL SIGN DIRGA MURE -> KAWI VOWEL SIGN AI
-  0xA9BC: 0x11F40,  // JAVANESE VOWEL SIGN PEPET -> KAWI VOWEL SIGN EU
+	0xa9bd: 0x11f3a, // JAVANESE CONSONANT SIGN KERET -> KAWI VOWEL SIGN VOCALIC R
+	0xa9be: [0x11f42, 0x11f2b], // JAVANESE CONSONANT SIGN PENGKAL -> KAWI CONJOINER + KAWI LETTER YA
+	0xa9bf: [0x11f42, 0x11f2c], // JAVANESE CONSONANT SIGN CAKRA -> KAWI CONJOINER + KAWI LETTER RA
 
-  0xA9C8: 0x11F43,  // JAVANESE PADA LINGSA -> KAWI DANDA
-  0xA9C9: 0x11F44,  // JAVANESE PADA LUNGSI -> KAWI DOUBLE DANDA
+	// Handle special case for JAVANESE PANGKON
+	0xa9c0: function (nextCodepoint) {
+		if (nextCodepoint === 0x200c) {
+			return [0x11f41, null];
+		}
+		// A984 to A988 and A98C to A98E are independent vowel characters but attestation of the characters being conjoined is yet to be seen. Setting them to be "conjoined" as well for the time being
+		else if (nextCodepoint >= 0xa984 && nextCodepoint <= 0xa9b2) {
+			return [0x11f42];
+		} else {
+			return [0x11f41];
+		}
+	},
+
+	0xa9c8: 0x11f43, // JAVANESE PADA LINGSA -> KAWI DANDA
+	0xa9c9: 0x11f44 // JAVANESE PADA LUNGSI -> KAWI DOUBLE DANDA
+};
+
+// Add mappings for digits
+for (let i = 0; i <= 9; i++) {
+	mapping[0xa9d0 + i] = [0x11f50 + i];
 }
 
-// Digits
-for (var i of [0,1,2,3,4,5,6,7,8,9]) {
-    mapping[0xA9D0 + i] = 0x11F50 + i;
-}
+// Handle input event
+$("#input").on("input", function () {
+	const text = $("#input").val();
+	const chars = Array.from(text);
+	const output_chars = [];
 
-$("#input").on("input", function() {
-    var text = $("#input").val();
-    var chars = Array.from(text);
-    var output_chars = [];
-    for (var char of chars) {
-        var codepoint = char.charCodeAt(0);
-        output_chars.push(mapping[codepoint] || codepoint);
-    }
-    $("#output").val(String.fromCodePoint(...output_chars));
-})
-        </script>
-    </body>
+	for (let i = 0; i < chars.length; i++) {
+		const char = chars[i];
+		const codepoint = char.charCodeAt(0);
+		const nextCodepoint = chars[i + 1] && chars[i + 1].charCodeAt(0);
+		const mappedValue = mapping[codepoint];
+
+		if (typeof mappedValue === "function") {
+			// Handle special cases with function
+			const result = mappedValue(nextCodepoint);
+			output_chars.push(...result.filter((v) => v !== null));
+			if (result[1] === null) {
+				i++;
+			}
+		} else if (mappedValue) {
+			// Add mapped value to output
+			if (Array.isArray(mappedValue)) {
+				output_chars.push(...mappedValue);
+			} else {
+				output_chars.push(mappedValue);
+			}
+		} else {
+			// No mapping found, add original value to output
+			output_chars.push(codepoint);
+		}
+	}
+
+	// Update output with converted text
+	$("#output").val(String.fromCodePoint(...output_chars));
+});
+	</script>
+</body>
 </html>
