@@ -5585,6 +5585,12 @@ glyphname = "uu-kawi";
 kernLeft = "u-kawi";
 layers = (
 {
+anchors = (
+{
+name = top;
+pos = (387,833);
+}
+);
 background = {
 shapes = (
 {
@@ -5660,6 +5666,12 @@ ref = "u-kawi";
 width = 760;
 },
 {
+anchors = (
+{
+name = top;
+pos = (433,853);
+}
+);
 layerId = "FD202070-6699-4318-8E83-95414ED89137";
 shapes = (
 {
