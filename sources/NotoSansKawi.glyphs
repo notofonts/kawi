@@ -1,5 +1,5 @@
 {
-.appVersion = "3195";
+.appVersion = "3207";
 .formatVersion = 3;
 axes = (
 {
@@ -243,9 +243,11 @@ lookup postForms {
 	sub virama-kawi rVocalic-kawi by vowelVocalicR-kawi.post;
 } postForms;
 
-lookup vowelAaAltForms {
-	sub [pa-kawi la-kawi] vowelAa-kawi' by vowelAa-kawi.alt;
-} vowelAaAltForms;
+# See #14
+
+#lookup vowelAaAltForms {
+#	sub [pa-kawi la-kawi] vowelAa-kawi' by vowelAa-kawi.alt;
+#} vowelAaAltForms;
 
 ";
 tag = pstf;
