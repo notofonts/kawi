@@ -58952,7 +58952,6 @@ metricLeft = "=45";
 metricRight = "=|";
 script = kawi;
 subCategory = Nonspacing;
-unicode = 73532;
 },
 {
 category = Mark;
