@@ -1,8 +1,9 @@
-googleFonts: true
-sources:
-- NotoSansKawi.glyphs
+buildVariable: true
 familyName: Noto Sans Kawi
+googleFonts: true
 includeSubsets:
 - from: Noto Sans
   name: GF_Latin_Core
-buildVariable: true
+recipeProvider: noto
+sources:
+- NotoSansKawi.glyphs
