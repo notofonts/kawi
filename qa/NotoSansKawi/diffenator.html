@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Diffenator3</title>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+		crossorigin="anonymous"></script>
+	<style type="text/css">
+		@font-face {
+      font-family: "Font Before";
+      src: url();
+    }
+
+    @font-face {
+      font-family: "Font After";
+      src: url();
+    }
+
+    .font-before, .font-after {
+      font-variation-settings: "wght" 400, "wdth" 100;
+    }
+
+    .font-before {
+      font-family: "Font Before", "Adobe Notdef";
+    }
+
+    .font-after {
+      font-family: "Font After", "Adobe Notdef";
+    }
+
+	:root {
+	--node-pt-size: 40px;
+	}
+
+	@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: #b3d4f5 !important;
+    font-family: "Montserrat", sans-serif !important;
+}
+
+.nav-pills .nav-item.show .nav-link, .nav-pills .nav-link.active {
+    background-color: #ced9e4 !important;
+}
+.nav-item {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 2px;
+}
+
+.nav-pills .nav-link{
+    background-color: #9fcaf5 !important;
+}
+h4 {
+    color: #6f7882 !important;
+}
+
+@font-face {
+    font-family: "Adobe NotDef";
+    src: url(https://cdn.jsdelivr.net/gh/adobe-fonts/adobe-notdef/AND-Regular.ttf);
+}
+
+.box-title {
+    width: 100%;
+    font-size: 8pt;
+    font-weight: 700;
+    border-top: 1px solid black;
+    padding-top: 5px;
+    margin-bottom: 10pt;
+    display: block;
+}
+
+.box {
+    margin-bottom: 20pt;
+    width: 100%;
+    float: left;
+}
+
+.box-text {}
+
+#ui-nav {
+    position: fixed;
+    right: 20px;
+    z-index: 100;
+}
+
+#font-toggle {}
+
+.ui-nav-item {
+    display: block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+    text-align: center;
+    color: white;
+    background-color: black;
+    display: block;
+    font-size: 14pt;
+    padding: 5px;
+    margin: 2px;
+}
+
+/* Stuff needed for the table differ */
+body {
+    font-family: Helvetica;
+}
+
+.node {
+    font-family: courier;
+    cursor: pointer;
+    position: relative;
+    left: 30px;
+    padding: 5px;
+    display: block;
+    border: 1px dashed grey;
+    background-color: #e9e9ee;
+}
+
+.header {
+    font-weight: bold;
+}
+
+.attr-before {
+    color: green;
+    cursor: text;
+}
+
+.attr-after {
+    color: red;
+    cursor: text;
+}
+
+.leaf {
+    font-weight: bold;
+}
+
+.old .cell .new {
+    display: none;
+}
+
+.new .cell .old {
+    display: none;
+}
+
+.both .cell .old {
+    opacity: 0.75;
+    color: red;
+}
+
+.both .cell .new {
+    opacity: 0.75;
+    position: absolute;
+    top: 0;
+    color: green;
+}
+
+.spacer {
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+#ot-panel {
+    max-height: 400px;
+    overflow-y: scroll;
+    background: white;
+    padding: 10px;
+    display: none;
+   }
+
+   .cell{
+    z-index: -100;
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 5pt;
+    margin: 5pt;
+    width: 50pt;
+    font-size: var(--node-pt-size);
+    line-height: calc(var(--node-pt-size) * 1.5);
+  }
+  .cell-word{
+    z-index: -100;
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 5pt;
+    margin: 5pt;
+    font-size: var(--node-pt-size);
+    line-height: calc(var(--node-pt-size) * 1.5);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+  .cell-glyph{
+    z-index: -100;
+    float: left;
+    display: block;
+    text-align: center;
+    border-radius: 5pt;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    padding: 5pt;
+    margin: 5pt;
+    width: calc(var(--node-pt-size) * 2);
+    min-height: calc(var(--node-pt-size) * 2);
+    font-size: var(--node-pt-size);
+  }
+  .cell-glyph.font-before, .cell-word.font-before {
+    background: #eff6f2;
+  }
+  .cell-glyph.font-after, .cell-word.font-after {
+    background: #f7f4f4;
+  }
+
+  .cell-glyph:hover {
+    box-shadow: none;
+    background: #f0f0f5;
+  }
+  .cat-strings .cell {
+    clear: both;
+    position: static;
+    float: none;
+    text-align: left;
+  }
+  .codepoint {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 10pt;
+    line-height: 10pt;
+  }
+  .box-title {
+    clear: both;
+  }
+  .node.closed::before {
+    content: "+";
+    margin-right: 5pt;
+  }
+  .node.open::before {
+    content: "-";
+    margin-right: 5pt;
+  }
+
+  .tooltip pre {
+    background-color: #6f7882;
+    padding: 5px;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+  .tooltip {
+    line-height: 1em;
+  }
+  .tooltip-inner {
+    max-width: 300px;
+  }
+
+  h1,h2,h3,h4,h5 {
+    clear: both;
+  }
+
+  #locationnav li {
+    white-space: wrap;
+  }
+
+  #userdefined div { width: 100%; }
+  
+/* The following rules are used in the WASM version, not in the CLI version.
+   But we keep them here so we can share them between the two versions. */
+
+   .modal-dialog {
+    max-width: 100% !important;
+    margin: 0 !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    display: flex;
+  }
+
+  .fontdrop {
+    padding: 30px;
+    border-radius: 20px;
+    outline: 3px dashed #ffffffff;
+    outline-offset: -20px;
+  }
+
+  #fontbefore {
+    background-color: #ddffdddd;
+  }
+
+  #fontafter {
+    background-color: #ffdddddd;
+  }
+
+  .dragging {
+    background-image: linear-gradient(rgb(0 0 0/5%) 0 0);
+    outline: 5px dashed #ffffffff;
+  }
+
+  #diffkerns {
+    max-height: 500px;
+    overflow-y: scroll;
+  }
+		</style>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+	integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+		<div id="ui-nav">
+		  <div class="ui-nav-item" id="fonttoggle">Old</div>
+		  <div class="ui-nav-item" id="fontanimate">Animate</div>
+		  <div id="axes">
+		  </div>
+		</div>
+	
+	<div class="row">
+		<div class="col-2">
+			<ul class="nav nav-pills" id="locationnav">
+			</ul>
+		</div>
+		<div class="col-9 mt-3">
+			<div id="title"></div>
+			<div id="cmapdiff"> </div>
+			<div id="main"></div>
+			<div id="userdefined">
+				<h4>User defined sample text</h4>
+				<div contenteditable="true" class="font-before cell-word">
+					You can type your own text here to see it previewed in the fonts.
+				</div>
+				<div style="clear: both"></div>
+			</div>
+			<div id="diffkerns"> </div>
+			<div id="difftable"> </div>
+		</div>
+	</div>
+	<script type="module">
+		function renderTableDiff(node, toplevel) {
+  var wrapper = $("<div> </div>");
+  if (!node) {
+    return wrapper;
+  }
+  if (Array.isArray(node) && node.length == 2) {
+    var before = $("<span/>");
+    before.addClass("attr-before");
+    before.html(" " + node[0] + " ");
+    var after = $("<span/>");
+    after.addClass("attr-after");
+    after.append(renderTableDiff(node[1], true).children());
+    wrapper.append(before);
+    wrapper.append(after);
+    return wrapper;
+  }
+  if (node.constructor != Object) {
+    var thing = $("<span/>");
+    thing.html(node);
+    wrapper.append(thing);
+    return wrapper;
+  }
+  for (const [key, value] of Object.entries(node)) {
+    var display = $("<div/>");
+    display.addClass("node");
+    if (!toplevel) {
+      display.hide();
+    }
+    display.append(key);
+    display.append(renderTableDiff(value, false).children());
+    if (display.children(".node").length > 0) {
+      display.addClass("closed");
+    }
+    wrapper.append(display);
+  }
+  return wrapper;
+}
+
+function addAGlyph(glyph, where) {
+  let title = "";
+  if (glyph.name) {
+    title = "name: " + glyph.name;
+  }
+  let cp =
+    "<br>U+" +
+    glyph.string.codePointAt(0).toString(16).padStart(4, "0").toUpperCase();
+  where.append(`
+        <div class="cell-glyph font-before">
+        <div data-toggle="tooltip" data-html="true" data-title="${glyph.differing_pixels} pixels"> ${glyph.string}
+        <div class="codepoint" data-toggle="tooltip" data-html="true" data-title="${title}">
+		${cp}
+        </div>
+        </div>
+    `);
+}
+
+function addAWord(diff, where) {
+  if (!diff.buffer_b) {
+    diff.buffer_b = diff.buffer_a;
+  }
+  where.append(`
+		<div class="cell-word font-before">
+		<span data-toggle="tooltip" data-html="true" data-title="Before: <pre>${diff.buffer_a}</pre>After: <pre>${diff.buffer_b}</pre><br>difference: ${diff.differing_pixels} pixels">
+		${diff.word}
+		</span>
+		</div>
+	`);
+}
+
+function diffTables(report) {
+  $("#difftable").empty();
+  $("#difftable").append(`<h4 class="mt-2 box-title">Table-level details</h4>`);
+  $("#difftable").append(
+    renderTableDiff({ tables: report["tables"] }, true).children()
+  );
+  $("#difftable .node").on("click", function (e) {
+    $(this).toggleClass("closed open");
+    $(this).children(".node").toggle();
+    e.stopPropagation();
+  });
+}
+function diffKerns(report) {
+  $("#diffkerns").empty();
+  $("#diffkerns").append(`<h4 class="mt-2">Modified Kerns</h4>`);
+  $("#diffkerns").append(
+    `<table class="table table-striped" id="diffkerns"><tr><th>Pair</th><th>Old</old><th>New</th></table>`
+  );
+  for (let [pair, value] of Object.entries(report["kerns"])) {
+    if (pair == "error") {
+      $("#diffkerns").append(`<p class="text-danger">Error: ${value}</p>`);
+      continue;
+    } else {
+      let row = $("<tr>");
+      row.append(`<td>${pair}</td>`);
+      row.append(`<td>${serializeKernBefore(value)}</td>`);
+      row.append(`<td>${serializeKernAfter(value)}</td>`);
+      $("#diffkerns table").append(row);
+    }
+  }
+}
+
+function serializeKernBefore(kern) {
+  if (Array.isArray(kern)) {
+    return serializeKern(kern[0], -1);
+  }
+  return serializeKern(kern, 0);
+}
+
+function serializeKernAfter(kern) {
+  if (Array.isArray(kern)) {
+    return serializeKern(kern[1], -1);
+  }
+  return serializeKern(kern, 1);
+}
+
+function serializeKern(kern, index) {
+  let string = "";
+  if (kern === null || kern === undefined) {
+    return "(null)";
+  }
+  if (kern.x) {
+    string += serializeKernValue(kern.x, index);
+  } else if (kern.y) {
+    string = "0";
+  }
+
+  if (kern.y) {
+    string += "," + serializeKernValue(kern.y, index);
+  }
+  if (!kern.x_placement && !kern.y_placement) {
+    return string;
+  }
+  string += "@";
+  if (kern.x_placement) {
+    string += serializeKernValue(kern.x_placement, index);
+  } else if (kern.y_placement) {
+    string += "0";
+  }
+  if (kern.y_placement) {
+    string += "," + serializeKernValue(kern.y_placement, index);
+  }
+  return string;
+}
+
+function serializeKernValue(kern, index) {
+  if (typeof kern == "number") {
+    return kern;
+  }
+  let string = "(";
+  let verybig = Object.entries(kern).length > 5;
+  for (let [key, value] of Object.entries(kern)) {
+    if (key == "default") {
+      string += value[index] + " ";
+    } else {
+      string += value[index] + "@" + key + " ";
+    }
+    if (verybig) {
+      string += "<br>";
+    }
+  }
+  return string.trim() + ")";
+}
+
+function cmapDiff(report) {
+  if (report.cmap_diff && (report.cmap_diff.new || report.cmap_diff.missing)) {
+    $("#cmapdiff").append(
+      `<h4 class="mt-2">Added and Removed Encoded Glyphs</h4>`
+    );
+    if (report["cmap_diff"]["new"]) {
+      $("#cmapdiff").append(`<h4 class="box-title">Added Glyphs</h4>`);
+      let added = $("<div>");
+      for (let glyph of report["cmap_diff"]["new"]) {
+        addAGlyph(glyph, added);
+      }
+      $("#cmapdiff").append(added);
+    }
+
+    if (report["cmap_diff"]["missing"]) {
+      $("#cmapdiff").append(`<h4 class="box-title">Removed Glyphs</h4>`);
+      let missing = $("<div>");
+      for (let glyph of report["cmap_diff"]["missing"]) {
+        addAGlyph(glyph, missing);
+      }
+      $("#cmapdiff").append(missing);
+    }
+  } else {
+    $("#cmapdiff").append(`<p>No changes to encoded glyphs</p>`);
+  }
+}
+
+function setupAnimation() {
+  $("#fonttoggle").click(function () {
+    if ($(this).text() == "Old") {
+      $(this).text("New");
+      $(".font-before").removeClass("font-before").addClass("font-after");
+    } else {
+      $(this).text("Old");
+      $(".font-after").removeClass("font-after").addClass("font-before");
+    }
+  });
+
+  let animationHandle;
+  function animate() {
+    $("#fonttoggle").click();
+    animationHandle = setTimeout(animate, 1000);
+  }
+  $("#fontanimate").click(function () {
+    if ($(this).text() == "Animate") {
+      $(this).text("Stop");
+      animate();
+    } else {
+      $(this).text("Animate");
+      clearTimeout(animationHandle);
+    }
+  });
+}
+
+export {
+  renderTableDiff,
+  addAGlyph,
+  addAWord,
+  cmapDiff,
+  diffTables,
+  diffKerns,
+  setupAnimation,
+};
+
+	var report = {"tables":{"GPOS":{"script_list":{"DFLT/dflt":{"lookups":{"1":[2,1],"3":[null,4]}},"kawi/dflt":{"lookups":{"0":[1,0],"1":[2,1],"2":[3,2],"3":[null,3],"4":[null,4]}}},"feature_list":{"kern":{"1":[31,null]},"mark":{"0":[32,36],"1":[null,37]},"mkmk":[[33,34],null],"abvm":[null,[32,33]],"blwm":[null,[34,35]],"dist":[null,[31]]},"lookup_list":{"31":{"0":{"classes":{"@CLASS_L_0":{"0":["phakawi.post","pakawi.post.short"],"1":["sakawi.post","jhakawi.post"],"2":["pakawi.post","sakawi.post.short"],"3":["ssakawi.post","phakawi.post.short"],"4":["yakawi.post","ssakawi.post"],"5":["ssakawi.post.short","yakawi.post"],"6":["pakawi.post.short","pakawi.post"],"7":["sakawi.post.short","phakawi.post"],"8":["phakawi.post.short","sakawi.post"],"9":["jhakawi.post","ssakawi.post.short"]}}}},"32":{"0":{"marks":{"anchor_1":[{"vowelUkawi":{"x":{"default":201,"wght=700":236},"y":0},"vowelUukawi":{"x":{"default":345,"wght=700":375},"y":0},"vowelVocalicRkawi":{"x":{"default":588,"wght=700":614},"y":0},"vowelVocalicLkawi":{"x":{"default":448,"wght=700":463},"y":0},"viramakawi":{"x":{"wght=700":232,"default":219},"y":0},"bakawi.below":{"x":{"default":540,"wght=700":545},"y":0},"bhakawi.below":{"x":{"wght=700":437,"default":412},"y":0},"cakawi.below":{"x":{"wght=700":573,"default":577},"y":0},"chakawi.below":{"x":623,"y":0},"dakawi.below":{"x":{"default":478,"wght=700":458},"y":0},"ddakawi.below":{"x":{"default":606,"wght=700":572},"y":0},"ddhakawi.below":{"x":{"default":611,"wght=700":559},"y":0},"dhakawi.below":{"x":{"wght=700":594,"default":589},"y":0},"gakawi.below":{"x":{"wght=700":559,"default":532},"y":0},"ghakawi.below":{"x":{"wght=700":863,"default":847},"y":0},"hakawi.below":{"x":{"wght=700":610,"default":581},"y":0},"jakawi.below":{"x":{"wght=700":432,"default":420},"y":0},"kakawi.below":{"x":{"default":539,"wght=700":591},"y":0},"khakawi.below":{"x":{"default":541,"wght=700":576},"y":0},"lakawi.below":{"x":{"wght=700":610,"default":605},"y":0},"lakawi.below2":{"x":{"wght=700":570,"default":575},"y":0},"makawi.below":{"x":459,"y":0},"nakawi.below":{"x":{"default":363,"wght=700":376},"y":0},"ngakawi.below":{"x":{"default":480,"wght=700":509},"y":0},"nnakawi.below":{"x":{"default":768,"wght=700":814},"y":0},"nyakawi.below":{"x":{"wght=700":728,"default":712},"y":0},"rakawi.below":{"x":{"default":620,"wght=700":650},"y":0},"shakawi.below":{"x":{"wght=700":466,"default":425},"y":0},"ssakawi.below":{"x":{"default":706,"wght=700":650},"y":0},"takawi.below":{"x":{"default":550,"wght=700":611},"y":0},"thakawi.below":{"x":{"default":506,"wght=700":535},"y":0},"ttakawi.below":{"x":429,"y":0},"tthakawi.below":{"x":{"default":433,"wght=700":429},"y":0},"vowelUkawi.below":{"x":{"wght=700":213,"default":201},"y":0},"vowelUukawi.below":{"x":{"default":279,"wght=700":305},"y":0},"wakawi.below":{"x":{"default":484,"wght=700":506},"y":0},"wakawi.below2":{"x":{"wght=700":540,"default":535},"y":0},"wakawi.below2.low":{"x":{"default":535,"wght=700":540},"y":0}},null]},"bases":{"ikawi":{"anchor_1":[{"x":{"wght=700":549,"default":577},"y":0},null]},"uukawi":{"anchor_0":{"x":{"wght=700":[341,433],"default":[330,387]},"y":[544,{"wght=700":853,"default":833}]}},"rVocalickawi":{"anchor_1":[{"x":{"wght=700":557,"default":532},"y":0},null]},"rrVocalickawi":{"anchor_1":[{"x":{"wght=700":830,"default":773},"y":0},null]},"kakawi":{"anchor_1":[{"x":{"wght=700":645,"default":632},"y":0},null]},"khakawi":{"anchor_1":[{"x":{"default":647,"wght=700":661},"y":0},null]},"gakawi":{"anchor_1":[{"x":{"default":589,"wght=700":601},"y":0},null]},"ghakawi":{"anchor_1":[{"x":{"default":997,"wght=700":995},"y":0},null]},"ngakawi":{"anchor_1":[{"x":545,"y":0},null]},"cakawi":{"anchor_1":[{"x":{"default":504,"wght=700":445},"y":0},null]},"chakawi":{"anchor_1":[{"x":{"wght=700":612,"default":628},"y":0},null]},"jakawi":{"anchor_1":[{"x":{"wght=700":510,"default":500},"y":0},null]},"jhakawi":{"anchor_1":[{"x":855,"y":0},null]},"nyakawi":{"anchor_1":[{"x":{"wght=700":843,"default":834},"y":0},null]},"ttakawi":{"anchor_1":[{"x":{"wght=700":485,"default":454},"y":0},null]},"tthakawi":{"anchor_1":[{"x":{"default":575,"wght=700":538},"y":0},null]},"ddakawi":{"anchor_1":[{"x":{"default":612,"wght=700":592},"y":0},null]},"ddhakawi":{"anchor_1":[{"x":{"default":615,"wght=700":600},"y":0},null]},"nnakawi":{"anchor_1":[{"x":{"wght=700":938,"default":886},"y":0},null]},"takawi":{"anchor_1":[{"x":{"default":643,"wght=700":646},"y":0},null]},"thakawi":{"anchor_1":[{"x":{"default":493,"wght=700":470},"y":0},null]},"dakawi":{"anchor_1":[{"x":515,"y":0},null]},"dhakawi":{"anchor_1":[{"x":{"default":628,"wght=700":633},"y":0},null]},"nakawi":{"anchor_1":[{"x":{"default":441,"wght=700":449},"y":0},null]},"pakawi":{"anchor_1":[{"x":557,"y":0},null]},"phakawi":{"anchor_1":[{"x":{"default":673,"wght=700":680},"y":0},null]},"bakawi":{"anchor_1":[{"x":{"default":629,"wght=700":635},"y":0},null]},"bhakawi":{"anchor_1":[{"x":{"wght=700":502,"default":472},"y":0},null]},"makawi":{"anchor_1":[{"x":{"wght=700":624,"default":593},"y":0},null]},"yakawi":{"anchor_1":[{"x":{"default":786,"wght=700":830},"y":0},null]},"rakawi":{"anchor_1":[{"x":{"default":223,"wght=700":258},"y":0},null]},"lakawi":{"anchor_1":[{"x":{"default":685,"wght=700":675},"y":0},null]},"wakawi":{"anchor_1":[{"x":{"wght=700":465,"default":488},"y":0},null]},"shakawi":{"anchor_1":[{"x":{"wght=700":561,"default":534},"y":0},null]},"ssakawi":{"anchor_1":[{"x":560,"y":0},null]},"sakawi":{"anchor_1":[{"x":{"default":521,"wght=700":524},"y":0},null]},"hakawi":{"anchor_1":[{"x":{"default":726,"wght=700":762},"y":0},null]},"hakawi.post":[{"anchor_1":{"x":{"default":445,"wght=700":434},"y":0}},null],"jhakawi.post":{"anchor_1":[{"x":{"wght=700":175,"default":150},"y":-550},null]},"pakawi.post":{"anchor_1":[{"x":{"default":171,"wght=700":180},"y":-550},null]},"phakawi.post":{"anchor_1":[{"x":{"default":251,"wght=700":270},"y":-550},null]},"sakawi.post":{"anchor_1":[{"x":{"wght=700":180,"default":171},"y":-550},null]},"ssakawi.post":{"anchor_1":[{"x":{"wght=700":180,"default":171},"y":-550},null]},"vowelVocalicRkawi.post":{"anchor_1":[{"x":{"wght=700":180,"default":171},"y":-420},null]},"yakawi.post":{"anchor_1":[{"x":{"default":171,"wght=700":161},"y":-550},null]},"pakawi.post.short":{"anchor_1":[{"x":{"wght=700":180,"default":171},"y":-420},null]},"phakawi.post.short":{"anchor_1":[{"x":{"default":211,"wght=700":235},"y":-420},null]},"rakawi.post.002":[{"anchor_1":{"x":{"default":516,"wght=700":560},"y":-550}},null],"sakawi.post.short":{"anchor_1":[{"x":{"wght=700":180,"default":171},"y":-420},null]},"ssakawi.post.short":{"anchor_1":[{"x":{"default":171,"wght=700":180},"y":-420},null]},"yakawi.post.below":{"anchor_1":[{"x":{"default":171,"wght=700":181},"y":-954},null]},"yakawi.post.below2":{"anchor_1":[{"x":{"default":171,"wght=700":161},"y":-954},null]},"eightkawi":{"anchor_1":[{"x":{"default":524,"wght=700":536},"y":0},null]},"uni25CC":[{"anchor_0":{"x":339,"y":544},"anchor_1":{"x":565,"y":0}},null]}}},"33":{"0":{"marks":{"anchor_0":{"vowelUkawi":[{"x":{"default":201,"wght=700":236},"y":0},null],"vowelUukawi":[{"x":{"default":345,"wght=700":375},"y":0},null],"vowelVocalicRkawi":[{"x":{"default":588,"wght=700":614},"y":0},null],"vowelVocalicLkawi":[{"x":{"default":448,"wght=700":463},"y":0},null],"viramakawi":[{"x":{"default":219,"wght=700":232},"y":0},null],"bakawi.below":[{"x":{"wght=700":545,"default":540},"y":0},null],"bhakawi.below":[{"x":{"default":412,"wght=700":437},"y":0},null],"cakawi.below":[{"x":{"wght=700":573,"default":577},"y":0},null],"chakawi.below":[{"x":623,"y":0},null],"dakawi.below":[{"x":{"default":478,"wght=700":458},"y":0},null],"ddakawi.below":[{"x":{"default":606,"wght=700":572},"y":0},null],"ddhakawi.below":[{"x":{"wght=700":559,"default":611},"y":0},null],"dhakawi.below":[{"x":{"default":589,"wght=700":594},"y":0},null],"gakawi.below":[{"x":{"default":532,"wght=700":559},"y":0},null],"ghakawi.below":[{"x":{"wght=700":863,"default":847},"y":0},null],"hakawi.below":[{"x":{"default":581,"wght=700":610},"y":0},null],"jakawi.below":[{"x":{"wght=700":432,"default":420},"y":0},null],"kakawi.below":[{"x":{"default":539,"wght=700":591},"y":0},null],"khakawi.below":[{"x":{"default":541,"wght=700":576},"y":0},null],"lakawi.below":[{"x":{"wght=700":610,"default":605},"y":0},null],"lakawi.below2":[{"x":{"wght=700":570,"default":575},"y":0},null],"makawi.below":[{"x":459,"y":0},null],"nakawi.below":[{"x":{"wght=700":376,"default":363},"y":0},null],"ngakawi.below":[{"x":{"default":480,"wght=700":509},"y":0},null],"nnakawi.below":[{"x":{"wght=700":814,"default":768},"y":0},null],"nyakawi.below":[{"x":{"wght=700":728,"default":712},"y":0},null],"rakawi.below":[{"x":{"default":620,"wght=700":650},"y":0},null],"shakawi.below":[{"x":{"default":425,"wght=700":466},"y":0},null],"ssakawi.below":[{"x":{"wght=700":650,"default":706},"y":0},null],"takawi.below":[{"x":{"wght=700":611,"default":550},"y":0},null],"thakawi.below":[{"x":{"wght=700":535,"default":506},"y":0},null],"ttakawi.below":[{"x":429,"y":0},null],"tthakawi.below":[{"x":{"default":433,"wght=700":429},"y":0},null],"vowelUkawi.below":[{"x":{"default":201,"wght=700":213},"y":0},null],"vowelUukawi.below":[{"x":{"wght=700":305,"default":279},"y":0},null],"wakawi.below":[{"x":{"default":484,"wght=700":506},"y":0},null],"wakawi.below2":[{"x":{"wght=700":540,"default":535},"y":0},null],"wakawi.below2.low":[{"x":{"wght=700":540,"default":535},"y":0},null],"repha_anusvarakawi":[null,{"x":384,"y":544}],"repha_candrabindukawi":[null,{"x":{"wght=700":424,"default":360},"y":544}],"repha_vowelEukawi":[null,{"x":{"wght=700":446,"default":428},"y":544}],"repha_vowelEu_anusvarakawi":[null,{"x":{"wght=700":446,"default":428},"y":544}],"repha_vowelIkawi":[null,{"x":{"default":392,"wght=700":413},"y":544}],"repha_vowelIkawi_anusvarakawi":[null,{"x":{"default":392,"wght=700":413},"y":544}],"repha_vowelIikawi":[null,{"x":{"wght=700":413,"default":392},"y":544}],"repha_vowelIikawi_anusvarakawi":[null,{"x":{"default":392,"wght=700":413},"y":544}],"candrabindukawi":[null,{"x":{"wght=700":281,"default":242},"y":544}],"anusvarakawi":[null,{"x":{"default":121,"wght=700":151},"y":544}],"rephakawi":[null,{"x":{"wght=700":320,"default":329},"y":544}],"vowelIkawi":[null,{"x":{"wght=700":287,"default":263},"y":544}],"vowelIikawi":[null,{"x":{"default":263,"wght=700":287},"y":544}],"vowelEukawi":[null,{"x":{"wght=700":309,"default":280},"y":544}],"vowelEu_anusvarakawi":[null,{"x":{"default":280,"wght=700":309},"y":544}],"vowelEu_candrabindukawi":[null,{"x":{"default":242,"wght=700":281},"y":544}],"vowelI_anusvarakawi":[null,{"x":{"wght=700":287,"default":263},"y":544}],"vowelI_candrabindukawi":[null,{"x":{"default":263,"wght=700":287},"y":{"default":934,"wght=700":968}}],"vowelIi_anusvarakawi":[null,{"x":{"default":263,"wght=700":287},"y":544}],"vowelIi_candrabindukawi":[null,{"x":{"wght=700":287,"default":263},"y":{"wght=700":968,"default":934}}]}},"basemarks":{"bakawi.below":[{"anchor_0":{"x":{"default":540,"wght=700":545},"y":-550}},null],"bhakawi.below":[{"anchor_0":{"x":{"default":412,"wght=700":437},"y":-550}},null],"cakawi.below":[{"anchor_0":{"x":{"default":577,"wght=700":573},"y":-550}},null],"chakawi.below":[{"anchor_0":{"x":603,"y":-550}},null],"dakawi.below":[{"anchor_0":{"x":{"default":476,"wght=700":456},"y":-550}},null],"ddakawi.below":[{"anchor_0":{"x":{"default":606,"wght=700":572},"y":{"default":-570,"wght=700":-550}}},null],"ddhakawi.below":[{"anchor_0":{"x":{"default":611,"wght=700":559},"y":{"wght=700":-550,"default":-570}}},null],"dhakawi.below":[{"anchor_0":{"x":{"wght=700":594,"default":589},"y":-550}},null],"gakawi.below":[{"anchor_0":{"x":{"wght=700":559,"default":532},"y":-550}},null],"ghakawi.below":[{"anchor_0":{"x":{"default":847,"wght=700":863},"y":-550}},null],"hakawi.below":[{"anchor_0":{"x":{"default":581,"wght=700":610},"y":-550}},null],"jakawi.below":[{"anchor_0":{"x":{"default":420,"wght=700":432},"y":-550}},null],"kakawi.below":[{"anchor_0":{"x":{"default":539,"wght=700":591},"y":-550}},null],"khakawi.below":[{"anchor_0":{"x":{"wght=700":576,"default":541},"y":-550}},null],"lakawi.below":[{"anchor_0":{"x":{"wght=700":610,"default":605},"y":-550}},null],"lakawi.below2":[{"anchor_0":{"x":{"default":575,"wght=700":570},"y":-460}},null],"makawi.below":[{"anchor_0":{"x":459,"y":-550}},null],"nakawi.below":[{"anchor_0":{"x":{"default":363,"wght=700":376},"y":-550}},null],"ngakawi.below":[{"anchor_0":{"x":{"default":480,"wght=700":509},"y":-550}},null],"nnakawi.below":[{"anchor_0":{"x":{"wght=700":814,"default":768},"y":-550}},null],"nyakawi.below":[{"anchor_0":{"x":{"wght=700":728,"default":712},"y":-550}},null],"rakawi.below":[{"anchor_0":{"x":{"default":620,"wght=700":650},"y":{"wght=700":-430,"default":-370}}},null],"shakawi.below":[{"anchor_0":{"x":{"default":425,"wght=700":466},"y":-550}},null],"ssakawi.below":[{"anchor_0":{"x":{"default":706,"wght=700":650},"y":{"wght=700":-430,"default":-420}}},null],"takawi.below":[{"anchor_0":{"x":{"default":550,"wght=700":611},"y":-550}},null],"thakawi.below":[{"anchor_0":{"x":{"default":487,"wght=700":517},"y":-550}},null],"ttakawi.below":[{"anchor_0":{"x":429,"y":-550}},null],"tthakawi.below":[{"anchor_0":{"x":{"wght=700":429,"default":433},"y":-550}},null],"wakawi.below":[{"anchor_0":{"x":{"default":484,"wght=700":506},"y":-550}},null],"vowelIkawi":[null,{"anchor_0":{"x":{"default":263,"wght=700":287},"y":{"wght=700":1070,"default":1010}}}],"vowelIikawi":[null,{"anchor_0":{"x":{"default":263,"wght=700":287},"y":{"default":1010,"wght=700":1060}}}],"vowelEukawi":[null,{"anchor_0":{"x":{"default":280,"wght=700":309},"y":{"default":1010,"wght=700":1070}}}],"vowelEu_anusvarakawi":[null,{"anchor_0":{"x":{"wght=700":309,"default":280},"y":{"wght=700":1070,"default":1010}}}],"vowelI_anusvarakawi":[null,{"anchor_0":{"x":{"wght=700":287,"default":263},"y":{"wght=700":1070,"default":1010}}}],"vowelIi_anusvarakawi":[null,{"anchor_0":{"x":{"wght=700":287,"default":263},"y":{"default":1010,"wght=700":1060}}}]}}},"34":{"0":{"type":["mark_to_mark","mark_to_base"],"marks":{"anchor_0":{"repha_anusvarakawi":[{"x":384,"y":544},null],"repha_candrabindukawi":[{"x":{"wght=700":424,"default":360},"y":544},null],"repha_vowelEukawi":[{"x":{"wght=700":446,"default":428},"y":544},null],"repha_vowelEu_anusvarakawi":[{"x":{"default":428,"wght=700":446},"y":544},null],"repha_vowelIkawi":[{"x":{"wght=700":413,"default":392},"y":544},null],"repha_vowelIkawi_anusvarakawi":[{"x":{"wght=700":413,"default":392},"y":544},null],"repha_vowelIikawi":[{"x":{"wght=700":413,"default":392},"y":544},null],"repha_vowelIikawi_anusvarakawi":[{"x":{"default":392,"wght=700":413},"y":544},null],"candrabindukawi":[{"x":{"default":242,"wght=700":281},"y":544},null],"anusvarakawi":[{"x":{"wght=700":151,"default":121},"y":544},null],"rephakawi":[{"x":{"wght=700":320,"default":329},"y":544},null],"vowelIkawi":[{"x":{"default":263,"wght=700":287},"y":544},null],"vowelIikawi":[{"x":{"wght=700":287,"default":263},"y":544},null],"vowelEukawi":[{"x":{"wght=700":309,"default":280},"y":544},null],"vowelEu_anusvarakawi":[{"x":{"wght=700":309,"default":280},"y":544},null],"vowelEu_candrabindukawi":[{"x":{"default":242,"wght=700":281},"y":544},null],"vowelI_anusvarakawi":[{"x":{"wght=700":287,"default":263},"y":544},null],"vowelI_candrabindukawi":[{"x":{"default":263,"wght=700":287},"y":{"default":934,"wght=700":968}},null],"vowelIi_anusvarakawi":[{"x":{"wght=700":287,"default":263},"y":544},null],"vowelIi_candrabindukawi":[{"x":{"wght=700":287,"default":263},"y":{"default":934,"wght=700":968}},null],"vowelUkawi":[null,{"x":{"default":201,"wght=700":236},"y":0}],"vowelUukawi":[null,{"x":{"default":345,"wght=700":375},"y":0}],"vowelVocalicRkawi":[null,{"x":{"default":588,"wght=700":614},"y":0}],"vowelVocalicLkawi":[null,{"x":{"default":448,"wght=700":463},"y":0}],"viramakawi":[null,{"x":{"default":219,"wght=700":232},"y":0}],"bakawi.below":[null,{"x":{"default":540,"wght=700":545},"y":0}],"bhakawi.below":[null,{"x":{"wght=700":437,"default":412},"y":0}],"cakawi.below":[null,{"x":{"default":577,"wght=700":573},"y":0}],"chakawi.below":[null,{"x":623,"y":0}],"dakawi.below":[null,{"x":{"default":478,"wght=700":458},"y":0}],"ddakawi.below":[null,{"x":{"default":606,"wght=700":572},"y":0}],"ddhakawi.below":[null,{"x":{"wght=700":559,"default":611},"y":0}],"dhakawi.below":[null,{"x":{"wght=700":594,"default":589},"y":0}],"gakawi.below":[null,{"x":{"default":532,"wght=700":559},"y":0}],"ghakawi.below":[null,{"x":{"default":847,"wght=700":863},"y":0}],"hakawi.below":[null,{"x":{"default":581,"wght=700":610},"y":0}],"jakawi.below":[null,{"x":{"wght=700":432,"default":420},"y":0}],"kakawi.below":[null,{"x":{"default":539,"wght=700":591},"y":0}],"khakawi.below":[null,{"x":{"wght=700":576,"default":541},"y":0}],"lakawi.below":[null,{"x":{"default":605,"wght=700":610},"y":0}],"lakawi.below2":[null,{"x":{"wght=700":570,"default":575},"y":0}],"makawi.below":[null,{"x":459,"y":0}],"nakawi.below":[null,{"x":{"wght=700":376,"default":363},"y":0}],"ngakawi.below":[null,{"x":{"wght=700":509,"default":480},"y":0}],"nnakawi.below":[null,{"x":{"wght=700":814,"default":768},"y":0}],"nyakawi.below":[null,{"x":{"default":712,"wght=700":728},"y":0}],"rakawi.below":[null,{"x":{"default":620,"wght=700":650},"y":0}],"shakawi.below":[null,{"x":{"default":425,"wght=700":466},"y":0}],"ssakawi.below":[null,{"x":{"wght=700":650,"default":706},"y":0}],"takawi.below":[null,{"x":{"wght=700":611,"default":550},"y":0}],"thakawi.below":[null,{"x":{"wght=700":535,"default":506},"y":0}],"ttakawi.below":[null,{"x":429,"y":0}],"tthakawi.below":[null,{"x":{"wght=700":429,"default":433},"y":0}],"vowelUkawi.below":[null,{"x":{"wght=700":213,"default":201},"y":0}],"vowelUukawi.below":[null,{"x":{"default":279,"wght=700":305},"y":0}],"wakawi.below":[null,{"x":{"default":484,"wght=700":506},"y":0}],"wakawi.below2":[null,{"x":{"wght=700":540,"default":535},"y":0}],"wakawi.below2.low":[null,{"x":{"default":535,"wght=700":540},"y":0}]}},"basemarks":[{"vowelIkawi":{"anchor_0":{"x":{"wght=700":287,"default":263},"y":{"wght=700":1070,"default":1010}}},"vowelIikawi":{"anchor_0":{"x":{"default":263,"wght=700":287},"y":{"wght=700":1060,"default":1010}}},"vowelEukawi":{"anchor_0":{"x":{"default":280,"wght=700":309},"y":{"default":1010,"wght=700":1070}}},"vowelEu_anusvarakawi":{"anchor_0":{"x":{"default":280,"wght=700":309},"y":{"default":1010,"wght=700":1070}}},"vowelI_anusvarakawi":{"anchor_0":{"x":{"default":263,"wght=700":287},"y":{"wght=700":1070,"default":1010}}},"vowelIi_anusvarakawi":{"anchor_0":{"x":{"default":263,"wght=700":287},"y":{"default":1010,"wght=700":1060}}}},null],"bases":[null,{"ikawi":{"anchor_0":{"x":{"default":577,"wght=700":549},"y":0}},"rVocalickawi":{"anchor_0":{"x":{"wght=700":557,"default":532},"y":0}},"rrVocalickawi":{"anchor_0":{"x":{"wght=700":830,"default":773},"y":0}},"kakawi":{"anchor_0":{"x":{"default":632,"wght=700":645},"y":0}},"khakawi":{"anchor_0":{"x":{"default":647,"wght=700":661},"y":0}},"gakawi":{"anchor_0":{"x":{"default":589,"wght=700":601},"y":0}},"ghakawi":{"anchor_0":{"x":{"default":997,"wght=700":995},"y":0}},"ngakawi":{"anchor_0":{"x":545,"y":0}},"cakawi":{"anchor_0":{"x":{"default":504,"wght=700":445},"y":0}},"chakawi":{"anchor_0":{"x":{"default":628,"wght=700":612},"y":0}},"jakawi":{"anchor_0":{"x":{"default":500,"wght=700":510},"y":0}},"jhakawi":{"anchor_0":{"x":855,"y":0}},"nyakawi":{"anchor_0":{"x":{"default":834,"wght=700":843},"y":0}},"ttakawi":{"anchor_0":{"x":{"wght=700":485,"default":454},"y":0}},"tthakawi":{"anchor_0":{"x":{"wght=700":538,"default":575},"y":0}},"ddakawi":{"anchor_0":{"x":{"wght=700":592,"default":612},"y":0}},"ddhakawi":{"anchor_0":{"x":{"wght=700":600,"default":615},"y":0}},"nnakawi":{"anchor_0":{"x":{"wght=700":938,"default":886},"y":0}},"takawi":{"anchor_0":{"x":{"wght=700":646,"default":643},"y":0}},"thakawi":{"anchor_0":{"x":{"wght=700":470,"default":493},"y":0}},"dakawi":{"anchor_0":{"x":515,"y":0}},"dhakawi":{"anchor_0":{"x":{"default":628,"wght=700":633},"y":0}},"nakawi":{"anchor_0":{"x":{"default":441,"wght=700":449},"y":0}},"pakawi":{"anchor_0":{"x":557,"y":0}},"phakawi":{"anchor_0":{"x":{"default":673,"wght=700":680},"y":0}},"bakawi":{"anchor_0":{"x":{"default":629,"wght=700":635},"y":0}},"bhakawi":{"anchor_0":{"x":{"default":472,"wght=700":502},"y":0}},"makawi":{"anchor_0":{"x":{"default":593,"wght=700":624},"y":0}},"yakawi":{"anchor_0":{"x":{"default":786,"wght=700":830},"y":0}},"rakawi":{"anchor_0":{"x":{"wght=700":258,"default":223},"y":0}},"lakawi":{"anchor_0":{"x":{"wght=700":675,"default":685},"y":0}},"wakawi":{"anchor_0":{"x":{"wght=700":465,"default":488},"y":0}},"shakawi":{"anchor_0":{"x":{"default":534,"wght=700":561},"y":0}},"ssakawi":{"anchor_0":{"x":560,"y":0}},"sakawi":{"anchor_0":{"x":{"wght=700":524,"default":521},"y":0}},"hakawi":{"anchor_0":{"x":{"default":726,"wght=700":762},"y":0}},"hakawi.post":{"anchor_0":{"x":{"wght=700":434,"default":445},"y":0}},"jhakawi.post":{"anchor_0":{"x":{"wght=700":175,"default":150},"y":-550}},"pakawi.post":{"anchor_0":{"x":{"default":171,"wght=700":180},"y":-550}},"phakawi.post":{"anchor_0":{"x":{"wght=700":270,"default":251},"y":-550}},"sakawi.post":{"anchor_0":{"x":{"default":171,"wght=700":180},"y":-550}},"ssakawi.post":{"anchor_0":{"x":{"default":171,"wght=700":180},"y":-550}},"vowelVocalicRkawi.post":{"anchor_0":{"x":{"wght=700":180,"default":171},"y":-420}},"yakawi.post":{"anchor_0":{"x":{"default":171,"wght=700":161},"y":-550}},"pakawi.post.short":{"anchor_0":{"x":{"wght=700":180,"default":171},"y":-420}},"phakawi.post.short":{"anchor_0":{"x":{"default":211,"wght=700":235},"y":-420}},"rakawi.post.002":{"anchor_0":{"x":{"default":516,"wght=700":560},"y":-550}},"sakawi.post.short":{"anchor_0":{"x":{"wght=700":180,"default":171},"y":-420}},"ssakawi.post.short":{"anchor_0":{"x":{"default":171,"wght=700":180},"y":-420}},"yakawi.post.below":{"anchor_0":{"x":{"default":171,"wght=700":181},"y":-954}},"yakawi.post.below2":{"anchor_0":{"x":{"wght=700":161,"default":171},"y":-954}},"eightkawi":{"anchor_0":{"x":{"default":524,"wght=700":536},"y":0}}}]}},"35":[null,[{"type":"mark_to_mark","marks":{"anchor_0":{"vowelUkawi":{"x":{"default":201,"wght=700":236},"y":0},"vowelUukawi":{"x":{"wght=700":375,"default":345},"y":0},"vowelVocalicRkawi":{"x":{"wght=700":614,"default":588},"y":0},"vowelVocalicLkawi":{"x":{"default":448,"wght=700":463},"y":0},"viramakawi":{"x":{"wght=700":232,"default":219},"y":0},"bakawi.below":{"x":{"default":540,"wght=700":545},"y":0},"bhakawi.below":{"x":{"wght=700":437,"default":412},"y":0},"cakawi.below":{"x":{"default":577,"wght=700":573},"y":0},"chakawi.below":{"x":623,"y":0},"dakawi.below":{"x":{"default":478,"wght=700":458},"y":0},"ddakawi.below":{"x":{"default":606,"wght=700":572},"y":0},"ddhakawi.below":{"x":{"default":611,"wght=700":559},"y":0},"dhakawi.below":{"x":{"default":589,"wght=700":594},"y":0},"gakawi.below":{"x":{"default":532,"wght=700":559},"y":0},"ghakawi.below":{"x":{"default":847,"wght=700":863},"y":0},"hakawi.below":{"x":{"wght=700":610,"default":581},"y":0},"jakawi.below":{"x":{"default":420,"wght=700":432},"y":0},"kakawi.below":{"x":{"wght=700":591,"default":539},"y":0},"khakawi.below":{"x":{"default":541,"wght=700":576},"y":0},"lakawi.below":{"x":{"default":605,"wght=700":610},"y":0},"lakawi.below2":{"x":{"default":575,"wght=700":570},"y":0},"makawi.below":{"x":459,"y":0},"nakawi.below":{"x":{"default":363,"wght=700":376},"y":0},"ngakawi.below":{"x":{"wght=700":509,"default":480},"y":0},"nnakawi.below":{"x":{"default":768,"wght=700":814},"y":0},"nyakawi.below":{"x":{"default":712,"wght=700":728},"y":0},"rakawi.below":{"x":{"default":620,"wght=700":650},"y":0},"shakawi.below":{"x":{"wght=700":466,"default":425},"y":0},"ssakawi.below":{"x":{"wght=700":650,"default":706},"y":0},"takawi.below":{"x":{"wght=700":611,"default":550},"y":0},"thakawi.below":{"x":{"wght=700":535,"default":506},"y":0},"ttakawi.below":{"x":429,"y":0},"tthakawi.below":{"x":{"wght=700":429,"default":433},"y":0},"vowelUkawi.below":{"x":{"wght=700":213,"default":201},"y":0},"vowelUukawi.below":{"x":{"wght=700":305,"default":279},"y":0},"wakawi.below":{"x":{"default":484,"wght=700":506},"y":0},"wakawi.below2":{"x":{"wght=700":540,"default":535},"y":0},"wakawi.below2.low":{"x":{"default":535,"wght=700":540},"y":0}}},"basemarks":{"bakawi.below":{"anchor_0":{"x":{"wght=700":545,"default":540},"y":-550}},"bhakawi.below":{"anchor_0":{"x":{"default":412,"wght=700":437},"y":-550}},"cakawi.below":{"anchor_0":{"x":{"default":577,"wght=700":573},"y":-550}},"chakawi.below":{"anchor_0":{"x":603,"y":-550}},"dakawi.below":{"anchor_0":{"x":{"wght=700":456,"default":476},"y":-550}},"ddakawi.below":{"anchor_0":{"x":{"wght=700":572,"default":606},"y":{"default":-570,"wght=700":-550}}},"ddhakawi.below":{"anchor_0":{"x":{"default":611,"wght=700":559},"y":{"default":-570,"wght=700":-550}}},"dhakawi.below":{"anchor_0":{"x":{"default":589,"wght=700":594},"y":-550}},"gakawi.below":{"anchor_0":{"x":{"default":532,"wght=700":559},"y":-550}},"ghakawi.below":{"anchor_0":{"x":{"default":847,"wght=700":863},"y":-550}},"hakawi.below":{"anchor_0":{"x":{"default":581,"wght=700":610},"y":-550}},"jakawi.below":{"anchor_0":{"x":{"wght=700":432,"default":420},"y":-550}},"kakawi.below":{"anchor_0":{"x":{"default":539,"wght=700":591},"y":-550}},"khakawi.below":{"anchor_0":{"x":{"wght=700":576,"default":541},"y":-550}},"lakawi.below":{"anchor_0":{"x":{"default":605,"wght=700":610},"y":-550}},"lakawi.below2":{"anchor_0":{"x":{"default":575,"wght=700":570},"y":-460}},"makawi.below":{"anchor_0":{"x":459,"y":-550}},"nakawi.below":{"anchor_0":{"x":{"default":363,"wght=700":376},"y":-550}},"ngakawi.below":{"anchor_0":{"x":{"wght=700":509,"default":480},"y":-550}},"nnakawi.below":{"anchor_0":{"x":{"default":768,"wght=700":814},"y":-550}},"nyakawi.below":{"anchor_0":{"x":{"default":712,"wght=700":728},"y":-550}},"rakawi.below":{"anchor_0":{"x":{"wght=700":650,"default":620},"y":{"default":-370,"wght=700":-430}}},"shakawi.below":{"anchor_0":{"x":{"default":425,"wght=700":466},"y":-550}},"ssakawi.below":{"anchor_0":{"x":{"default":706,"wght=700":650},"y":{"wght=700":-430,"default":-420}}},"takawi.below":{"anchor_0":{"x":{"wght=700":611,"default":550},"y":-550}},"thakawi.below":{"anchor_0":{"x":{"wght=700":517,"default":487},"y":-550}},"ttakawi.below":{"anchor_0":{"x":429,"y":-550}},"tthakawi.below":{"anchor_0":{"x":{"wght=700":429,"default":433},"y":-550}},"wakawi.below":{"anchor_0":{"x":{"default":484,"wght=700":506},"y":-550}}}}]],"36":[null,[{"type":"mark_to_base","marks":{"anchor_0":{"vowelUkawi":{"x":{"wght=700":236,"default":201},"y":0},"vowelUukawi":{"x":{"default":345,"wght=700":375},"y":0},"vowelVocalicRkawi":{"x":{"default":588,"wght=700":614},"y":0},"vowelVocalicLkawi":{"x":{"wght=700":463,"default":448},"y":0},"viramakawi":{"x":{"default":219,"wght=700":232},"y":0},"bakawi.below":{"x":{"default":540,"wght=700":545},"y":0},"bhakawi.below":{"x":{"default":412,"wght=700":437},"y":0},"cakawi.below":{"x":{"wght=700":573,"default":577},"y":0},"chakawi.below":{"x":623,"y":0},"dakawi.below":{"x":{"default":478,"wght=700":458},"y":0},"ddakawi.below":{"x":{"default":606,"wght=700":572},"y":0},"ddhakawi.below":{"x":{"default":611,"wght=700":559},"y":0},"dhakawi.below":{"x":{"wght=700":594,"default":589},"y":0},"gakawi.below":{"x":{"default":532,"wght=700":559},"y":0},"ghakawi.below":{"x":{"wght=700":863,"default":847},"y":0},"hakawi.below":{"x":{"default":581,"wght=700":610},"y":0},"jakawi.below":{"x":{"wght=700":432,"default":420},"y":0},"kakawi.below":{"x":{"default":539,"wght=700":591},"y":0},"khakawi.below":{"x":{"default":541,"wght=700":576},"y":0},"lakawi.below":{"x":{"default":605,"wght=700":610},"y":0},"lakawi.below2":{"x":{"wght=700":570,"default":575},"y":0},"makawi.below":{"x":459,"y":0},"nakawi.below":{"x":{"wght=700":376,"default":363},"y":0},"ngakawi.below":{"x":{"wght=700":509,"default":480},"y":0},"nnakawi.below":{"x":{"default":768,"wght=700":814},"y":0},"nyakawi.below":{"x":{"wght=700":728,"default":712},"y":0},"rakawi.below":{"x":{"default":620,"wght=700":650},"y":0},"shakawi.below":{"x":{"default":425,"wght=700":466},"y":0},"ssakawi.below":{"x":{"wght=700":650,"default":706},"y":0},"takawi.below":{"x":{"wght=700":611,"default":550},"y":0},"thakawi.below":{"x":{"default":506,"wght=700":535},"y":0},"ttakawi.below":{"x":429,"y":0},"tthakawi.below":{"x":{"wght=700":429,"default":433},"y":0},"vowelUkawi.below":{"x":{"wght=700":213,"default":201},"y":0},"vowelUukawi.below":{"x":{"default":279,"wght=700":305},"y":0},"wakawi.below":{"x":{"wght=700":506,"default":484},"y":0},"wakawi.below2":{"x":{"wght=700":540,"default":535},"y":0},"wakawi.below2.low":{"x":{"wght=700":540,"default":535},"y":0}}},"bases":{"uni25CC":{"anchor_0":{"x":565,"y":0}}}}]],"37":[null,[{"type":"mark_to_base","marks":{"anchor_0":{"repha_anusvarakawi":{"x":384,"y":544},"repha_candrabindukawi":{"x":{"default":360,"wght=700":424},"y":544},"repha_vowelEukawi":{"x":{"default":428,"wght=700":446},"y":544},"repha_vowelEu_anusvarakawi":{"x":{"wght=700":446,"default":428},"y":544},"repha_vowelIkawi":{"x":{"wght=700":413,"default":392},"y":544},"repha_vowelIkawi_anusvarakawi":{"x":{"wght=700":413,"default":392},"y":544},"repha_vowelIikawi":{"x":{"wght=700":413,"default":392},"y":544},"repha_vowelIikawi_anusvarakawi":{"x":{"default":392,"wght=700":413},"y":544},"candrabindukawi":{"x":{"wght=700":281,"default":242},"y":544},"anusvarakawi":{"x":{"default":121,"wght=700":151},"y":544},"rephakawi":{"x":{"wght=700":320,"default":329},"y":544},"vowelIkawi":{"x":{"default":263,"wght=700":287},"y":544},"vowelIikawi":{"x":{"default":263,"wght=700":287},"y":544},"vowelEukawi":{"x":{"wght=700":309,"default":280},"y":544},"vowelEu_anusvarakawi":{"x":{"wght=700":309,"default":280},"y":544},"vowelEu_candrabindukawi":{"x":{"default":242,"wght=700":281},"y":544},"vowelI_anusvarakawi":{"x":{"wght=700":287,"default":263},"y":544},"vowelI_candrabindukawi":{"x":{"wght=700":287,"default":263},"y":{"wght=700":968,"default":934}},"vowelIi_anusvarakawi":{"x":{"wght=700":287,"default":263},"y":544},"vowelIi_candrabindukawi":{"x":{"default":263,"wght=700":287},"y":{"wght=700":968,"default":934}}}},"bases":{"uni25CC":{"anchor_0":{"x":339,"y":544}}}}]]}},"GSUB":{"feature_list":{"abvs":{"0":[35,33]},"pstf":{"1":[16,null]},"psts":{"0":[18,16],"1":[20,18],"2":[22,20],"3":[24,22],"4":[26,24],"5":[28,26],"6":[31,29],"7":[32,30],"8":[33,31]},"ss01":{"0":[36,34],"1":[37,35]},"ss02":{"0":[39,37]}},"lookup_list":{"0":{"0":{"vowelAakawi":[null,"NullMark"]}},"1":{"0":{"vowelAakawi":[["vowelAakawi.alt","NullMark"],null],"rakawi.post":{"0":["rakawi.post.001","rakawi.post.short"],"1":["rakawi.post.002","rakawi.post.001"],"2":["rakawi.post.short","rakawi.post.002"]}}},"16":{"0":{"rules":{"0":["[pakawi lakawi] vowelAakawi' lookup lookup_17","rakawi.post' lookup lookup_17 [kakawi khakawi gakawi ghakawi ngakawi cakawi chakawi jakawi jhakawi nyakawi ttakawi tthakawi ddakawi ddhakawi nnakawi takawi thakawi dakawi dhakawi nakawi pakawi phakawi bakawi bhakawi makawi yakawi rakawi lakawi wakawi shakawi ssakawi sakawi hakawi] [jhakawi.post pakawi.post phakawi.post sakawi.post ssakawi.post yakawi.post]"]}},"1":[null,{"type":"chained_sequence_context","rules":["rakawi.post' lookup lookup_17 [kakawi khakawi gakawi ghakawi ngakawi cakawi chakawi jakawi jhakawi nyakawi ttakawi tthakawi ddakawi ddhakawi nnakawi takawi thakawi dakawi dhakawi nakawi pakawi phakawi bakawi bhakawi makawi yakawi rakawi lakawi wakawi shakawi ssakawi sakawi hakawi] [vowelUkawi vowelUukawi]"]}]},"17":{"0":{"vowelAakawi":["vowelAakawi.alt",null],"rakawi.post":[null,"rakawi.post.short"]}},"18":{"0":{"rules":{"0":["rakawi.post' lookup lookup_19 [kakawi khakawi gakawi ghakawi ngakawi cakawi chakawi jakawi jhakawi nyakawi ttakawi tthakawi ddakawi ddhakawi nnakawi takawi thakawi dakawi dhakawi nakawi pakawi phakawi bakawi bhakawi makawi yakawi rakawi lakawi wakawi shakawi ssakawi sakawi hakawi] [jhakawi.post pakawi.post phakawi.post sakawi.post ssakawi.post yakawi.post]","rakawi rakawi.post.short yakawi.post' lookup lookup_19"]}},"1":{"rules":{"0":["rakawi.post' lookup lookup_19 [kakawi khakawi gakawi ghakawi ngakawi cakawi chakawi jakawi jhakawi nyakawi ttakawi tthakawi ddakawi ddhakawi nnakawi takawi thakawi dakawi dhakawi nakawi pakawi phakawi bakawi bhakawi makawi yakawi rakawi lakawi wakawi shakawi ssakawi sakawi hakawi] [vowelUkawi vowelUukawi]","[bakawi.below bhakawi.below cakawi.below chakawi.below dakawi.below ddakawi.below ddhakawi.below dhakawi.below gakawi.below ghakawi.below hakawi.below jakawi.below kakawi.below khakawi.below lakawi.below lakawi.below2 makawi.below nakawi.below ngakawi.below nnakawi.below nyakawi.below rakawi.below shakawi.below ssakawi.below takawi.below thakawi.below ttakawi.below tthakawi.below wakawi.below] yakawi.post' lookup lookup_19"]}},"2":[null,{"type":"chained_sequence_context","rules":["[jhakawi.post pakawi.post phakawi.post sakawi.post ssakawi.post yakawi.post] yakawi.post' lookup lookup_19"]}]},"19":{"0":{"rakawi.post":["rakawi.post.short",null],"yakawi.post":[null,"yakawi.post.below"]}},"20":{"0":{"rules":{"0":["rakawi rakawi.post.short yakawi.post' lookup lookup_21","rakawi.below yakawi.post.below' lookup lookup_21"]}},"1":{"rules":{"0":["[bakawi.below bhakawi.below cakawi.below chakawi.below dakawi.below ddakawi.below ddhakawi.below dhakawi.below gakawi.below ghakawi.below hakawi.below jakawi.below kakawi.below khakawi.below lakawi.below lakawi.below2 makawi.below nakawi.below ngakawi.below nnakawi.below nyakawi.below rakawi.below shakawi.below ssakawi.below takawi.below thakawi.below ttakawi.below tthakawi.below wakawi.below] yakawi.post' lookup lookup_21","makawi.below [jhakawi.post pakawi.post phakawi.post sakawi.post ssakawi.post yakawi.post] yakawi.post.below' lookup lookup_21"]}},"2":[{"type":"chained_sequence_context","rules":["[jhakawi.post pakawi.post phakawi.post sakawi.post ssakawi.post yakawi.post] yakawi.post' lookup lookup_21"]},null]},"21":{"0":{"yakawi.post":["yakawi.post.below",null],"yakawi.post.below":[null,"yakawi.post.below2"]}},"22":{"0":{"rules":{"0":["rakawi.below yakawi.post.below' lookup lookup_23","[pakawi.post phakawi.post sakawi.post ssakawi.post]' lookup lookup_23 [lakawi.below makawi.below wakawi.below]"]}},"1":[{"type":"chained_sequence_context","rules":["makawi.below [jhakawi.post pakawi.post phakawi.post sakawi.post ssakawi.post yakawi.post] yakawi.post.below' lookup lookup_23"]},null]},"23":{"0":{"yakawi.post.below":["yakawi.post.below2",null],"pakawi.post":[null,"pakawi.post.short"],"phakawi.post":[null,"phakawi.post.short"],"sakawi.post":[null,"sakawi.post.short"],"ssakawi.post":[null,"ssakawi.post.short"]}},"24":{"0":{"rules":{"0":["[pakawi.post phakawi.post sakawi.post ssakawi.post]' lookup lookup_25 [lakawi.below makawi.below wakawi.below]","[jhakawi.post pakawi.post phakawi.post rakawi.post sakawi.post ssakawi.post yakawi.post rakawi.post.001 rakawi.post.002 yakawi.post.below yakawi.post.below2] [vowelUkawi vowelUukawi]' lookup lookup_25"]}}},"25":{"0":{"pakawi.post":["pakawi.post.short",null],"phakawi.post":["phakawi.post.short",null],"sakawi.post":["sakawi.post.short",null],"ssakawi.post":["ssakawi.post.short",null],"vowelUkawi":[null,"vowelUkawi.below"],"vowelUukawi":[null,"vowelUukawi.below"]}},"26":{"0":{"rules":{"0":["[jhakawi.post pakawi.post phakawi.post rakawi.post sakawi.post ssakawi.post yakawi.post rakawi.post.001 rakawi.post.002 yakawi.post.below yakawi.post.below2] [vowelUkawi vowelUukawi]' lookup lookup_27","rakawi.post' lookup lookup_27 [cakawi jakawi ttakawi thakawi dakawi nakawi pakawi bhakawi wakawi sakawi]"]}},"1":[null,{"type":"chained_sequence_context","rules":["rakawi.post' lookup lookup_28 rakawi"]}]},"27":{"0":{"vowelUkawi":["vowelUkawi.below",null],"vowelUukawi":["vowelUukawi.below",null],"rakawi.post":[null,"rakawi.post.001"]}},"28":{"0":{"type":["chained_sequence_context","single"],"rules":[["rakawi.post' lookup lookup_29 [cakawi jakawi ttakawi thakawi dakawi nakawi pakawi bhakawi wakawi sakawi]"],null],"rakawi.post":[null,"rakawi.post.002"]},"1":[{"type":"chained_sequence_context","rules":["rakawi.post' lookup lookup_30 rakawi"]},null]},"29":{"0":{"type":["single","sequence_context"],"rakawi.post":["rakawi.post.001",null],"rules":[null,["vowelAakawi' lookup lookup_2 [candrabindukawi anusvarakawi rephakawi vowelIkawi vowelIikawi vowelEukawi]' lookup lookup_3"]]},"1":[null,{"type":"sequence_context","rules":["vowelAakawi' lookup lookup_2 [candrabindukawi anusvarakawi rephakawi vowelIkawi vowelIikawi vowelEukawi]' lookup lookup_4"]}],"2":[null,{"type":"sequence_context","rules":["yakawi.post' lookup lookup_2 [candrabindukawi anusvarakawi rephakawi vowelIkawi vowelIikawi vowelEukawi]' lookup lookup_5"]}],"3":[null,{"type":"sequence_context","rules":["yakawi.post.below' lookup lookup_2 [candrabindukawi anusvarakawi rephakawi vowelIkawi vowelIikawi vowelEukawi]' lookup lookup_6"]}],"4":[null,{"type":"sequence_context","rules":["yakawi.post.below2' lookup lookup_2 [candrabindukawi anusvarakawi rephakawi vowelIkawi vowelIikawi vowelEukawi]' lookup lookup_7"]}]},"30":{"0":{"type":["single","ligature"],"rakawi.post":["rakawi.post.002",null],"rephakawi vowelAakawi.alt":[null,"repha_vowelAakawi.alt"]}},"31":{"0":{"type":["sequence_context","chained_sequence_context"],"rules":{"0":["yakawi.post.below2' lookup lookup_2 [candrabindukawi anusvarakawi rephakawi vowelIkawi vowelIikawi vowelEukawi]' lookup lookup_7","[rakawi.post rakawi.post.001 rakawi.post.002]'  ghakawi'  vowelUkawi' "],"1":["yakawi.post.below' lookup lookup_2 [candrabindukawi anusvarakawi rephakawi vowelIkawi vowelIikawi vowelEukawi]' lookup lookup_6",null],"2":["yakawi.post' lookup lookup_2 [candrabindukawi anusvarakawi rephakawi vowelIkawi vowelIikawi vowelEukawi]' lookup lookup_5",null],"3":["vowelAakawi' lookup lookup_2 [candrabindukawi anusvarakawi rephakawi vowelIkawi vowelIikawi vowelEukawi]' lookup lookup_3",null],"4":["vowelAakawi' lookup lookup_2 [candrabindukawi anusvarakawi rephakawi vowelIkawi vowelIikawi vowelEukawi]' lookup lookup_4",null]}},"1":[null,{"type":"chained_sequence_context","rules":["[kakawi khakawi gakawi ghakawi ngakawi cakawi chakawi jakawi jhakawi nyakawi ttakawi tthakawi ddakawi ddhakawi nnakawi takawi thakawi dakawi dhakawi nakawi pakawi phakawi bakawi bhakawi makawi yakawi rakawi lakawi wakawi shakawi ssakawi sakawi hakawi] [rakawi.post rakawi.post.001 rakawi.post.002] wakawi.below' lookup lookup_32"]}]},"32":{"0":{"type":["ligature","single"],"rephakawi vowelAakawi.alt":["repha_vowelAakawi.alt",null],"wakawi.below":[null,"wakawi.below2.low"]}},"33":{"0":{"type":["chained_sequence_context","ligature"],"rules":[["[rakawi.post rakawi.post.001 rakawi.post.002]'  ghakawi'  vowelUkawi' "],null],"rephakawi vowelIkawi anusvarakawi":[null,"repha_vowelIkawi_anusvarakawi"],"rephakawi vowelIikawi anusvarakawi":[null,"repha_vowelIikawi_anusvarakawi"],"rephakawi vowelEukawi anusvarakawi":[null,"repha_vowelEu_anusvarakawi"],"rephakawi vowelIikawi":[null,"repha_vowelIikawi"],"rephakawi vowelIkawi":[null,"repha_vowelIkawi"],"rephakawi vowelEukawi":[null,"repha_vowelEukawi"],"rephakawi candrabindukawi":[null,"repha_candrabindukawi"],"rephakawi anusvarakawi":[null,"repha_anusvarakawi"],"vowelIkawi anusvarakawi":[null,"vowelI_anusvarakawi"],"vowelIkawi candrabindukawi":[null,"vowelI_candrabindukawi"],"vowelIikawi anusvarakawi":[null,"vowelIi_anusvarakawi"],"vowelIikawi candrabindukawi":[null,"vowelIi_candrabindukawi"],"vowelEukawi anusvarakawi":[null,"vowelEu_anusvarakawi"],"vowelEukawi candrabindukawi":[null,"vowelEu_candrabindukawi"]},"1":[{"type":"chained_sequence_context","rules":["[kakawi khakawi gakawi ghakawi ngakawi cakawi chakawi jakawi jhakawi nyakawi ttakawi tthakawi ddakawi ddhakawi nnakawi takawi thakawi dakawi dhakawi nakawi pakawi phakawi bakawi bhakawi makawi yakawi rakawi lakawi wakawi shakawi ssakawi sakawi hakawi] [rakawi.post rakawi.post.001 rakawi.post.002] wakawi.below' lookup lookup_34"]},null]},"34":{"0":{"wakawi.below":["wakawi.below2.low",null],"hakawi.below":[null,"hakawi.post"]}},"35":{"0":{"type":["ligature","chained_sequence_context"],"rephakawi vowelEukawi anusvarakawi":["repha_vowelEu_anusvarakawi",null],"rephakawi vowelIkawi anusvarakawi":["repha_vowelIkawi_anusvarakawi",null],"rephakawi vowelIikawi anusvarakawi":["repha_vowelIikawi_anusvarakawi",null],"rephakawi anusvarakawi":["repha_anusvarakawi",null],"rephakawi candrabindukawi":["repha_candrabindukawi",null],"rephakawi vowelEukawi":["repha_vowelEukawi",null],"rephakawi vowelIkawi":["repha_vowelIkawi",null],"rephakawi vowelIikawi":["repha_vowelIikawi",null],"vowelIkawi anusvarakawi":["vowelI_anusvarakawi",null],"vowelIkawi candrabindukawi":["vowelI_candrabindukawi",null],"vowelIikawi anusvarakawi":["vowelIi_anusvarakawi",null],"vowelIikawi candrabindukawi":["vowelIi_candrabindukawi",null],"vowelEukawi anusvarakawi":["vowelEu_anusvarakawi",null],"vowelEukawi candrabindukawi":["vowelEu_candrabindukawi",null],"rules":[null,["hakawi.post [vowelUkawi.below vowelUukawi.below]' lookup lookup_36"]]}},"36":{"0":{"hakawi.below":["hakawi.post",null],"vowelUkawi.below":[null,"vowelUkawi"],"vowelUukawi.below":[null,"vowelUukawi"]}},"37":{"0":{"type":["chained_sequence_context","single"],"rules":[["hakawi.post [vowelUkawi.below vowelUukawi.below]' lookup lookup_38"],null],"ssakawi.post":[null,"ssakawi.below"]}},"38":[[{"type":"single","vowelUkawi.below":"vowelUkawi","vowelUukawi.below":"vowelUukawi"}],null],"39":[[{"type":"single","ssakawi.post":"ssakawi.below"}],null]}},"STAT":{"offset_to_axis_value_offsets":{"axis_value_offsets":{"2":{"value_name_id":["262","263"]},"3":{"value_name_id":["260","265"]}}}},"cmap":{"U+11F3C":["vowelVocalicLkawi",null]},"fvar":{"axis_instance_arrays_offset":{"instances":{"0":{"subfamily_name_id":["263","259"],"post_script_name_id":[null,"260"]},"1":{"subfamily_name_id":["264","261"],"post_script_name_id":[null,"262"]},"2":{"subfamily_name_id":["265","263"],"post_script_name_id":[null,"264"]},"3":{"subfamily_name_id":["266","265"],"post_script_name_id":[null,"266"]}}},"instance_size":[8,10]},"head":{"checksum_adjustment":[2272035566,1940460283],"modified":[3770809841,3813911896]},"hhea":{"caret_slope_rise":[1,1000]},"name":{"LICENSE_DESCRIPTION":{"en-US":["This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL","This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org"]},"LICENSE_URL":{"en-US":["https://scripts.sil.org/OFL","https://openfontlicense.org"]},"258":{"en":[null,"Weight"]},"260":{"en-US":["Bold","NotoSansKawi-Regular"],"en":[null,"NotoSansKawi-Regular"]},"261":{"en":[null,"Medium"]},"262":{"en-US":["SemiBold","NotoSansKawi-Medium"],"en":[null,"NotoSansKawi-Medium"]},"263":{"en":["Regular","SemiBold"],"en-US":["Regular","SemiBold"]},"264":{"en":["Medium","NotoSansKawi-SemiBold"],"en-US":["Medium","NotoSansKawi-SemiBold"]},"265":{"en":["SemiBold","Bold"],"en-US":["SemiBold","Bold"]},"266":{"en":["Bold","NotoSansKawi-Bold"],"en-US":["Bold","NotoSansKawi-Bold"]},"259":[null,{"en":"Regular","en-US":"Regular"}]}},"cmap_diff":{"missing":[{"string":"𑼼"}]}};
+		function buildLocation_statichtml(loc) {
+  // Set font styles to appropriate axis locations
+  let rule = document.styleSheets[0].cssRules[2].style;
+  let cssSetting = "";
+  let textLocation = "Default";
+  if (loc.coords) {
+    cssSetting = Object.entries(loc.coords)
+      .map(function ([axis, value]) {
+        return `"${axis}" ${value}`;
+      })
+      .join(", ");
+    textLocation = Object.entries(loc.coords)
+      .map(function ([axis, value]) {
+        return `${axis}=${value}`;
+      })
+      .join(" ");
+    rule.setProperty("font-variation-settings", cssSetting);
+  }
+
+  $("#main").empty();
+
+  $("#title").html(`<h4 class="mt-2">${textLocation}</h2>`);
+
+  if (loc.glyphs) {
+    $("#main").append("<h4>Modified Glyphs</h4>");
+    let glyphs = $("<div>");
+    for (let glyph of loc.glyphs) {
+      addAGlyph(glyph, glyphs);
+    }
+    $("#main").append(glyphs);
+  }
+
+  if (loc.words) {
+    $("#main").append("<h4>Modified Words</h4>");
+    for (let [script, words] of Object.entries(loc.words)) {
+      let scriptTitle = $(`<h6>${script}</h6>`);
+      $("#main").append(scriptTitle);
+      let worddiv = $("<div>");
+      for (let word of words) {
+        addAWord(word, worddiv);
+      }
+      $("#main").append(worddiv);
+    }
+  }
+  $('[data-toggle="tooltip"]').tooltip();
+}
+
+$(function () {
+  if (report["tables"]) {
+    diffTables(report);
+  }
+  if (report["kerns"]) {
+    diffKerns(report);
+  }
+  cmapDiff(report);
+  $('[data-toggle="tooltip"]').tooltip();
+  if (!report["locations"]) {
+    $("#title").html("<h4 class='mt-2'>No differences found</h4>");
+    $("#ui-nav").hide();
+    return;
+  }
+
+  for (var [index, loc] of report["locations"].entries()) {
+    var loc_nav = $(`<li class="nav-item">
+		<a class="nav-link text-secondary" href="#" data-index="${index}">${loc.location.replaceAll(
+      ",",
+      ",\u200b"
+    )}</a>
+	</li>`);
+    $("#locationnav").append(loc_nav);
+  }
+  $("#locationnav li a").on("click", function (e) {
+    $("#locationnav li a").removeClass("active");
+    $(this).addClass("active");
+    buildLocation_statichtml(report.locations[$(this).data("index")]);
+  });
+  $("#locationnav li a").eq(0).click();
+
+  document.styleSheets[0].cssRules[0].style.setProperty(
+    "src",
+    "url(old-NotoSansKawi[wght].ttf)"
+  );
+  document.styleSheets[0].cssRules[1].style.setProperty(
+    "src",
+    "url(new-NotoSansKawi[wght].ttf)"
+  );
+  setupAnimation();
+});
+
+	</script>
+</body>
+
+</html>
